@@ -4,6 +4,9 @@ from mock.mock_data import get_mock_reply, get_mock_summary
 
 LLM_SERVICE_URL = os.getenv("LLM_SERVICE_URL", "http://localhost:8001")
 USE_MOCK = os.getenv("USE_MOCK", "true").lower() == "true"
+# 允许独立控制 LLM mock，优先级: USE_MOCK_LLM > USE_MOCK
+_use_mock_llm = os.getenv("USE_MOCK_LLM", "").lower()
+USE_MOCK_LLM = _use_mock_llm == "true" if _use_mock_llm else USE_MOCK
 
 
 async def call_generate(payload: dict) -> dict:
@@ -13,7 +16,7 @@ async def call_generate(payload: dict) -> dict:
 
     期望响应: { "text": str, "emotion": "愤怒"|"悲伤"|"喜悦"|"平静" }
     """
-    if USE_MOCK:
+    if USE_MOCK_LLM:
         return get_mock_reply(payload.get("character_id", ""))
 
     async with httpx.AsyncClient(timeout=30.0) as client:
@@ -29,7 +32,7 @@ async def call_summarize(payload: dict) -> dict:
 
     期望响应: { "attitude": str, "comment": str }
     """
-    if USE_MOCK:
+    if USE_MOCK_LLM:
         return get_mock_summary(payload.get("character_id", ""))
 
     async with httpx.AsyncClient(timeout=30.0) as client:

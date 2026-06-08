@@ -6,6 +6,9 @@ import httpx
 
 TTS_SERVICE_URL = os.getenv("TTS_SERVICE_URL", "http://localhost:8002")
 USE_MOCK = os.getenv("USE_MOCK", "true").lower() == "true"
+# 允许独立控制 TTS mock，优先级: USE_MOCK_TTS > USE_MOCK
+_use_mock_tts = os.getenv("USE_MOCK_TTS", "").lower()
+USE_MOCK_TTS = _use_mock_tts == "true" if _use_mock_tts else USE_MOCK
 STATIC_AUDIO_DIR = os.path.join(os.path.dirname(__file__), "..", "static", "audio")
 STATIC_BASE_URL = os.getenv("STATIC_BASE_URL", "http://localhost:8000")
 
@@ -19,7 +22,7 @@ async def call_synthesize(payload: dict) -> str:
       方案A: { "audio_path": "/absolute/path/to/audio.wav" }
       方案B: { "audio_base64": "...", "format": "wav" }
     """
-    if USE_MOCK:
+    if USE_MOCK_TTS:
         return f"{STATIC_BASE_URL}/static/audio/mock_silence.wav"
 
     async with httpx.AsyncClient(timeout=60.0) as client:
