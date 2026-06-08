@@ -1,0 +1,154 @@
+.summary-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.summary-modal {
+  width: 420px;
+  max-width: 95vw;
+  background: rgba(20, 15, 10, 0.92);
+  border: var(--border-gold);
+  border-radius: 16px;
+  backdrop-filter: blur(12px);
+  animation: modalIn 0.3s ease;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── 卡片内容区（用于截图） ── */
+.summary-card {
+  padding: 1.8rem 2rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.summary-title {
+  font-family: var(--font-title);
+  font-size: 1.6rem;
+  color: var(--color-gold);
+  text-align: center;
+}
+
+.summary-divider {
+  width: 80%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--color-gold), transparent);
+}
+
+.summary-avatar-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.summary-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: var(--border-gold);
+}
+
+.summary-char-name {
+  font-family: var(--font-title);
+  font-size: 1rem;
+  color: var(--color-gold-light);
+}
+
+.summary-rounds {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--color-text-dim);
+}
+
+.summary-loading {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  padding: 0.5rem 0;
+}
+
+.summary-loading .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-gold);
+  animation: dotBounce 1.2s ease infinite;
+}
+
+.summary-loading .dot:nth-child(2) { animation-delay: 0.2s; }
+.summary-loading .dot:nth-child(3) { animation-delay: 0.4s; }
+
+.summary-attitude {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--color-text);
+  text-align: center;
+}
+
+.summary-attitude-value {
+  color: var(--color-gold);
+  font-weight: bold;
+}
+
+.summary-comment {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--color-text-dim);
+  font-style: italic;
+  text-align: center;
+  line-height: 1.6;
+  padding: 0 0.5rem;
+}
+
+/* ── 底部按钮 ── */
+.summary-actions {
+  display: flex;
+  gap: 0;
+  border-top: var(--border-gold);
+}
+
+.summary-btn {
+  flex: 1;
+  padding: 0.85rem;
+  font-family: var(--font-title);
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  letter-spacing: 0.08em;
+  transition: background var(--transition), color var(--transition);
+}
+
+.summary-btn--save {
+  background: transparent;
+  color: var(--color-gold);
+  border-right: var(--border-gold);
+}
+
+.summary-btn--save:hover:not(:disabled) {
+  background: rgba(201, 168, 76, 0.15);
+}
+
+.summary-btn--save:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.summary-btn--restart {
+  background: var(--color-gold);
+  color: #1a1208;
+}
+
+.summary-btn--restart:hover {
+  background: var(--color-gold-light);
+}
