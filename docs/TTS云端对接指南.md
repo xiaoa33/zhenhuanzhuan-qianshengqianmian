@@ -24,11 +24,16 @@ ssh -p 28281 root@connect.bjb1.seetacloud.com
 conda activate cosyvoice
 cd /root/autodl-tmp
 
-# 如果旧进程残留，换端口
+# 全功能模式（情绪控制 + 精细控制 + 跨语言）
 python tts_server_zhz.py --port 8003 --preload
+
+# 纯 zero-shot 模式（音色最像，不加情绪控制）
+python tts_server_zhz.py --port 8003 --preload --no-emotion
 ```
 
-若端口被占：`python tts_server_zhz.py --port 8004 --preload`（隧道端口跟着改即可）。
+> `--no-emotion`：LLM 仍然正常传 emotion 字段，但 TTS 全部走 zero_shot。API 接口不变，随时可切换。
+>
+> 若端口被占：`python tts_server_zhz.py --port 8004 --preload`（隧道端口跟着改即可）。
 
 ### 终端2 — SSH 隧道（本地）
 
