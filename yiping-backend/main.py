@@ -7,7 +7,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 
-from routers import chat, synthesize, digital_human, summary
+from routers import asr, chat, synthesize, digital_human, summary
 
 app = FastAPI(title="甄嬛传·千声千面 后端服务")
 
@@ -28,6 +28,7 @@ os.makedirs("static/video", exist_ok=True)
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
 app.include_router(chat.router)
+app.include_router(asr.router)
 app.include_router(synthesize.router)
 app.include_router(digital_human.router)
 app.include_router(summary.router)

@@ -12,8 +12,8 @@
     ▼
 yiping-backend FastAPI (:8000)   ← 主后端，负责路由和 SadTalker 调用
     │
-    ├── xiao-asr_llm (:8001)     ← 模块A：LLM 对话生成 + 情绪分析
-    └── TTS 语音合成 (:8002)      ← 模块B：角色声音合成
+    ├── xiao-asr_llm (:8001)     ← 模块A：ASR + LLM 对话生成 + 情绪分析
+    └── GPT-SoVITS TTS (:8002)   ← 模块B：角色声音合成
 ```
 
 各模块独立运行，主后端通过 `USE_MOCK=true` 可在外部模块未就绪时用预设数据运行。
@@ -86,6 +86,7 @@ cp .env.example .env
 | 变量 | 默认值 | 说明 |
 |------|--------|------|
 | `USE_MOCK` | `true` | `true` 时 /chat、/synthesize、/summary 使用预设数据，外部模块未就绪时保持 true |
+| `USE_MOCK_ASR` | `false` | `true` 时 /asr 返回固定演示文本 |
 | `LLM_SERVICE_URL` | `http://localhost:8001` | LLM 模块地址，默认无需修改 |
 | `TTS_SERVICE_URL` | `http://localhost:8002` | TTS 模块地址，默认无需修改 |
 | `SADTALKER_PATH` | `../SadTalker/SadTalker` | SadTalker 仓库路径（数字人功能必填） |
@@ -186,12 +187,13 @@ SADTALKER_PYTHON=D:/path/to/SadTalker/SadTalker/.venv/Scripts/python.exe
 
 ---
 
-## 四、接入外部模块（LLM + TTS）
+## 四、接入外部模块（ASR + LLM + TTS）
 
 外部模块就绪后，修改 `yiping-backend/.env`：
 
 ```env
 USE_MOCK=false
+USE_MOCK_ASR=false
 LLM_SERVICE_URL=http://localhost:8001
 TTS_SERVICE_URL=http://localhost:8002
 ```
@@ -211,14 +213,14 @@ uvicorn main:app --reload --port 8000
 ```
 
 ```bash
-# 终端2：LLM 模块
+# 终端2：ASR + LLM 模块
 cd xiao-asr_llm
 uvicorn main:app --reload --port 8001
 ```
 
 ```bash
-# 终端3：TTS 模块
-cd <TTS模块目录>
+# 终端3：GPT-SoVITS TTS 模块
+cd gpt-sovits-service
 uvicorn main:app --reload --port 8002
 ```
 
@@ -238,7 +240,8 @@ npm run dev
 /
 ├── yiping-frontend/     # React 前端
 ├── yiping-backend/      # FastAPI 主后端
-├── xiao-asr_llm/        # 模块A：LLM 对话生成
+├── xiao-asr_llm/        # 模块A：ASR + LLM 对话生成
+├── gpt-sovits-service/  # 模块B：GPT-SoVITS 语音合成
 ├── SadTalker/           # 数字人（克隆后生成）
 └── docs/
     ├── 后端设计文档.md

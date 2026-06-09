@@ -43,6 +43,7 @@ uvicorn main:app --reload --port 8000
 | 变量 | 默认值 | 说明 |
 |------|--------|------|
 | `USE_MOCK` | `true` | `true` 时 /chat、/synthesize、/summary 使用预设数据 |
+| `USE_MOCK_ASR` | `false` | `true` 时 /asr 返回固定演示文本 |
 | `LLM_SERVICE_URL` | `http://localhost:8001` | xiao-asr_llm 模块地址 |
 | `TTS_SERVICE_URL` | `http://localhost:8002` | TTS 语音合成模块地址 |
 | `SADTALKER_PATH` | `../SadTalker` | SadTalker 仓库路径 |
@@ -64,6 +65,14 @@ uvicorn main:app --reload --port 8000
 3. 该文件中 `call_generate()` 和 `call_summarize()` 函数已按接口规范调用，无需修改
 4. 若 xiao-asr_llm 的接口路径或字段名有差异，在这两个函数中调整
 
+### 接入 ASR 模块（/asr）
+
+文件：`services/asr_client.py`
+
+1. 确认 `LLM_SERVICE_URL` 指向正在运行的 xiao-asr_llm 服务
+2. xiao-asr_llm 需实现 `POST /asr`，multipart 字段名为 `audio`
+3. 前端录音按钮会调用主后端 `/asr`，识别结果只填入输入框，不会自动发送
+
 ### 接入 TTS 语音合成模块（/synthesize）
 
 文件：`services/tts_client.py`
@@ -74,6 +83,8 @@ uvicorn main:app --reload --port 8000
    - `{ "audio_path": "/absolute/path/to/output.wav" }`
    - `{ "audio_base64": "...", "format": "wav" }`
 4. 若响应格式不同，在 `call_synthesize()` 函数中修改解析逻辑
+
+GPT-SoVITS 本地服务位于 `../gpt-sovits-service`，启动后同样监听 `8002` 并返回 `{ "audio_path": "..." }`。
 
 ### 接入 SadTalker（/digital-human）
 

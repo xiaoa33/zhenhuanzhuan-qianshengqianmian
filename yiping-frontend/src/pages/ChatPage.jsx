@@ -2,10 +2,20 @@ import { useState, useRef, useEffect, useContext, useCallback } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { MusicContext } from '../App'
 import SummaryCard from '../components/SummaryCard'
-import { sendMessage, synthesizeAudio, generateDigitalHuman } from '../api'
+import { sendMessage, synthesizeAudio, generateDigitalHuman, transcribeAudio } from '../api'
 import './ChatPage.css'
 
 const QUICK_PHRASES = ['臣妾做不到啊', '贱人就是矫情', '愿得一心人', '皇上圣安']
+const EMOTION_OPTIONS = ['自动', '喜悦', '愤怒', '悲伤', '平静']
+const DEFAULT_TTS_ENGINE = import.meta.env.VITE_TTS_ENGINE || 'gpt_sovits'
+const TTS_ENGINE_OPTIONS = [
+  { id: 'gpt_sovits', label: 'GPT-SoVITS' },
+  { id: 'cosyvoice', label: 'CosyVoice' },
+]
+
+function ttsTextKey(engine) {
+  return engine === 'gpt-sovits' ? 'gpt_sovits' : engine
+}
 
 export default function ChatPage() {
   const location = useLocation()
@@ -18,12 +28,18 @@ export default function ChatPage() {
   const [input, setInput] = useState('')
   const [isLoading, setIsLoading] = useState(false)
   const [isPlaying, setIsPlaying] = useState(false)
+  const [isRecording, setIsRecording] = useState(false)
+  const [isTranscribing, setIsTranscribing] = useState(false)
   const [videoUrl, setVideoUrl] = useState(null)
   const [emotion, setEmotion] = useState('平静')
+  const [preferredEmotion, setPreferredEmotion] = useState('自动')
+  const [ttsEngine, setTtsEngine] = useState(DEFAULT_TTS_ENGINE)
   const [showSummary, setShowSummary] = useState(false)
 
   const messagesEndRef = useRef(null)
   const chatAudioRef = useRef(null)
+  const mediaRecorderRef = useRef(null)
+  const audioChunksRef = useRef([])
 
   useEffect(() => {
     if (!character) navigate('/')
@@ -41,7 +57,7 @@ export default function ChatPage() {
   }, [emotion])
 
   const handleSend = useCallback(async () => {
-    if (!input.trim() || isLoading) return
+    if (!input.trim() || isLoading || isTranscribing) return
     const userText = input.trim()
     setInput('')
 
@@ -56,17 +72,20 @@ export default function ChatPage() {
         userRole?.id || null,
         userRole?.name || null,
         messages,
-        userText
+        userText,
+        preferredEmotion === '自动' ? null : preferredEmotion
       )
       const replyText = chatRes.text
       const replyEmotion = chatRes.emotion || '平静'
+      const ttsTexts = chatRes.tts_texts || {}
+      const ttsText = ttsTexts[ttsTextKey(ttsEngine)] || replyText
 
       setMessages(prev => [...prev, { role: 'character', text: replyText, emotion: replyEmotion }])
       setEmotion(replyEmotion)
 
       // 2. 语音合成
       try {
-        const audioRes = await synthesizeAudio(character.id, replyText, replyEmotion)
+        const audioRes = await synthesizeAudio(character.id, ttsText, replyEmotion, ttsEngine)
         if (audioRes.audio_url && chatAudioRef.current) {
           chatAudioRef.current.src = audioRes.audio_url
           chatAudioRef.current.play()
@@ -80,18 +99,87 @@ export default function ChatPage() {
             })
             .catch(() => {})
         }
-      } catch {
+      } catch (err) {
         // 语音合成失败时仍展示文字回复
+        setMessages(prev => [
+          ...prev,
+          { role: 'system', text: `⚠ 语音合成失败：${err.message}` },
+        ])
       }
-    } catch {
+    } catch (err) {
       setMessages(prev => [
         ...prev,
-        { role: 'system', text: '⚠ 与后端通信失败，请检查服务是否已启动' },
+        { role: 'system', text: `⚠ 与后端通信失败：${err.message}` },
       ])
     } finally {
       setIsLoading(false)
     }
-  }, [input, isLoading, character, userIdentity, userRole, messages])
+  }, [input, isLoading, isTranscribing, character, userIdentity, userRole, messages, preferredEmotion, ttsEngine])
+
+  const handleRecordToggle = useCallback(async () => {
+    if (isLoading || isTranscribing) return
+
+    if (isRecording) {
+      mediaRecorderRef.current?.stop()
+      return
+    }
+
+    if (!navigator.mediaDevices?.getUserMedia) {
+      setMessages(prev => [
+        ...prev,
+        { role: 'system', text: '⚠ 当前浏览器不支持录音' },
+      ])
+      return
+    }
+
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({ audio: true })
+      const recorder = new MediaRecorder(stream)
+      audioChunksRef.current = []
+
+      recorder.ondataavailable = (event) => {
+        if (event.data?.size > 0) audioChunksRef.current.push(event.data)
+      }
+
+      recorder.onstop = async () => {
+        setIsRecording(false)
+        stream.getTracks().forEach(track => track.stop())
+
+        const blob = new Blob(audioChunksRef.current, { type: recorder.mimeType || 'audio/webm' })
+        audioChunksRef.current = []
+        if (!blob.size) return
+
+        setIsTranscribing(true)
+        try {
+          const result = await transcribeAudio(blob)
+          if (result.text?.trim()) {
+            setInput(result.text.trim())
+          } else {
+            setMessages(prev => [
+              ...prev,
+              { role: 'system', text: '⚠ 未识别到有效语音' },
+            ])
+          }
+        } catch {
+          setMessages(prev => [
+            ...prev,
+            { role: 'system', text: '⚠ 语音识别失败，请检查 ASR 服务' },
+          ])
+        } finally {
+          setIsTranscribing(false)
+        }
+      }
+
+      mediaRecorderRef.current = recorder
+      recorder.start()
+      setIsRecording(true)
+    } catch {
+      setMessages(prev => [
+        ...prev,
+        { role: 'system', text: '⚠ 无法开启麦克风，请检查浏览器权限' },
+      ])
+    }
+  }, [isLoading, isRecording, isTranscribing])
 
   const handleKeyDown = (e) => {
     if (e.key === 'Enter' && !e.shiftKey) {
@@ -212,19 +300,53 @@ export default function ChatPage() {
               </button>
             ))}
           </div>
+          <div className="emotion-picker" aria-label="情绪选择">
+            <span className="emotion-picker-label">情绪</span>
+            {EMOTION_OPTIONS.map(item => (
+              <button
+                key={item}
+                className={`emotion-chip ${preferredEmotion === item ? 'emotion-chip--active' : ''}`}
+                onClick={() => setPreferredEmotion(item)}
+                disabled={isLoading || isTranscribing}
+              >
+                {item}
+              </button>
+            ))}
+          </div>
+          <div className="model-picker" aria-label="语音模型选择">
+            <span className="emotion-picker-label">模型</span>
+            {TTS_ENGINE_OPTIONS.map(item => (
+              <button
+                key={item.id}
+                className={`emotion-chip ${ttsEngine === item.id ? 'emotion-chip--active' : ''}`}
+                onClick={() => setTtsEngine(item.id)}
+                disabled={isLoading || isTranscribing}
+              >
+                {item.label}
+              </button>
+            ))}
+          </div>
           <div className="input-row">
+            <button
+              className={`record-btn ${isRecording ? 'record-btn--active' : ''}`}
+              onClick={handleRecordToggle}
+              disabled={isLoading || isTranscribing}
+              title={isRecording ? '停止录音' : '开始录音'}
+            >
+              {isRecording ? '■' : '●'}
+            </button>
             <input
               className="chat-input"
               value={input}
               onChange={e => setInput(e.target.value)}
               onKeyDown={handleKeyDown}
-              placeholder="请说话…"
-              disabled={isLoading}
+              placeholder={isRecording ? '正在听…' : isTranscribing ? '识别中…' : '请说话…'}
+              disabled={isLoading || isTranscribing}
             />
             <button
               className="send-btn"
               onClick={handleSend}
-              disabled={isLoading || !input.trim()}
+              disabled={isLoading || isTranscribing || !input.trim()}
             >
               传话
             </button>

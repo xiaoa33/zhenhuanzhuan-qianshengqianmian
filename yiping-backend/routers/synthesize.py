@@ -9,6 +9,7 @@ class SynthesizeRequest(BaseModel):
     character_id: str
     text: str
     emotion: str
+    engine: str | None = None
 
 
 @router.post("/synthesize")

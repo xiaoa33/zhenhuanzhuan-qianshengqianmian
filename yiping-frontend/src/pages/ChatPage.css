@@ -333,9 +333,90 @@
   color: var(--color-gold);
 }
 
+.emotion-picker {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.model-picker {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.emotion-picker-label {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  color: var(--color-text-dim);
+}
+
+.emotion-chip {
+  min-width: 44px;
+  height: 26px;
+  padding: 0 0.65rem;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  color: var(--color-text-dim);
+  background: rgba(15, 12, 8, 0.62);
+  border: 1px solid rgba(201, 168, 76, 0.38);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background var(--transition), border-color var(--transition), color var(--transition);
+}
+
+.emotion-chip:hover {
+  border-color: var(--color-gold);
+  color: var(--color-gold);
+}
+
+.emotion-chip--active {
+  color: #1a1208;
+  background: var(--color-gold);
+  border-color: var(--color-gold);
+}
+
+.emotion-chip:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 .input-row {
   display: flex;
   gap: 0.6rem;
+}
+
+.record-btn {
+  flex: 0 0 40px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  line-height: 1;
+  color: var(--color-gold);
+  background: rgba(15, 12, 8, 0.7);
+  border: var(--border-gold);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition), opacity var(--transition);
+}
+
+.record-btn:hover {
+  background: rgba(201, 168, 76, 0.18);
+}
+
+.record-btn--active {
+  color: #1a1208;
+  background: var(--color-gold);
+}
+
+.record-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
 }
 
 .chat-input {
@@ -421,5 +502,9 @@
   }
   .quick-phrases {
     display: none;
+  }
+  .emotion-chip {
+    min-width: 40px;
+    padding: 0 0.5rem;
   }
 }

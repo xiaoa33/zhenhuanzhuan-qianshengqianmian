@@ -15,7 +15,25 @@ TTS 服务有两种启动模式，但对你是**完全透明**的——你始终
 
 ## 你的接口
 
-两个 POST，监听 **8001**：
+三个 POST，监听 **8001**：
+
+### POST /asr — 用户语音识别
+
+前端录音会经主后端转发到这里。请求为 `multipart/form-data`，字段名：
+
+```text
+audio
+```
+
+响应：
+
+```json
+{
+  "text": "娘娘今日心情如何？",
+  "language": "zh",
+  "confidence": 0.93
+}
+```
 
 ### POST /generate — 角色对话
 
@@ -40,9 +58,15 @@ TTS 服务有两种启动模式，但对你是**完全透明**的——你始终
 ```json
 {
   "text": "本宫今日心情极佳，你倒是有眼力见儿。",
-  "emotion": "喜悦"
+  "emotion": "喜悦",
+  "tts_texts": {
+    "cosyvoice": "[laughter]本宫今日心情极佳，你倒是有眼力见儿。",
+    "gpt_sovits": "本宫今日心情极佳，你倒是有眼力见儿。"
+  }
 }
 ```
+
+`text` 给前端气泡展示，必须干净；`tts_texts` 给不同 TTS 引擎使用。
 
 ### POST /summarize — 对话总结
 
@@ -100,11 +124,11 @@ curl -X POST http://localhost:8001/generate \
 
 ---
 
-## text 中的精细控制 token（可选增强）
+## CosyVoice 文本中的精细控制 token（可选增强）
 
 > 这是可选功能，不做也没关系。但如果做了，语音表现力会大幅提升。
 
-你可以在 `text` 回复中插入以下 token，TTS 模块会自动识别并合成对应的副语言效果：
+LLM 应在 `tts_texts.cosyvoice` 中按语义和情绪自行插入以下 token，TTS 模块会自动识别并合成对应的副语言效果。不要把这些 token 放进顶层 `text`，也不要放进 `tts_texts.gpt_sovits`。
 
 | token | 效果 | 适用场景 |
 |---|---|---|
@@ -127,8 +151,16 @@ curl -X POST http://localhost:8001/generate \
 
 ### 建议规则
 
-- `[breath]` — emotion=`愤怒` `悲伤` 的台词，在句首或长句中间插入
-- `[laughter]` — emotion=`喜悦` 的台词，在句首插入
-- `[sigh]` — emotion=`悲伤` 的台词，在句首或句尾插入
+- `[breath]` — emotion=`愤怒` `悲伤` 的台词，可放在句首或长句中间
+- `[laughter]` — emotion=`喜悦` 的台词，可放在轻松、得意、调侃的位置
+- `[sigh]` — emotion=`悲伤` 的台词，可放在无奈、感伤、停顿处
 - `<strong>` — 需要强调的关键词，1~2 个即可，不要过多
-- 每个回复最多 2~3 个 token，不要滥用
+- 每个回复最多 2 个副语言 token，不要机械固定在句首
+
+## GPT-SoVITS 文本规则
+
+`tts_texts.gpt_sovits` 必须是干净中文文本：
+
+- 不要包含 `[breath]`、`[laughter]`、`[sigh]` 等 token
+- 不要包含 `<strong>` 或其他 HTML 标签
+- 主要使用 `，`、`。`、`！`、`？`、`……` 控制停顿和语气

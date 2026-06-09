@@ -5,12 +5,23 @@ import shutil
 import httpx
 
 TTS_SERVICE_URL = os.getenv("TTS_SERVICE_URL", "http://localhost:8002")
+GPT_SOVITS_SERVICE_URL = os.getenv("GPT_SOVITS_SERVICE_URL", TTS_SERVICE_URL)
+COSYVOICE_SERVICE_URL = os.getenv("COSYVOICE_SERVICE_URL", os.getenv("COSYVOICE_TTS_SERVICE_URL", TTS_SERVICE_URL))
 USE_MOCK = os.getenv("USE_MOCK", "true").lower() == "true"
 # 允许独立控制 TTS mock，优先级: USE_MOCK_TTS > USE_MOCK
 _use_mock_tts = os.getenv("USE_MOCK_TTS", "").lower()
 USE_MOCK_TTS = _use_mock_tts == "true" if _use_mock_tts else USE_MOCK
 STATIC_AUDIO_DIR = os.path.join(os.path.dirname(__file__), "..", "static", "audio")
 STATIC_BASE_URL = os.getenv("STATIC_BASE_URL", "http://localhost:8000")
+
+
+def _tts_service_url(payload: dict) -> str:
+    engine = (payload.get("engine") or "gpt_sovits").replace("-", "_")
+    if engine == "cosyvoice":
+        return COSYVOICE_SERVICE_URL
+    if engine == "gpt_sovits":
+        return GPT_SOVITS_SERVICE_URL
+    return TTS_SERVICE_URL
 
 
 async def call_synthesize(payload: dict) -> str:
@@ -25,8 +36,9 @@ async def call_synthesize(payload: dict) -> str:
     if USE_MOCK_TTS:
         return f"{STATIC_BASE_URL}/static/audio/mock_silence.wav"
 
-    async with httpx.AsyncClient(timeout=60.0) as client:
-        resp = await client.post(f"{TTS_SERVICE_URL}/synthesize", json=payload)
+    service_url = _tts_service_url(payload).rstrip("/")
+    async with httpx.AsyncClient(timeout=120.0) as client:
+        resp = await client.post(f"{service_url}/synthesize", json=payload)
         resp.raise_for_status()
         data = resp.json()
 
