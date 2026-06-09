@@ -39,7 +39,13 @@ async def call_synthesize(payload: dict) -> str:
     service_url = _tts_service_url(payload).rstrip("/")
     async with httpx.AsyncClient(timeout=120.0) as client:
         resp = await client.post(f"{service_url}/synthesize", json=payload)
-        resp.raise_for_status()
+        if resp.is_error:
+            detail = resp.text
+            try:
+                detail = resp.json().get("detail", detail)
+            except ValueError:
+                pass
+            raise RuntimeError(f"TTS 服务 {service_url} 返回 {resp.status_code}: {detail}")
         data = resp.json()
 
     os.makedirs(STATIC_AUDIO_DIR, exist_ok=True)
