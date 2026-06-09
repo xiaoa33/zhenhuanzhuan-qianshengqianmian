@@ -11,12 +11,18 @@ from routers import asr, chat, synthesize, digital_human, summary
 
 app = FastAPI(title="甄嬛传·千声千面 后端服务")
 
+cors_origins = [
+    origin.strip()
+    for origin in os.getenv(
+        "CORS_ORIGINS",
+        "http://localhost:5173,http://127.0.0.1:5173",
+    ).split(",")
+    if origin.strip()
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:5173",
-        "http://127.0.0.1:5173",
-    ],
+    allow_origins=cors_origins,
     allow_methods=["*"],
     allow_headers=["*"],
 )

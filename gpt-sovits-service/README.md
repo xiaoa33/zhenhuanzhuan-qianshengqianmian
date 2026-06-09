@@ -1,6 +1,6 @@
 # GPT-SoVITS TTS Service
 
-独立 TTS 服务，监听 `8002`，实现 `POST /synthesize`，响应格式兼容 `yiping-backend/services/tts_client.py`。
+独立 TTS 服务，监听 `8004`，实现 `POST /synthesize`，响应格式兼容 `yiping-backend/services/tts_client.py`。
 
 ## 启动
 
@@ -9,7 +9,7 @@
 ```bash
 cd zhenhuanzhuan-qianshengqianmian/gpt-sovits-service
 pip install -r requirements.txt
-uvicorn main:app --reload --port 8002
+uvicorn main:app --reload --port 8004
 ```
 
 实时演示推荐模式：
@@ -17,7 +17,7 @@ uvicorn main:app --reload --port 8002
 ```bash
 cd /mnt/sdb/wangxinran/zhangxiao/template/VIP_BigHW/zhenhuanzhuan-qianshengqianmian/gpt-sovits-service
 GSV_BACKEND=persistent GSV_CACHE_SIZE=1 \
-  /mnt/sdc/zhangyuxuan/envs/zx_VIP/bin/python -m uvicorn main:app --port 8002
+  /mnt/sdc/zhangyuxuan/envs/zx_VIP/bin/python -m uvicorn main:app --port 8004
 ```
 
 `persistent` 模式会按 `(role, version)` 缓存 GPT-SoVITS 的 `TTS` 对象。第一次请求某个角色仍需加载模型，之后同一角色只执行推理，不再每轮重新加载权重。
@@ -62,19 +62,21 @@ GSV_CACHE_SIZE=1
 
 ## 与 CosyVoice 共存
 
-如果同时需要 CosyVoice 云端隧道，不要让隧道占用本地 `8002`。建议：
+当前约定 CosyVoice 继续占用原来的本地 `8002`，GPT-SoVITS 改到 `8004`：
 
 ```bash
 # GPT-SoVITS service
-uvicorn main:app --reload --port 8002
+uvicorn main:app --reload --port 8004
 
-# CosyVoice tunnel 改到本地 8003
-ssh -L 8003:localhost:8003 -p 28281 root@connect.bjb1.seetacloud.com
+# CosyVoice tunnel 保持本地 8002
+ssh -L 8002:localhost:8003 -p 28281 root@connect.bjb1.seetacloud.com
 ```
 
 主后端保持：
 
 ```env
 TTS_SERVICE_URL=http://localhost:8002
+GPT_SOVITS_SERVICE_URL=http://localhost:8004
+COSYVOICE_SERVICE_URL=http://localhost:8002
 USE_MOCK_TTS=false
 ```

@@ -128,24 +128,24 @@ LLM 目前只允许这些 token 出现在 `tts_texts.cosyvoice`：
 |---|---|
 | yiping-backend | `8003` |
 | xiao-asr_llm | `8001` |
-| GPT-SoVITS service | `8002` |
-| CosyVoice 本地入口/SSH 隧道 | `8004` |
+| CosyVoice 本地入口/SSH 隧道 | `8002` |
+| GPT-SoVITS service | `8004` |
 
 主后端 `.env` 当前相关配置：
 
 ```env
 TTS_SERVICE_URL=http://localhost:8002
-GPT_SOVITS_SERVICE_URL=http://localhost:8002
-COSYVOICE_SERVICE_URL=http://localhost:8004
+GPT_SOVITS_SERVICE_URL=http://localhost:8004
+COSYVOICE_SERVICE_URL=http://localhost:8002
 ```
 
 如果 CosyVoice 云端实际跑在 `cloud:8003`，本地可以这样建隧道：
 
 ```bash
-ssh -L 8004:localhost:8003 -p 28281 root@connect.bjb1.seetacloud.com
+ssh -L 8002:localhost:8003 -p 28281 root@connect.bjb1.seetacloud.com
 ```
 
-这样不会和本地 GPT-SoVITS 的 `8002` 冲突。
+这样 CosyVoice 维持原来的本地 `8002`，不会和本地 GPT-SoVITS 的 `8004` 冲突。
 
 ## 7. 角色 ID
 
@@ -190,7 +190,7 @@ GPT-SoVITS 内部有自己的角色 ID 映射，但这不影响 CosyVoice。
 直接测 CosyVoice 服务：
 
 ```bash
-curl -X POST http://localhost:8004/synthesize \
+curl -X POST http://localhost:8002/synthesize \
   -H "Content-Type: application/json" \
   -d '{
     "character_id": "zhenhuan",
