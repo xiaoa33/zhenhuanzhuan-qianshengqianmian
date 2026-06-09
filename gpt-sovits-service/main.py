@@ -6,6 +6,7 @@ import random
 import re
 import sys
 import uuid
+import wave
 from collections import OrderedDict
 from pathlib import Path
 from typing import Optional
@@ -31,6 +32,8 @@ TIMEOUT_SEC = float(os.getenv("GSV_TIMEOUT_SEC", "600"))
 BACKEND = os.getenv("GSV_BACKEND", "subprocess").lower()
 CACHE_SIZE = int(os.getenv("GSV_CACHE_SIZE", "1"))
 SEED = int(os.getenv("GSV_SEED", "1234"))
+REF_MIN_SEC = float(os.getenv("GSV_REF_MIN_SEC", "3.0"))
+REF_MAX_SEC = float(os.getenv("GSV_REF_MAX_SEC", "10.0"))
 
 ROLE_ID_MAP = {
     "anlinrong": "anlingrong",
@@ -76,7 +79,25 @@ def _role_list_path(gsv_role: str) -> Path:
     return path
 
 
-def _load_role_refs(gsv_role: str) -> list[tuple[Path, str]]:
+def _audio_duration_sec(path: Path) -> float | None:
+    try:
+        import soundfile as sf  # noqa: PLC0415
+
+        return float(sf.info(str(path)).duration)
+    except Exception:
+        try:
+            with wave.open(str(path), "rb") as wav:
+                return wav.getnframes() / float(wav.getframerate())
+        except Exception:
+            return None
+
+
+def _is_valid_ref_duration(path: Path) -> bool:
+    duration = _audio_duration_sec(path)
+    return duration is not None and REF_MIN_SEC <= duration <= REF_MAX_SEC
+
+
+def _load_role_refs(gsv_role: str, valid_duration_only: bool = True) -> list[tuple[Path, str]]:
     refs: list[tuple[Path, str]] = []
     with _role_list_path(gsv_role).open("r", encoding="utf-8") as f:
         for line in f:
@@ -85,10 +106,12 @@ def _load_role_refs(gsv_role: str) -> list[tuple[Path, str]]:
                 continue
             wav_path = Path(parts[0])
             prompt_text = parts[3]
-            if wav_path.exists() and prompt_text:
+            if wav_path.exists() and prompt_text and (not valid_duration_only or _is_valid_ref_duration(wav_path)):
                 refs.append((wav_path, prompt_text))
     if not refs:
-        raise FileNotFoundError(f"角色 {gsv_role} 没有可读参考音频")
+        raise FileNotFoundError(
+            f"角色 {gsv_role} 没有 {REF_MIN_SEC:g}-{REF_MAX_SEC:g} 秒范围内的可读参考音频"
+        )
     return refs
 
 
@@ -120,7 +143,7 @@ def _choose_reference(character_id: str, gsv_role: str, emotion: str) -> tuple[P
         random.shuffle(emotion_samples)
         for ref_audio in emotion_samples:
             ref_text = text_by_name.get(ref_audio.name)
-            if ref_text:
+            if ref_text and _is_valid_ref_duration(ref_audio):
                 return ref_audio.resolve(), ref_text, "emotion_sample"
 
     ref_audio, ref_text = random.choice(_load_role_refs(gsv_role))

@@ -42,6 +42,8 @@ GSV_DEVICE=cuda
 GSV_TIMEOUT_SEC=600
 GSV_BACKEND=persistent
 GSV_CACHE_SIZE=1
+GSV_REF_MIN_SEC=3.0
+GSV_REF_MAX_SEC=10.0
 ```
 
 默认路径已按当前项目结构设置，通常不需要额外配置。
@@ -51,6 +53,7 @@ GSV_CACHE_SIZE=1
 - `zhenhuan` 和 `huangshang`：优先从 `zhenhuanzhuan-qianshengqianmian/emotion_samples/{role}/{emotion}/` 随机取一条。
 - 其他角色：从 `dataset/gpt_sovits_lists/by_role/{role}_all.list` 中随机取一条可读音频。
 - 情绪样本的参考文本会按 wav 文件名去角色 list 中查找。
+- 参考音频默认只选择 `3-10` 秒范围内的音频。GPT-SoVITS 内部也会校验这个范围，不建议放宽。
 
 已处理网站角色 ID 与 GPT-SoVITS 权重名不一致的问题：
 
