@@ -10,10 +10,11 @@
 前端 React (:5173)
     │
     ▼
-yiping-backend FastAPI (:8000)   ← 主后端，负责路由和 SadTalker 调用
+yiping-backend FastAPI (:8003)   ← 主后端，负责路由、TTS分发和 SadTalker 调用
     │
     ├── xiao-asr_llm (:8001)     ← 模块A：ASR + LLM 对话生成 + 情绪分析
-    └── GPT-SoVITS TTS (:8002)   ← 模块B：角色声音合成
+    ├── CosyVoice TTS (:8002)    ← 队友模块：CosyVoice 语音合成
+    └── GPT-SoVITS TTS (:8004)   ← 本机模块：GPT-SoVITS 语音合成
 ```
 
 各模块独立运行，主后端通过 `USE_MOCK=true` 可在外部模块未就绪时用预设数据运行。
@@ -51,7 +52,8 @@ cp .env.example .env.local
 编辑 `.env.local`，确认后端地址：
 
 ```env
-VITE_API_BASE_URL=http://localhost:8000
+VITE_API_BASE_URL=http://localhost:8003
+VITE_TTS_ENGINE=gpt_sovits
 ```
 
 启动开发服务器：
@@ -88,10 +90,14 @@ cp .env.example .env
 | `USE_MOCK` | `true` | `true` 时 /chat、/synthesize、/summary 使用预设数据，外部模块未就绪时保持 true |
 | `USE_MOCK_ASR` | `false` | `true` 时 /asr 返回固定演示文本 |
 | `LLM_SERVICE_URL` | `http://localhost:8001` | LLM 模块地址，默认无需修改 |
-| `TTS_SERVICE_URL` | `http://localhost:8002` | TTS 模块地址，默认无需修改 |
+| `TTS_SERVICE_URL` | `http://localhost:8002` | 默认 TTS 地址，当前通常指向 CosyVoice |
+| `GPT_SOVITS_SERVICE_URL` | `http://localhost:8004` | GPT-SoVITS 服务地址 |
+| `COSYVOICE_SERVICE_URL` | `http://localhost:8002` | CosyVoice 服务地址 |
 | `SADTALKER_PATH` | `../SadTalker/SadTalker` | SadTalker 仓库路径（数字人功能必填） |
 | `SADTALKER_PYTHON` | `python` | SadTalker 专属 Python 3.8 解释器路径（Windows 必填） |
-| `STATIC_BASE_URL` | `http://localhost:8000` | 返回给前端的静态资源基础 URL |
+| `STATIC_BASE_URL` | `http://localhost:8003` | 返回给前端的静态资源基础 URL |
+| `CORS_ORIGINS` | `http://localhost:5173,http://127.0.0.1:5173` | 允许访问主后端的前端地址 |
+| `PORT` | `8003` | 主后端端口 |
 
 准备角色参考图（数字人功能需要）：
 
@@ -119,10 +125,10 @@ cp .env.example .env
 启动服务：
 
 ```bash
-uvicorn main:app --reload --port 8000
+uvicorn main:app --reload --port 8003
 ```
 
-访问 `http://localhost:8000/docs` 可查看 Swagger 接口文档。
+访问 `http://localhost:8003/docs` 可查看 Swagger 接口文档。
 
 ---
 
@@ -196,6 +202,9 @@ USE_MOCK=false
 USE_MOCK_ASR=false
 LLM_SERVICE_URL=http://localhost:8001
 TTS_SERVICE_URL=http://localhost:8002
+GPT_SOVITS_SERVICE_URL=http://localhost:8004
+COSYVOICE_SERVICE_URL=http://localhost:8002
+STATIC_BASE_URL=http://localhost:8003
 ```
 
 接口规范见 [`docs/外部模块接口规范.md`](docs/外部模块接口规范.md)。
@@ -204,33 +213,184 @@ TTS_SERVICE_URL=http://localhost:8002
 
 ## 五、完整启动（所有模块就绪后）
 
-打开四个终端分别执行：
+当前约定端口：
+
+| 服务 | 端口 |
+|---|---|
+| 前端 | `5173` |
+| xiao-asr_llm | `8001` |
+| CosyVoice | `8002` |
+| yiping-backend | `8003` |
+| GPT-SoVITS | `8004` |
+
+### 0. 可选：下载 ASR 模型
+
+如果服务器不能在线下载模型，先手动下载 faster-whisper 模型：
 
 ```bash
-# 终端1：主后端
-cd yiping-backend
-uvicorn main:app --reload --port 8000
+cd /mnt/sdb/wangxinran/zhangxiao/template/VIP_BigHW
+mkdir -p models
+
+hf download Systran/faster-whisper-small \
+  --local-dir models/faster-whisper-small
 ```
 
-```bash
-# 终端2：ASR + LLM 模块
-cd xiao-asr_llm
-uvicorn main:app --reload --port 8001
+然后在 `xiao-asr_llm/.env` 中配置：
+
+```env
+ASR_MODEL=/mnt/sdb/wangxinran/zhangxiao/template/VIP_BigHW/models/faster-whisper-small
+ASR_DEVICE=cuda
+ASR_COMPUTE_TYPE=int8_float16
+ASR_LANGUAGE=zh
 ```
 
-```bash
-# 终端3：GPT-SoVITS TTS 模块
-cd gpt-sovits-service
-uvicorn main:app --reload --port 8002
-```
+### 1. 启动 ASR + LLM 模块
 
 ```bash
-# 终端4：前端
-cd yiping-frontend
+cd /mnt/sdb/wangxinran/zhangxiao/template/VIP_BigHW/zhenhuanzhuan-qianshengqianmian/xiao-asr_llm
+pip install -r requirements.txt
+uvicorn main:app --reload --host 0.0.0.0 --port 8001
+```
+
+### 2. 启动 GPT-SoVITS 模块
+
+推荐使用常驻缓存模式，避免每轮重新加载权重：
+
+```bash
+cd /mnt/sdb/wangxinran/zhangxiao/template/VIP_BigHW/zhenhuanzhuan-qianshengqianmian/gpt-sovits-service
+
+GSV_BACKEND=persistent GSV_CACHE_SIZE=1 \
+  /mnt/sdc/zhangyuxuan/envs/zx_VIP/bin/python -m uvicorn main:app --host 0.0.0.0 --port 8004
+```
+
+### 3. 启动或接入 CosyVoice
+
+CosyVoice 维持原来的 `8002`。如果 CosyVoice 队友的服务可以直接访问，在 `yiping-backend/.env` 中配置：
+
+```env
+COSYVOICE_SERVICE_URL=http://队友CosyVoice地址:8002
+```
+
+如果 CosyVoice 是云端 `8003`，并通过 SSH 隧道接到本机 `8002`：
+
+```bash
+ssh -L 8002:localhost:8003 -p 28281 root@connect.bjb1.seetacloud.com
+```
+
+然后 `yiping-backend/.env` 中保持：
+
+```env
+COSYVOICE_SERVICE_URL=http://localhost:8002
+```
+
+### 4. 启动主后端
+
+本机调试：
+
+```bash
+cd /mnt/sdb/wangxinran/zhangxiao/template/VIP_BigHW/zhenhuanzhuan-qianshengqianmian/yiping-backend
+pip install -r requirements.txt
+uvicorn main:app --reload --port 8003
+```
+
+多人异地联调：
+
+```bash
+cd /mnt/sdb/wangxinran/zhangxiao/template/VIP_BigHW/zhenhuanzhuan-qianshengqianmian/yiping-backend
+uvicorn main:app --host 0.0.0.0 --port 8003
+```
+
+多人联调时，`yiping-backend/.env` 需要把 `localhost` 改成你的服务器可访问地址，例如：
+
+```env
+STATIC_BASE_URL=http://你的校内IP:8003
+CORS_ORIGINS=http://你的校内IP:5173
+```
+
+临时联调也可以：
+
+```env
+CORS_ORIGINS=*
+```
+
+### 5. 启动前端
+
+本机调试：
+
+```bash
+cd /mnt/sdb/wangxinran/zhangxiao/template/VIP_BigHW/zhenhuanzhuan-qianshengqianmian/yiping-frontend
+npm install
 npm run dev
 ```
 
-浏览器访问 `http://localhost:5173` 即可使用完整功能。
+多人异地联调：
+
+```bash
+cd /mnt/sdb/wangxinran/zhangxiao/template/VIP_BigHW/zhenhuanzhuan-qianshengqianmian/yiping-frontend
+npm run dev -- --host 0.0.0.0
+```
+
+前端 `.env.local` 本机调试：
+
+```env
+VITE_API_BASE_URL=http://localhost:8003
+VITE_TTS_ENGINE=gpt_sovits
+```
+
+多人联调时改成：
+
+```env
+VITE_API_BASE_URL=http://你的校内IP:8003
+VITE_TTS_ENGINE=gpt_sovits
+```
+
+浏览器访问：
+
+```text
+http://localhost:5173
+```
+
+多人联调时访问：
+
+```text
+http://你的校内IP:5173
+```
+
+### 6. 启动后验证
+
+在服务器本机执行：
+
+```bash
+curl http://localhost:8001/
+curl http://localhost:8003/
+curl http://localhost:8004/
+```
+
+通过主后端测试 GPT-SoVITS：
+
+```bash
+curl -X POST http://localhost:8003/synthesize \
+  -H "Content-Type: application/json" \
+  -d '{
+    "character_id": "zhenhuan",
+    "text": "本宫今日心情尚可，你倒是有眼力见儿。",
+    "emotion": "喜悦",
+    "engine": "gpt_sovits"
+  }'
+```
+
+通过主后端测试 CosyVoice：
+
+```bash
+curl -X POST http://localhost:8003/synthesize \
+  -H "Content-Type: application/json" \
+  -d '{
+    "character_id": "zhenhuan",
+    "text": "[laughter]本宫今日心情尚可，你倒是有<strong>眼力见儿</strong>。",
+    "emotion": "喜悦",
+    "engine": "cosyvoice"
+  }'
+```
 
 ---
 
