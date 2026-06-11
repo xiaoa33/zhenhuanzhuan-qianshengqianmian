@@ -1,5 +1,6 @@
 import os
 import base64
+import json
 import uuid
 import shutil
 import httpx
@@ -66,3 +67,33 @@ async def call_synthesize(payload: dict) -> str:
         raise ValueError("TTS 响应格式不支持，需含 audio_path 或 audio_base64 字段")
 
     return f"{STATIC_BASE_URL}/static/audio/{filename}"
+
+
+async def call_synthesize_stream(payload: dict):
+    """
+    流式调用 TTS 模块的 POST /synthesize/stream，SSE 推送音频块。
+    用法（在路由里）:
+        async for chunk in call_synthesize_stream(payload):
+            yield chunk  # {'i': 0, 'audio': 'base64...', 'dur': 1.4}
+    最后收到: {'done': True, 'chunks': N, 'total_dur': X}
+    """
+    if USE_MOCK_TTS:
+        # mock: 返回一个静音块
+        yield {"i": 0, "audio": ""}
+        yield {"done": True, "chunks": 1, "total_dur": 0}
+        return
+
+    service_url = _tts_service_url(payload).rstrip("/")
+    async with httpx.AsyncClient(timeout=120.0) as client:
+        async with client.stream("POST", f"{service_url}/synthesize/stream", json=payload) as resp:
+            if resp.is_error:
+                detail = await resp.aread()
+                raise RuntimeError(f"TTS 流式返回 {resp.status_code}: {detail}")
+            async for line in resp.aiter_lines():
+                if line.startswith("data: "):
+                    yield json.loads(line[6:])
+                elif line.startswith("event: done"):
+                    # done 事件的数据在下一行
+                    pass
+                elif line.startswith("event: error"):
+                    pass
