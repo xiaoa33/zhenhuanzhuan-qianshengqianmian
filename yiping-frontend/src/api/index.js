@@ -59,6 +59,43 @@ export async function synthesizeAudio(characterId, text, emotion, engine) {
 }
 
 /**
+ * POST /synthesize/stream — SSE 流式音频，逐块回调（仅 CosyVoice）
+ * @param {function} onChunk - 每收到一个音频块回调 ({i, audio, dur})
+ * @param {AbortSignal} [signal] - 取消信号
+ */
+export async function synthesizeAudioStream(characterId, text, emotion, onChunk, signal) {
+  const resp = await fetch(`${BASE_URL}/synthesize/stream`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ character_id: characterId, text, emotion, engine: 'cosyvoice' }),
+    signal,
+  })
+  if (!resp.ok) throw new Error(`Stream failed: ${resp.status}`)
+
+  const reader = resp.body.getReader()
+  const decoder = new TextDecoder()
+  let buf = ''
+
+  while (true) {
+    const { done, value } = await reader.read()
+    if (done) break
+
+    buf += decoder.decode(value, { stream: true })
+    const lines = buf.split('\n')
+    buf = lines.pop() || ''
+
+    for (const line of lines) {
+      if (line.startsWith('data: ')) {
+        const chunk = JSON.parse(line.slice(6))
+        if (chunk.audio) onChunk(chunk)
+      } else if (line.startsWith('event: done')) {
+        return  // 流结束
+      }
+    }
+  }
+}
+
+/**
  * POST /asr
  * @param {Blob} audioBlob - Browser recording blob
  * @returns {{ text: string, language?: string, confidence?: number|null }}

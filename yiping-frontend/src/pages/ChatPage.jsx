@@ -40,6 +40,8 @@ export default function ChatPage() {
   const chatAudioRef = useRef(null)
   const mediaRecorderRef = useRef(null)
   const audioChunksRef = useRef([])
+  const streamAbortRef = useRef(null)
+  const streamAudioCtxRef = useRef(null)
 
   useEffect(() => {
     if (!character) navigate('/')
@@ -85,22 +87,24 @@ export default function ChatPage() {
 
       // 2. 语音合成
       try {
-        const audioRes = await synthesizeAudio(character.id, ttsText, replyEmotion, ttsEngine)
-        if (audioRes.audio_url && chatAudioRef.current) {
-          chatAudioRef.current.src = audioRes.audio_url
-          chatAudioRef.current.play()
-          setIsPlaying(true)
-          chatAudioRef.current.onended = () => setIsPlaying(false)
-
-          // 3. 数字人视频（异步，不阻塞主流程）
-          generateDigitalHuman(character.id, audioRes.audio_url)
-            .then(videoRes => {
-              if (videoRes.video_url) setVideoUrl(videoRes.video_url)
-            })
-            .catch(() => {})
+        if (ttsEngine === 'cosyvoice') {
+          // CosyVoice 流式：边生成边播放，首音延迟 ~1.5s
+          playStreamedTts(ttsText, replyEmotion)
+        } else {
+          // GPT-SoVITS 非流式（保持原逻辑）
+          const audioRes = await synthesizeAudio(character.id, ttsText, replyEmotion, ttsEngine)
+          if (audioRes.audio_url && chatAudioRef.current) {
+            chatAudioRef.current.src = audioRes.audio_url
+            chatAudioRef.current.play()
+            setIsPlaying(true)
+            chatAudioRef.current.onended = () => setIsPlaying(false)
+            // 数字人
+            generateDigitalHuman(character.id, audioRes.audio_url)
+              .then(videoRes => { if (videoRes.video_url) setVideoUrl(videoRes.video_url) })
+              .catch(() => {})
+          }
         }
       } catch (err) {
-        // 语音合成失败时仍展示文字回复
         setMessages(prev => [
           ...prev,
           { role: 'system', text: `⚠ 语音合成失败：${err.message}` },
@@ -115,6 +119,69 @@ export default function ChatPage() {
       setIsLoading(false)
     }
   }, [input, isLoading, isTranscribing, character, userIdentity, userRole, messages, preferredEmotion, ttsEngine])
+
+  // 流式 TTS 播放（CosyVoice）：和 /web 页面完全一致的 SSE + Web Audio API 逻辑
+  const playStreamedTts = useCallback(async (text, emotion) => {
+    // 取消上一个流
+    if (streamAbortRef.current) streamAbortRef.current.abort()
+    if (streamAudioCtxRef.current) streamAudioCtxRef.current.close()
+
+    const BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000'
+    const abort = new AbortController()
+    streamAbortRef.current = abort
+    const audioCtx = new (window.AudioContext || window.webkitAudioContext)()
+    streamAudioCtxRef.current = audioCtx
+    let nextTime = audioCtx.currentTime + 0.05
+    setIsPlaying(true)
+
+    try {
+      const resp = await fetch(`${BASE_URL}/synthesize/stream`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ character_id: character.id, text, emotion, engine: 'cosyvoice' }),
+        signal: abort.signal,
+      })
+      if (!resp.ok) throw new Error(`Stream failed: ${resp.status}`)
+
+      const reader = resp.body.getReader()
+      const decoder = new TextDecoder()
+      let buffer = ''
+
+      while (true) {
+        const { done, value } = await reader.read()
+        if (done) break
+        buffer += decoder.decode(value, { stream: true })
+        const lines = buffer.split('\n')
+        buffer = lines.pop() || ''
+
+        for (const line of lines) {
+          if (line.startsWith('data: ')) {
+            const data = JSON.parse(line.slice(6))
+            if (data.audio) {
+              // 解码并调度播放（和 web demo 一致）
+              const buf = await fetch('data:audio/wav;base64,' + data.audio).then(r => r.arrayBuffer())
+              const decoded = await audioCtx.decodeAudioData(buf)
+              const src = audioCtx.createBufferSource()
+              src.buffer = decoded
+              src.connect(audioCtx.destination)
+              const t = Math.max(audioCtx.currentTime, nextTime)
+              src.start(t)
+              nextTime = t + decoded.duration
+            }
+          }
+        }
+      }
+
+      const remain = (nextTime - audioCtx.currentTime) * 1000 + 300
+      setTimeout(() => { audioCtx.close(); setIsPlaying(false); streamAbortRef.current = null; streamAudioCtxRef.current = null }, Math.max(remain, 500))
+    } catch (err) {
+      if (err.name !== 'AbortError') {
+        audioCtx.close()
+        setIsPlaying(false)
+        throw err
+      }
+    }
+  }, [character.id])
 
   const handleRecordToggle = useCallback(async () => {
     if (isLoading || isTranscribing) return
