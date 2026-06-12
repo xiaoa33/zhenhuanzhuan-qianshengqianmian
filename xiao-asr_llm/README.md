@@ -6,6 +6,7 @@ ASR + LLM 模块，监听 `8001`，供 `yiping-backend` 调用。
 
 - `POST /asr`：浏览器录音转文字，字段名为 multipart `audio`
 - `POST /generate`：生成角色回复、情绪、两套 TTS 文本
+- `POST /generate/duet`：生成即兴对话中当前角色的一句台词和情绪
 - `POST /summarize`：生成对话总结
 
 `/generate` 返回示例：

@@ -67,6 +67,57 @@ FALLBACK_REPLIES = {
     ],
 }
 
+DUET_FALLBACK_REPLIES = {
+    "zhenhuan": [
+        ("这宫中风声向来细密，你我既在此相逢，有些话便点到为止吧。", "平静"),
+        ("你这话听着轻巧，落在本宫心里，却不免叫人添几分寒意。", "悲伤"),
+    ],
+    "huafei": [
+        ("哟，今日倒巧，本宫才走到这儿，就遇见你了。", "平静"),
+        ("本宫最不耐烦这些弯弯绕绕，有什么话便直说。", "愤怒"),
+    ],
+    "yixiu": [
+        ("后宫最要紧的是规矩，你我说话，也该顾着分寸。", "平静"),
+        ("本宫不过盼着六宫安稳，可人心二字，最是难测。", "悲伤"),
+    ],
+    "meizhuang": [
+        ("难得此处清静，你若有话，不妨慢慢说来。", "平静"),
+        ("这宫里真心难得，若能彼此留些余地，也是好的。", "喜悦"),
+    ],
+    "anlinrong": [
+        ("你这样说，倒叫本宫不知该如何接话了。", "悲伤"),
+        ("本宫向来人微言轻，有些心思，说了也未必有人懂。", "悲伤"),
+    ],
+    "supeisheng": [
+        ("奴才不过是奉命行事，哪里敢多说半句。", "平静"),
+        ("这宫里的话，传出去便变了味，还是谨慎些好。", "平静"),
+    ],
+    "yelanyi": [
+        ("我说话直，你若听着不顺耳，也不必勉强。", "平静"),
+        ("这宫里虚情假意太多，倒不如把话说清楚。", "愤怒"),
+    ],
+    "cuijinxi": [
+        ("奴婢瞧着，此事还需从长计议，急不得。", "平静"),
+        ("宫墙之内隔墙有耳，您这话还是轻些说才稳妥。", "平静"),
+    ],
+    "wensichu": [
+        ("身在宫中，许多事并非只凭本心便能周全。", "平静"),
+        ("有些话说出口便成了伤，不如留三分余地。", "悲伤"),
+    ],
+    "huanbi": [
+        ("我说话直，你可别拿那些虚礼来压我。", "平静"),
+        ("哼，这宫里装模作样的人多了，我偏不吃这一套。", "愤怒"),
+    ],
+    "huangshang": [
+        ("朕既听见了，自会有个计较，你不必急着分辩。", "平静"),
+        ("放肆，宫中言行皆有规矩，岂容随口妄言。", "愤怒"),
+    ],
+    "guojunwang": [
+        ("今日既然相逢，便把心中所想坦然说了吧。", "平静"),
+        ("这宫墙困得住人，却未必困得住一颗真心。", "悲伤"),
+    ],
+}
+
 
 class Message(BaseModel):
     role: str
@@ -86,6 +137,14 @@ class GenerateRequest(BaseModel):
 class SummarizeRequest(BaseModel):
     character_id: str
     messages: list[Message] = Field(default_factory=list)
+
+
+class DuetRequest(BaseModel):
+    my_character_id: str
+    other_character_id: str
+    context: str = ""
+    history: list[Message] = Field(default_factory=list)
+    my_turn: bool = True
 
 
 _asr_model = None
@@ -202,6 +261,40 @@ def _history_text(history: list[Message]) -> str:
         speaker = "用户" if item.role == "user" else "角色"
         lines.append(f"{speaker}: {item.text}")
     return "\n".join(lines)
+
+
+def _duet_history_text(history: list[Message]) -> str:
+    if not history:
+        return "无"
+    recent = history[-12:]
+    lines = []
+    for item in recent:
+        speaker = _character_name(item.role)
+        lines.append(f"{speaker}: {item.text}")
+    return "\n".join(lines)
+
+
+def _clean_duet_text(text: str, character_id: str) -> str:
+    text = _clean_display_text(text)
+    character = re.escape(_character_name(character_id))
+    character_id_escaped = re.escape(character_id)
+    text = re.sub(rf"^\s*(?:{character}|{character_id_escaped})\s*[:：]\s*", "", text)
+    text = re.sub(r"^\s*[（(][^）)]{1,12}[）)]\s*", "", text)
+    text = text.strip(" \t\r\n\"'“”‘’")
+    return text.strip()
+
+
+def _fallback_generate_duet(req: DuetRequest) -> tuple[str, str]:
+    replies = DUET_FALLBACK_REPLIES.get(req.my_character_id)
+    if replies:
+        own_turns = sum(1 for item in req.history if item.role == req.my_character_id)
+        return replies[own_turns % len(replies)]
+
+    character = _character_name(req.my_character_id)
+    other = _character_name(req.other_character_id)
+    if req.history:
+        return f"{character}略一沉吟，道：{other}这话，本也有几分道理，只是宫中行事还需谨慎。", "平静"
+    return f"{character}看向{other}，缓缓说道：今日既然相逢，有些话不妨说开。", "平静"
 
 
 async def _call_llm_json(system_prompt: str, user_prompt: str, max_tokens: int = 320) -> dict | None:
@@ -322,6 +415,44 @@ async def generate(req: GenerateRequest):
         "text": display_text,
         "emotion": emotion,
         "tts_texts": tts_texts,
+    }
+
+
+@app.post("/generate/duet")
+async def generate_duet(req: DuetRequest):
+    my_character = _character_name(req.my_character_id)
+    other_character = _character_name(req.other_character_id)
+    system_prompt = (
+        "你是《甄嬛传》双人即兴对话生成器。只输出 JSON，不要输出 Markdown。"
+        "JSON 顶层字段必须是 text、emotion。"
+        "text 是当前发言角色的一次自然回复，20 到 50 个汉字，1 到 2 句。"
+        "只写台词本身，不要写角色名、引号、旁白、舞台说明、动作描写、表情符号、英文控制 token 或 HTML 标签。"
+        "回复必须衔接最近一句对话，贴合场景，不要重复历史台词。"
+        "emotion 必须是 喜悦、愤怒、悲伤、平静 四选一。"
+    )
+    user_prompt = (
+        f"当前发言角色：{my_character}\n"
+        f"当前角色风格：{CHARACTER_STYLE.get(req.my_character_id, '保持古风、贴合人物身份。')}\n"
+        f"对方角色：{other_character}\n"
+        f"对方角色风格：{CHARACTER_STYLE.get(req.other_character_id, '保持古风、贴合人物身份。')}\n"
+        f"场景/话题：{req.context or '两位角色在宫中相遇'}\n"
+        f"完整对话历史：\n{_duet_history_text(req.history)}\n"
+        "请生成当前发言角色的下一句台词，并判断情绪。"
+    )
+
+    llm_data = await _call_llm_json(system_prompt, user_prompt, max_tokens=220)
+    if llm_data:
+        text = _clean_duet_text(str(llm_data.get("text", "")).strip(), req.my_character_id)
+        emotion = _normalize_emotion(str(llm_data.get("emotion", "")), text)
+    else:
+        text, emotion = _fallback_generate_duet(req)
+
+    if not text:
+        text, emotion = _fallback_generate_duet(req)
+
+    return {
+        "text": text,
+        "emotion": emotion,
     }
 
 

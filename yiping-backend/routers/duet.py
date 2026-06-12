@@ -36,6 +36,7 @@ async def duet_start(req: DuetRequest):
                     "other_character_id": other,
                     "context": req.context,
                     "history": history,
+                    "my_turn": True,
                 })
             except Exception as e:
                 yield f"data: {json.dumps({'error': str(e)}, ensure_ascii=False)}\n\n"
