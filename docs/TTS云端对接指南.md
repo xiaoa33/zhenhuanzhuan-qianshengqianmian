@@ -39,6 +39,7 @@ python tts_server_zhz.py --port 8003 --preload --no-emotion
 
 ```bash
 ssh -L 8002:localhost:8003 -p 28281 root@connect.bjb1.seetacloud.com
+ssh -L 8002:localhost:8003 -p 40916 root@connect.bjb1.seetacloud.com（新服务器）
 ```
 
 > 格式：`-L 本地端口:localhost:云端端口`。保持运行不关。  
