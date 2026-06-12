@@ -1,4 +1,5 @@
 import json
+import logging
 from fastapi import APIRouter
 from fastapi.responses import StreamingResponse
 from pydantic import BaseModel
@@ -6,6 +7,7 @@ from services.llm_client import call_duet_generate
 from services.tts_client import call_synthesize_stream
 
 router = APIRouter()
+logger = logging.getLogger("uvicorn.error")
 
 
 class DuetRequest(BaseModel):
@@ -19,6 +21,14 @@ class DuetRequest(BaseModel):
 @router.post("/duet/start")
 async def duet_start(req: DuetRequest):
     characters = [req.character_a, req.character_b]
+    logger.info(
+        "duet start: %s vs %s, starter=%s, max_rounds=%s, context=%s",
+        req.character_a,
+        req.character_b,
+        req.starter,
+        req.max_rounds,
+        req.context,
+    )
 
     async def event_stream():
         history: list[dict] = []
@@ -28,6 +38,7 @@ async def duet_start(req: DuetRequest):
         for _ in range(req.max_rounds):
             current = characters[current_idx]
             other = characters[1 - current_idx]
+            logger.info("duet turn: current=%s other=%s history=%s", current, other, len(history))
 
             # 1. LLM 生成本回合台词
             try:
@@ -39,18 +50,21 @@ async def duet_start(req: DuetRequest):
                     "my_turn": True,
                 })
             except Exception as e:
+                logger.exception("duet LLM failed: current=%s", current)
                 yield f"data: {json.dumps({'error': str(e)}, ensure_ascii=False)}\n\n"
                 break
 
             text = llm["text"]
             emotion = llm.get("emotion", "平静")
             history.append({"role": current, "text": text})
+            logger.info("duet LLM ok: current=%s emotion=%s text=%s", current, emotion, text)
 
             # 2. 推送文本给前端
             yield f"data: {json.dumps({'role': current, 'text': text, 'emotion': emotion}, ensure_ascii=False)}\n\n"
 
             # 3. TTS 流式合成 + 转发音频块
             try:
+                first_audio = True
                 async for chunk in call_synthesize_stream({
                     "character_id": current,
                     "text": text,
@@ -58,8 +72,14 @@ async def duet_start(req: DuetRequest):
                     "engine": "cosyvoice",
                 }):
                     if chunk.get("audio"):
+                        if first_audio:
+                            first_audio = False
+                            logger.info("duet TTS first audio: current=%s dur=%s", current, chunk.get("dur", 0))
                         yield f"data: {json.dumps({'audio': chunk['audio'], 'dur': chunk.get('dur', 0)})}\n\n"
+                if first_audio:
+                    logger.warning("duet TTS ended without audio: current=%s", current)
             except Exception:
+                logger.exception("duet TTS failed: current=%s", current)
                 pass  # TTS 失败不中断对话流程
 
             # 换对方发言

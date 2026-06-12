@@ -1,4 +1,5 @@
 import json
+import logging
 import os
 import random
 import re
@@ -15,6 +16,7 @@ from pydantic import BaseModel, Field
 load_dotenv()
 
 app = FastAPI(title="xiao-asr_llm")
+logger = logging.getLogger("xiao_asr_llm")
 
 EMOTIONS = ("喜悦", "愤怒", "悲伤", "平静")
 COSYVOICE_TOKENS = ("breath", "laughter", "sigh", "cough", "lipsmack", "noise")
@@ -315,13 +317,17 @@ async def _call_llm_json(system_prompt: str, user_prompt: str, max_tokens: int =
         "response_format": {"type": "json_object"},
     }
     headers = {"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"}
-    async with httpx.AsyncClient(timeout=45.0) as client:
-        resp = await client.post(f"{base_url.rstrip('/')}/chat/completions", headers=headers, json=payload)
-        resp.raise_for_status()
-        data = resp.json()
+    try:
+        async with httpx.AsyncClient(timeout=45.0) as client:
+            resp = await client.post(f"{base_url.rstrip('/')}/chat/completions", headers=headers, json=payload)
+            resp.raise_for_status()
+            data = resp.json()
 
-    content = data["choices"][0]["message"]["content"]
-    return json.loads(_strip_json_fence(content))
+        content = data["choices"][0]["message"]["content"]
+        return json.loads(_strip_json_fence(content))
+    except Exception as exc:
+        logger.warning("LLM 调用失败，改用本地 fallback: %s", exc)
+        return None
 
 
 def _fallback_generate(req: GenerateRequest) -> tuple[str, str]:
