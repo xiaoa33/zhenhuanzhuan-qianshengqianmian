@@ -265,7 +265,7 @@ export default function ChatPage() {
 
   return (
     <div
-      className="chat-page"
+      className={`chat-page ${userRole ? 'chat-page--ancient' : 'chat-page--modern'}`}
       style={{ backgroundImage: `url("${character.bg}")` }}
     >
       <div className="chat-bg-overlay" />
@@ -300,7 +300,16 @@ export default function ChatPage() {
         )}
       </aside>
 
-      {/* 右侧：对话区 */}
+      {/* 宫廷中人：用户角色面板（CSS order 使其排到最左） */}
+      {userRole && (
+        <aside className="user-role-panel">
+          <img className="char-media" src={userRole.photo} alt={userRole.name} />
+          <div className="char-name-label">{userRole.name}</div>
+          <span className="role-playing-tag">扮演中</span>
+        </aside>
+      )}
+
+      {/* 对话区 */}
       <main className={`chat-panel ${emotionClass}`}>
         <header className="chat-header">
           <span className="chat-with-label">
@@ -420,6 +429,17 @@ export default function ChatPage() {
           </div>
         </div>
       </main>
+
+      {/* 现代来客：右侧自身面板 */}
+      {!userRole && (
+        <aside className="modern-self-panel">
+          <div className="modern-self-avatar">
+            <span>你</span>
+          </div>
+          <div className="char-name-label">你</div>
+          <span className="role-playing-tag">现代来客</span>
+        </aside>
+      )}
 
       <audio ref={chatAudioRef} />
 

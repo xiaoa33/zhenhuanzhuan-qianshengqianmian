@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import HomePage from './pages/HomePage'
 import CharacterSelectPage from './pages/CharacterSelectPage'
 import ChatPage from './pages/ChatPage'
+import DuetPage from './pages/DuetPage'
 
 export const MusicContext = createContext(null)
 
@@ -38,6 +39,7 @@ export default function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/select" element={<CharacterSelectPage />} />
           <Route path="/chat" element={<ChatPage />} />
+          <Route path="/duet" element={<DuetPage />} />
         </Routes>
       </BrowserRouter>
     </MusicContext.Provider>

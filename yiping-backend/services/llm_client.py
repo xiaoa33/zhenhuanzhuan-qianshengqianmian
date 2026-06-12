@@ -25,6 +25,29 @@ async def call_generate(payload: dict) -> dict:
         return resp.json()
 
 
+DUET_SERVICE_URL = os.getenv("DUET_SERVICE_URL", LLM_SERVICE_URL)
+
+
+async def call_duet_generate(payload: dict) -> dict:
+    """
+    调用 LLM /generate/duet，为即兴对话生成当前角色的台词。
+
+    请求字段：my_character_id, other_character_id, context, history
+    期望响应: { "text": str, "emotion": str }
+    """
+    if USE_MOCK_LLM:
+        from mock.mock_data import get_mock_duet_reply
+        return get_mock_duet_reply(
+            payload.get("my_character_id", ""),
+            payload.get("other_character_id", ""),
+        )
+
+    async with httpx.AsyncClient(timeout=30.0) as client:
+        resp = await client.post(f"{DUET_SERVICE_URL}/generate/duet", json=payload)
+        resp.raise_for_status()
+        return resp.json()
+
+
 async def call_summarize(payload: dict) -> dict:
     """
     调用 xiao-asr_llm 模块的 POST /summarize 接口。

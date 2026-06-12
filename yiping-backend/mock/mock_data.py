@@ -105,6 +105,121 @@ def get_mock_reply(character_id: str) -> dict:
     return replies[idx]
 
 
+# ── 即兴对话 Mock 台词 ──
+# 每个角色 6 条，专为角色间对话设计，不针对特定对手
+DUET_REPLIES: dict[str, list[dict]] = {
+    "zhenhuan": [
+        {"text": "今日御花园的梅花开得正好，倒让本宫心里添了几分惆怅。", "emotion": "悲伤"},
+        {"text": "你我相遇于此，也算是缘分，不必拘礼。", "emotion": "平静"},
+        {"text": "宫中之事，向来是是非多、人心险，你我都须步步小心。", "emotion": "平静"},
+        {"text": "有些话，本宫埋在心里许久了，今日倒想说出来听听。", "emotion": "悲伤"},
+        {"text": "罢了，说这些又有何用，不过是徒增伤感。", "emotion": "悲伤"},
+        {"text": "你的意思本宫明白，只是有些事，非本宫所愿。", "emotion": "平静"},
+    ],
+    "huafei": [
+        {"text": "哟，今日是什么风把你吹来了？", "emotion": "平静"},
+        {"text": "本宫心情尚好，就不与你计较了。", "emotion": "喜悦"},
+        {"text": "这宫里的人，哪个不是笑里藏刀，本宫从不信那一套。", "emotion": "愤怒"},
+        {"text": "你说的这些，本宫懒得理会。", "emotion": "愤怒"},
+        {"text": "哼，倒是有几分意思，说下去。", "emotion": "平静"},
+        {"text": "本宫最不耐烦拐弯抹角，有话直说。", "emotion": "愤怒"},
+    ],
+    "yixiu": [
+        {"text": "皇后之位，本宫担了这么多年，早已看淡了许多。", "emotion": "平静"},
+        {"text": "你来见本宫，所为何事，直说无妨。", "emotion": "平静"},
+        {"text": "这后宫中，本宫见过太多聚散离合，早已不惊。", "emotion": "悲伤"},
+        {"text": "有些事，本宫不便明说，你心里明白就好。", "emotion": "平静"},
+        {"text": "本宫只希望后宫安稳，少些是非。", "emotion": "平静"},
+        {"text": "说到底，咱们都是困于这四方宫墙之中的人。", "emotion": "悲伤"},
+    ],
+    "meizhuang": [
+        {"text": "今日天色甚好，难得能在这里走走。", "emotion": "喜悦"},
+        {"text": "嬛嬛常说，凡事看开些，我如今倒是信了。", "emotion": "平静"},
+        {"text": "你有心事？说出来，兴许会好受些。", "emotion": "平静"},
+        {"text": "这宫里，真心相待的人太少，遇上了就该好好珍惜。", "emotion": "喜悦"},
+        {"text": "我向来不爱争，但有些事，不争不行。", "emotion": "平静"},
+        {"text": "宁可枝头抱香死，这句话我时常念起。", "emotion": "悲伤"},
+    ],
+    "anlinrong": [
+        {"text": "你也在这里……本宫有些意外。", "emotion": "平静"},
+        {"text": "本宫的心思，你大概也猜不透。", "emotion": "悲伤"},
+        {"text": "这宫里，本宫从来都是一个人走过来的。", "emotion": "悲伤"},
+        {"text": "罢了，说什么都没用，一切都是命。", "emotion": "悲伤"},
+        {"text": "你若不嫌弃，就听本宫说几句心里话。", "emotion": "悲伤"},
+        {"text": "本宫不恨，只是累了。", "emotion": "悲伤"},
+    ],
+    "supeisheng": [
+        {"text": "奴才见过，今日天气甚好，您来这里散散心？", "emotion": "平静"},
+        {"text": "奴才不过是个传话的，娘娘有吩咐，奴才照办就是。", "emotion": "平静"},
+        {"text": "皇上日理万机，这宫里上上下下都要仰赖各位娘娘多担待。", "emotion": "平静"},
+        {"text": "奴才嘴拙，有什么说得不对的地方，还请担待。", "emotion": "平静"},
+        {"text": "宫里的事，奴才只管做好份内，其余的不敢多言。", "emotion": "平静"},
+        {"text": "娘娘放心，奴才定当尽心。", "emotion": "喜悦"},
+    ],
+    "yelanyi": [
+        {"text": "倒是巧了，本宫正想找你说说话。", "emotion": "喜悦"},
+        {"text": "本宫说话向来直，你莫要见怪。", "emotion": "平静"},
+        {"text": "这宫里能让我高看的人不多，你算一个。", "emotion": "喜悦"},
+        {"text": "哼，你以为本宫不知道你在想什么？", "emotion": "愤怒"},
+        {"text": "有些事，慢慢来，不必急于一时。", "emotion": "平静"},
+        {"text": "本宫最欣赏的就是你这份不服软的劲儿。", "emotion": "喜悦"},
+    ],
+    "cuijinxi": [
+        {"text": "奴婢见过，今日来此，是有什么要紧之事？", "emotion": "平静"},
+        {"text": "奴婢这条命，早已不是自己的了，自当尽心。", "emotion": "平静"},
+        {"text": "这宫里的弯弯绕绕，奴婢见得多了，倒也看淡了。", "emotion": "平静"},
+        {"text": "奴婢直说了，您莫见怪。", "emotion": "平静"},
+        {"text": "有些事，需得小心些，宫墙之内，隔墙有耳。", "emotion": "平静"},
+        {"text": "奴婢愿尽绵薄之力，还请吩咐。", "emotion": "喜悦"},
+    ],
+    "wensichu": [
+        {"text": "今日偶遇，倒是缘分，不必多礼。", "emotion": "平静"},
+        {"text": "我习医多年，见过太多生离死别，倒学会了看淡。", "emotion": "平静"},
+        {"text": "有些话，说出口便是伤，有些事，心知就好。", "emotion": "悲伤"},
+        {"text": "你面色不太好，是近日休息不足？", "emotion": "平静"},
+        {"text": "身在宫廷，医者也好，旁观者也罢，终究难置身事外。", "emotion": "悲伤"},
+        {"text": "你找我，想必是有烦心事，不妨说来听听。", "emotion": "平静"},
+    ],
+    "huanbi": [
+        {"text": "你来这里做什么？", "emotion": "平静"},
+        {"text": "奴婢说话直，你别放在心上。", "emotion": "平静"},
+        {"text": "奴婢见过比你厉害的，也见过比你弱的，反正……", "emotion": "平静"},
+        {"text": "这宫里奴婢最烦装模作样的人，你还好。", "emotion": "喜悦"},
+        {"text": "哼，奴婢不吃这一套，有话直说。", "emotion": "愤怒"},
+        {"text": "你倒是有趣，不像有些人，净说些没用的。", "emotion": "喜悦"},
+    ],
+    "huangshang": [
+        {"text": "朕今日偶感，便来此走走，不想遇见你。", "emotion": "平静"},
+        {"text": "说吧，有何事要禀报。", "emotion": "平静"},
+        {"text": "朕心里自有计较，你不必多言。", "emotion": "平静"},
+        {"text": "这江山社稷，压着朕，有些话朕也难以开口。", "emotion": "悲伤"},
+        {"text": "你说的朕听进去了，但事关重大，容朕再想想。", "emotion": "平静"},
+        {"text": "放肆，宫中规矩，不可不守！", "emotion": "愤怒"},
+    ],
+    "guojunwang": [
+        {"text": "今日御花园的景致甚好，难得清静。", "emotion": "平静"},
+        {"text": "你我相逢，不必那些虚礼。", "emotion": "喜悦"},
+        {"text": "我自知身份，有些话不该说，却又不吐不快。", "emotion": "悲伤"},
+        {"text": "你可知道，有些人，一旦错过便是永远。", "emotion": "悲伤"},
+        {"text": "这宫廷之内，最难得的便是一颗真心。", "emotion": "平静"},
+        {"text": "山高水远，总有重逢之日，你信不信？", "emotion": "喜悦"},
+    ],
+}
+
+_duet_counters: dict[str, int] = {}
+
+
+def get_mock_duet_reply(character_id: str, other_character_id: str = "") -> dict:
+    """为即兴对话返回 mock 台词，按轮次循环。"""
+    replies = DUET_REPLIES.get(character_id)
+    if not replies:
+        return {"text": f"（{character_id} 台词占位）", "emotion": "平静"}
+    key = character_id
+    idx = _duet_counters.get(key, 0) % len(replies)
+    _duet_counters[key] = idx + 1
+    return replies[idx]
+
+
 CHARACTER_SUMMARIES: dict[str, dict] = {
     "zhenhuan": {"attitude": "若即若离", "comment": "她对你尚存一丝好奇，再努力便可入眼"},
     "huafei":   {"attitude": "不屑一顾", "comment": "你尚未入她眼，需再磨砺"},

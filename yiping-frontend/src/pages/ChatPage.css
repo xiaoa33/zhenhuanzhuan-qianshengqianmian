@@ -15,7 +15,7 @@
   z-index: 0;
 }
 
-/* ── 左侧数字人面板 ── */
+/* ── 左侧数字人面板（现代来客） ── */
 .digital-panel {
   position: relative;
   z-index: 1;
@@ -26,6 +26,97 @@
   justify-content: center;
   gap: 0.8rem;
   padding: 1.5rem;
+}
+
+/* ── 现代来客三列布局 ── */
+
+/* 对话角色面板缩到 22%，右留给自身面板 */
+.chat-page--modern .digital-panel {
+  flex: 0 0 22%;
+}
+
+/* 对话区加右边框 */
+.chat-page--modern .chat-panel {
+  border-right: var(--border-gold);
+}
+
+/* 右侧"我"面板 */
+.modern-self-panel {
+  position: relative;
+  z-index: 1;
+  flex: 0 0 22%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  padding: 1.5rem 0.8rem;
+}
+
+/* 占位头像：与 char-media 尺寸保持一致 */
+.modern-self-avatar {
+  width: 100%;
+  max-height: 56vh;
+  aspect-ratio: 2 / 3;
+  border-radius: 14px;
+  border: 1px solid rgba(201, 168, 76, 0.35);
+  background: rgba(20, 15, 10, 0.55);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modern-self-avatar span {
+  font-family: var(--font-title);
+  font-size: 4rem;
+  color: rgba(201, 168, 76, 0.45);
+  user-select: none;
+}
+
+/* ── 宫廷中人三列布局 ── */
+
+/* 用户角色面板（左列，order: 0 默认排最前） */
+.user-role-panel {
+  position: relative;
+  z-index: 1;
+  flex: 0 0 22%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  padding: 1.5rem 0.8rem;
+  order: 0;
+}
+
+.role-playing-tag {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  color: var(--color-text-dim);
+  background: rgba(201, 168, 76, 0.12);
+  border: 1px solid rgba(201, 168, 76, 0.32);
+  border-radius: 10px;
+  padding: 0.15rem 0.65rem;
+  letter-spacing: 0.05em;
+}
+
+/* 宫廷中人：对话区在中间 */
+.chat-page--ancient .chat-panel {
+  order: 2;
+  border-right: var(--border-gold);
+}
+
+/* 宫廷中人：用户扮演的角色面板移到右列 */
+.chat-page--ancient .user-role-panel {
+  order: 3;
+  border-left: var(--border-gold);
+}
+
+/* 宫廷中人：目标角色数字人面板缩窄移到左列 */
+.chat-page--ancient .digital-panel {
+  flex: 0 0 22%;
+  order: 1;
 }
 
 /* ── 回退按钮（固定在页面左上角） ── */
@@ -492,6 +583,65 @@
     flex: 1;
     border-left: none;
     border-top: var(--border-gold);
+  }
+
+  /* 现代来客窄屏：三列改纵向堆叠 */
+  .chat-page--modern .digital-panel,
+  .chat-page--modern .chat-panel {
+    flex: unset;
+    border-right: none;
+  }
+
+  .modern-self-panel {
+    flex: 0 0 auto;
+    flex-direction: row;
+    justify-content: center;
+    padding: 0.6rem;
+    border-top: var(--border-gold);
+  }
+
+  .modern-self-avatar {
+    max-height: 14vh;
+    width: auto;
+    max-width: 38%;
+    aspect-ratio: unset;
+  }
+
+  .modern-self-avatar span {
+    font-size: 2.5rem;
+  }
+
+  /* 宫廷中人窄屏：三列改纵向堆叠 */
+  .chat-page--ancient .digital-panel,
+  .chat-page--ancient .chat-panel,
+  .user-role-panel {
+    order: unset;
+    flex: unset;
+    border-left: none;
+    border-right: none;
+  }
+
+  .user-role-panel {
+    flex: 0 0 auto;
+    flex-direction: row;
+    justify-content: center;
+    padding: 0.6rem;
+    border-bottom: var(--border-gold);
+  }
+
+  .user-role-panel .char-media {
+    max-height: 14vh;
+    width: auto;
+    max-width: 38%;
+  }
+
+  .chat-page--ancient .digital-panel {
+    order: unset;
+  }
+
+  .chat-page--ancient .chat-panel {
+    border-top: var(--border-gold);
+    border-right: none;
   }
 }
 

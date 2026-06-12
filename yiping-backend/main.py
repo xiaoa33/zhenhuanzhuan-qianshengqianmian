@@ -7,7 +7,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 
-from routers import asr, chat, synthesize, digital_human, summary
+from routers import asr, chat, synthesize, digital_human, summary, duet
 
 app = FastAPI(title="甄嬛传·千声千面 后端服务")
 
@@ -38,6 +38,7 @@ app.include_router(asr.router)
 app.include_router(synthesize.router)
 app.include_router(digital_human.router)
 app.include_router(summary.router)
+app.include_router(duet.router)
 
 
 @app.get("/")
