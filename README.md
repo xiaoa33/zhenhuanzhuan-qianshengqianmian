@@ -248,7 +248,6 @@ ASR_LANGUAGE=zh
 
 ```bash
 cd /mnt/sdb/wangxinran/zhangxiao/template/VIP_BigHW/zhenhuanzhuan-qianshengqianmian/xiao-asr_llm
-pip install -r requirements.txt
 uvicorn main:app --reload --host 0.0.0.0 --port 8001
 ```
 
@@ -289,7 +288,6 @@ COSYVOICE_SERVICE_URL=http://localhost:8002
 
 ```bash
 cd /mnt/sdb/wangxinran/zhangxiao/template/VIP_BigHW/zhenhuanzhuan-qianshengqianmian/yiping-backend
-pip install -r requirements.txt
 uvicorn main:app --reload --port 8003
 ```
 

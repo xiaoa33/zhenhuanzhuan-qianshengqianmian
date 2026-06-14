@@ -1,0 +1,13 @@
+
+> zhenhuanzhuan-qianshengqianmian@1.0.0 dev
+> vite --host 0.0.0.0 --port 5173 --strictPort
+
+
+  VITE v5.4.21  ready in 250 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: http://10.160.4.184:5173/
+  ➜  Network: http://172.18.0.1:5173/
+  ➜  Network: http://172.19.0.1:5173/
+3:07:36 PM [vite] .env.local changed, restarting server...
+3:07:36 PM [vite] server restarted.

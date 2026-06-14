@@ -4,6 +4,7 @@ import { MusicContext } from '../App'
 import './DuetPage.css'
 
 const BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000'
+const TEXT_AUDIO_WAIT_TIMEOUT_MS = 1500
 
 export default function DuetPage() {
   const location = useLocation()
@@ -22,6 +23,27 @@ export default function DuetPage() {
   const abortRef = useRef(null)
   const audioCtxRef = useRef(null)
   const nextTimeRef = useRef(0)
+  const currentTurnRef = useRef(null)
+  const visibleTurnCountRef = useRef(0)
+  const speakerTimersRef = useRef([])
+  const clearActiveTimerRef = useRef(null)
+
+  const clearSpeakerTimers = () => {
+    speakerTimersRef.current.forEach(timer => clearTimeout(timer))
+    speakerTimersRef.current = []
+    if (clearActiveTimerRef.current) {
+      clearTimeout(clearActiveTimerRef.current)
+      clearActiveTimerRef.current = null
+    }
+  }
+
+  const showTurn = (turn) => {
+    if (!turn || turn.displayed) return
+    turn.displayed = true
+    visibleTurnCountRef.current += 1
+    setRound(Math.ceil(visibleTurnCountRef.current / 2))
+    setMessages(prev => [...prev, { role: turn.role, text: turn.text, emotion: turn.emotion }])
+  }
 
   useEffect(() => {
     if (!charA || !charB) {
@@ -31,6 +53,7 @@ export default function DuetPage() {
     startDuet()
     return () => {
       abortRef.current?.abort()
+      clearSpeakerTimers()
       if (audioCtxRef.current?.state !== 'closed') audioCtxRef.current?.close()
     }
   }, []) // eslint-disable-line react-hooks/exhaustive-deps
@@ -41,6 +64,7 @@ export default function DuetPage() {
 
   const startDuet = async () => {
     abortRef.current?.abort()
+    clearSpeakerTimers()
     if (audioCtxRef.current?.state !== 'closed') audioCtxRef.current?.close()
 
     setMessages([])
@@ -48,15 +72,14 @@ export default function DuetPage() {
     setIsDone(false)
     setIsRunning(true)
     setActiveRole(null)
-
-    const abort = new AbortController()
-    abortRef.current = abort
+    currentTurnRef.current = null
+    visibleTurnCountRef.current = 0
 
     const audioCtx = new (window.AudioContext || window.webkitAudioContext)()
     audioCtxRef.current = audioCtx
     nextTimeRef.current = audioCtx.currentTime + 0.05
-
-    let turnCount = 0
+    const abort = new AbortController()
+    abortRef.current = abort
 
     try {
       const resp = await fetch(`${BASE_URL}/duet/start`, {
@@ -87,9 +110,21 @@ export default function DuetPage() {
 
         for (const line of lines) {
           if (line.startsWith('event: done')) {
-            setIsDone(true)
-            setIsRunning(false)
-            setActiveRole(null)
+            if (currentTurnRef.current && !currentTurnRef.current.hasAudio) {
+              showTurn(currentTurnRef.current)
+            }
+            const finish = () => {
+              setIsDone(true)
+              setIsRunning(false)
+              setActiveRole(null)
+            }
+            const delay = Math.max(0, (nextTimeRef.current - audioCtx.currentTime) * 1000) + 150
+            if (delay > 150) {
+              const timer = setTimeout(finish, delay)
+              speakerTimersRef.current.push(timer)
+            } else {
+              finish()
+            }
             continue
           }
           if (!line.startsWith('data: ')) continue
@@ -98,10 +133,21 @@ export default function DuetPage() {
           try { data = JSON.parse(line.slice(6)) } catch { continue }
 
           if (data.role) {
-            turnCount++
-            setRound(Math.ceil(turnCount / 2))
-            setActiveRole(data.role)
-            setMessages(prev => [...prev, { role: data.role, text: data.text, emotion: data.emotion }])
+            if (currentTurnRef.current && !currentTurnRef.current.hasAudio) {
+              showTurn(currentTurnRef.current)
+            }
+            currentTurnRef.current = {
+              role: data.role,
+              text: data.text,
+              emotion: data.emotion,
+              hasAudio: false,
+              displayed: false,
+            }
+            const turn = currentTurnRef.current
+            const timer = setTimeout(() => {
+              if (!turn.hasAudio) showTurn(turn)
+            }, TEXT_AUDIO_WAIT_TIMEOUT_MS)
+            speakerTimersRef.current.push(timer)
           }
 
           if (data.audio) {
@@ -112,8 +158,22 @@ export default function DuetPage() {
               src.buffer = decoded
               src.connect(audioCtx.destination)
               const t = Math.max(audioCtx.currentTime, nextTimeRef.current)
+              const turn = currentTurnRef.current
+              if (turn && !turn.hasAudio) {
+                turn.hasAudio = true
+                const delay = Math.max(0, (t - audioCtx.currentTime) * 1000)
+                const timer = setTimeout(() => {
+                  showTurn(turn)
+                  setActiveRole(turn.role)
+                }, delay)
+                speakerTimersRef.current.push(timer)
+              }
               src.start(t)
               nextTimeRef.current = t + decoded.duration
+              if (clearActiveTimerRef.current) clearTimeout(clearActiveTimerRef.current)
+              clearActiveTimerRef.current = setTimeout(() => {
+                setActiveRole(null)
+              }, Math.max(0, (nextTimeRef.current - audioCtx.currentTime) * 1000) + 150)
             } catch { /* ignore audio decode errors */ }
           }
         }
@@ -128,6 +188,7 @@ export default function DuetPage() {
 
   const handleStop = () => {
     abortRef.current?.abort()
+    clearSpeakerTimers()
     if (audioCtxRef.current?.state !== 'closed') audioCtxRef.current?.close()
     setIsRunning(false)
     setIsDone(true)

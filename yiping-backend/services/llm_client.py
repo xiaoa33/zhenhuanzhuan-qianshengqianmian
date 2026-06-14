@@ -9,6 +9,16 @@ _use_mock_llm = os.getenv("USE_MOCK_LLM", "").lower()
 USE_MOCK_LLM = _use_mock_llm == "true" if _use_mock_llm else USE_MOCK
 
 
+def _upstream_error(resp: httpx.Response) -> RuntimeError:
+    detail = resp.text
+    try:
+        data = resp.json()
+        detail = data.get("detail") or data.get("message") or detail
+    except ValueError:
+        pass
+    return RuntimeError(f"LLM 服务 {resp.request.url} 返回 {resp.status_code}: {detail}")
+
+
 async def call_generate(payload: dict) -> dict:
     """
     调用 xiao-asr_llm 模块的 POST /generate 接口。
@@ -21,7 +31,8 @@ async def call_generate(payload: dict) -> dict:
 
     async with httpx.AsyncClient(timeout=30.0) as client:
         resp = await client.post(f"{LLM_SERVICE_URL}/generate", json=payload)
-        resp.raise_for_status()
+        if resp.is_error:
+            raise _upstream_error(resp)
         return resp.json()
 
 
@@ -44,7 +55,8 @@ async def call_duet_generate(payload: dict) -> dict:
 
     async with httpx.AsyncClient(timeout=30.0) as client:
         resp = await client.post(f"{DUET_SERVICE_URL}/generate/duet", json=payload)
-        resp.raise_for_status()
+        if resp.is_error:
+            raise _upstream_error(resp)
         return resp.json()
 
 
@@ -60,5 +72,6 @@ async def call_summarize(payload: dict) -> dict:
 
     async with httpx.AsyncClient(timeout=30.0) as client:
         resp = await client.post(f"{LLM_SERVICE_URL}/summarize", json=payload)
-        resp.raise_for_status()
+        if resp.is_error:
+            raise _upstream_error(resp)
         return resp.json()
