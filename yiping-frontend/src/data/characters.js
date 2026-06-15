@@ -11,7 +11,7 @@ export const characters = [
     name: '华妃·年世兰',
     quote: '贱人就是矫情',
     photo: '/resource/角色剧照/华妃剧照.jpg',
-    bg: '/resource/背景图/华妃背景.jpg',
+    bg: '/resource/背景图/华妃、曹贵人背景.jpg',
   },
   {
     id: 'yixiu',
