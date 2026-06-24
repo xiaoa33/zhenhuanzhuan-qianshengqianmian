@@ -1,0 +1,2762 @@
+{
+  "spk_25": [
+    {
+      "file": "zhz_71_seg0148.wav",
+      "text": "原 本 有 许 多 孩 子 都 死 在 皇 后 手 中",
+      "speaker": "spk_25",
+      "start": 799.53,
+      "end": 802.75,
+      "duration": 3.23,
+      "source": "zhz_71"
+    },
+    {
+      "file": "zhz_20_seg0150.wav",
+      "text": "还 不 顾 周 全 让 哀 家 操 心 太 后 还 操 心 您 哪 是 最 该 享 清 佛 的 人 了",
+      "speaker": "spk_25",
+      "start": 880.95,
+      "end": 888.49,
+      "duration": 7.54,
+      "source": "zhz_20"
+    },
+    {
+      "file": "zhz_30_seg0098.wav",
+      "text": "饶 恕 臣 妾 无 知 之 罪 你 无 知",
+      "speaker": "spk_25",
+      "start": 615.79,
+      "end": 618.88,
+      "duration": 3.08,
+      "source": "zhz_30"
+    },
+    {
+      "file": "zhz_03_seg0363.wav",
+      "text": "娘 娘 福 子 已 经 死 了",
+      "speaker": "spk_25",
+      "start": 2393.86,
+      "end": 2396.82,
+      "duration": 2.96,
+      "source": "zhz_03"
+    },
+    {
+      "file": "zhz_23_seg0139.wav",
+      "text": "启 禀 娘 娘 皇 后 娘 娘 说 最 近 宫 中 实 意 盛 行 请 娘 娘 帮 着 照 应 东 六 宫 已 经 撒 了 煮 沸 的 烧 酒 正 在 焚 烧 艾 叶 西 六 宫 就 交 娘 娘 助 理",
+      "speaker": "spk_25",
+      "start": 866.1,
+      "end": 879.01,
+      "duration": 12.91,
+      "source": "zhz_23"
+    },
+    {
+      "file": "zhz_41_seg0121.wav",
+      "text": "太 后 前 朝 的 事 您 少 操 心",
+      "speaker": "spk_25",
+      "start": 510.43,
+      "end": 513.58,
+      "duration": 3.15,
+      "source": "zhz_41"
+    },
+    {
+      "file": "zhz_40_seg0190.wav",
+      "text": "怎 么 还 要 牵 连 年 复 年 轻 呢 皇 上 雷 霆 之 危 未 减 否 则 也 不 会 不 见 娘 娘 了 华 妃 娘 娘 吉 祥 什 么 事 儿",
+      "speaker": "spk_25",
+      "start": 1175.59,
+      "end": 1185.71,
+      "duration": 10.12,
+      "source": "zhz_40"
+    },
+    {
+      "file": "zhz_22_seg0083.wav",
+      "text": "臣 意 一 错 不 可 再 错 请 皇 上 容 臣 有 错 则 改",
+      "speaker": "spk_25",
+      "start": 466.37,
+      "end": 471.75,
+      "duration": 5.38,
+      "source": "zhz_22"
+    },
+    {
+      "file": "zhz_49_seg0204.wav",
+      "text": "太 后 万 人 之 上",
+      "speaker": "spk_25",
+      "start": 898.33,
+      "end": 900.5,
+      "duration": 2.17,
+      "source": "zhz_49"
+    },
+    {
+      "file": "zhz_42_seg0379.wav",
+      "text": "王 景 琦 虽 有 过 失 来",
+      "speaker": "spk_25",
+      "start": 1769.82,
+      "end": 1772.41,
+      "duration": 2.6,
+      "source": "zhz_42"
+    }
+  ],
+  "spk_09": [
+    {
+      "file": "zhz_15_seg0108.wav",
+      "text": "臣 只 好 给 了 小 主 方 子 至 于 小 主 为 何 呕 吐 爱 食 酸 臣",
+      "speaker": "spk_09",
+      "start": 604.56,
+      "end": 611.22,
+      "duration": 6.66,
+      "source": "zhz_15"
+    },
+    {
+      "file": "zhz_19_seg0078.wav",
+      "text": "小 主 要 不 要 奴 才 先 去 把 他 扣 下 不 用",
+      "speaker": "spk_09",
+      "start": 512.53,
+      "end": 515.98,
+      "duration": 3.44,
+      "source": "zhz_19"
+    },
+    {
+      "file": "zhz_41_seg0398.wav",
+      "text": "素 喜 来 了 溜 进 了 祺 贵 人 住 的 偏 殿 哼",
+      "speaker": "spk_09",
+      "start": 2304.07,
+      "end": 2307.41,
+      "duration": 3.35,
+      "source": "zhz_41"
+    },
+    {
+      "file": "zhz_25_seg0027.wav",
+      "text": "怎 么 你 每 次 为 华 妃 娘 娘 请 拜 回 来 便 一 脸 不 快 你 不 明 白 有 什 么 不 明 白 的 在 太 医 院 你 我 兄 弟 也 是 占 尽 风 光",
+      "speaker": "spk_09",
+      "start": 163.73,
+      "end": 173.11,
+      "duration": 9.38,
+      "source": "zhz_25"
+    },
+    {
+      "file": "zhz_64_seg0092.wav",
+      "text": "温 太 医 已 经 醒 了 不 过 他 现 在 的 身 体 状 况 恐 怕 还 不 能 为 娘 娘 接 生",
+      "speaker": "spk_09",
+      "start": 521.68,
+      "end": 528.98,
+      "duration": 7.3,
+      "source": "zhz_64"
+    },
+    {
+      "file": "zhz_52_seg0053.wav",
+      "text": "叶 答 应 很 有 可 能 呃 他 再 也 不 能 生 育 了",
+      "speaker": "spk_09",
+      "start": 352.69,
+      "end": 356.67,
+      "duration": 3.98,
+      "source": "zhz_52"
+    },
+    {
+      "file": "zhz_10_seg0219.wav",
+      "text": "板 子 背 下 了 吗 回 小 主 的 话 都 背 好 了 嗯",
+      "speaker": "spk_09",
+      "start": 1175.93,
+      "end": 1179.22,
+      "duration": 3.29,
+      "source": "zhz_10"
+    },
+    {
+      "file": "zhz_23_seg0254.wav",
+      "text": "恭 喜 小 主 心 愿 得 偿",
+      "speaker": "spk_09",
+      "start": 1633.37,
+      "end": 1635.66,
+      "duration": 2.29,
+      "source": "zhz_23"
+    },
+    {
+      "file": "zhz_08_seg0172.wav",
+      "text": "猴 崽 子 大 老 远 的 跑 来 讨 喜 回 去 少 不 了 你 的 姑 姑 这 回 可 是 错 怪 我 了 奴 才 是 奉 了 旨 意 来 请 小 主 暂 且 别 回 宫 这 是 为 什 么 小 主 先 别 问 请 小 主 往 御 花 园 里 散 散 心 即 刻 就 能 回 宫",
+      "speaker": "spk_09",
+      "start": 1002.62,
+      "end": 1015.62,
+      "duration": 13.01,
+      "source": "zhz_08"
+    },
+    {
+      "file": "zhz_67_seg0345.wav",
+      "text": "黎 妃 娘 娘 胎 气 甚 稳 您 只 看 她 的 好 气 色 便 可 知 一 二 了",
+      "speaker": "spk_09",
+      "start": 2073.4,
+      "end": 2079.2,
+      "duration": 5.8,
+      "source": "zhz_67"
+    }
+  ],
+  "spk_24": [
+    {
+      "file": "zhz_14_seg0217.wav",
+      "text": "运 往 西 北 的 粮 草 出 了 点 事 儿 事 关 军 情 皇 上 正 在 大 怒 呢",
+      "speaker": "spk_24",
+      "start": 1207.9,
+      "end": 1213.35,
+      "duration": 5.45,
+      "source": "zhz_14"
+    },
+    {
+      "file": "zhz_22_seg0020.wav",
+      "text": "大 将 军 可 否 稍 稍 移 驾 旁 边",
+      "speaker": "spk_24",
+      "start": 129.17,
+      "end": 131.61,
+      "duration": 2.44,
+      "source": "zhz_22"
+    },
+    {
+      "file": "zhz_53_seg0223.wav",
+      "text": "皇 上 的 意 思 又 是 秘 不 发 丧",
+      "speaker": "spk_24",
+      "start": 1005.06,
+      "end": 1008.14,
+      "duration": 3.08,
+      "source": "zhz_53"
+    },
+    {
+      "file": "zhz_74_seg0105.wav",
+      "text": "张 姐 也 算 对 我 们 很 好 诶 那 是",
+      "speaker": "spk_24",
+      "start": 487.64,
+      "end": 490.1,
+      "duration": 2.46,
+      "source": "zhz_74"
+    },
+    {
+      "file": "zhz_24_seg0225.wav",
+      "text": "喝 点 茶 消 消 火 儿",
+      "speaker": "spk_24",
+      "start": 1224.65,
+      "end": 1226.74,
+      "duration": 2.1,
+      "source": "zhz_24"
+    },
+    {
+      "file": "zhz_54_seg0012.wav",
+      "text": "想 来 不 日 后 就 能 顺 利 抵 京 了",
+      "speaker": "spk_24",
+      "start": 93.66,
+      "end": 95.92,
+      "duration": 2.27,
+      "source": "zhz_54"
+    },
+    {
+      "file": "zhz_23_seg0382.wav",
+      "text": "大 人 这 是 人 心 呐 听 说 大 人 已 经 在 这 儿 待 了 一 天 一 夜 了",
+      "speaker": "spk_24",
+      "start": 2304.13,
+      "end": 2309.16,
+      "duration": 5.03,
+      "source": "zhz_23"
+    },
+    {
+      "file": "zhz_38_seg0200.wav",
+      "text": "那 皇 上 您 是 回 九 州 清 宴 永 膳 去 华 妃 那 里 啊",
+      "speaker": "spk_24",
+      "start": 1116.09,
+      "end": 1119.83,
+      "duration": 3.74,
+      "source": "zhz_38"
+    },
+    {
+      "file": "zhz_54_seg0043.wav",
+      "text": "皇 上 一 向 称 赞 温 大 人 妙 手 仁 心 必 定 会 应 允 的",
+      "speaker": "spk_24",
+      "start": 298.99,
+      "end": 303.32,
+      "duration": 4.33,
+      "source": "zhz_54"
+    },
+    {
+      "file": "zhz_73_seg0412.wav",
+      "text": "这 件 事 不 干 熹 贵 妃 的 事 儿 啊",
+      "speaker": "spk_24",
+      "start": 1895.92,
+      "end": 1898.21,
+      "duration": 2.29,
+      "source": "zhz_73"
+    }
+  ],
+  "spk_02": [
+    {
+      "file": "zhz_21_seg0197.wav",
+      "text": "能 省 下 些 自 然 很 好 朕 一 直 以 为 他 的 聪 慧 才 学 皆 在 诗 书 之 上 不 想 还 有 主 事 之 才",
+      "speaker": "spk_02",
+      "start": 1065.18,
+      "end": 1074.56,
+      "duration": 9.38,
+      "source": "zhz_21"
+    },
+    {
+      "file": "zhz_24_seg0309.wav",
+      "text": "如 今 开 春 暖 和 些 了 你 身 子 好 些 了 没 有 多 谢 皇 上 关 心 臣 妾 好 多 了",
+      "speaker": "spk_02",
+      "start": 1706.74,
+      "end": 1713.16,
+      "duration": 6.42,
+      "source": "zhz_24"
+    },
+    {
+      "file": "zhz_08_seg0291.wav",
+      "text": "皇 上 先 吃 吧 朕 在 书 房 里 吃 过 了 你 先 尝 尝 合 不 合 你 的 口 味",
+      "speaker": "spk_02",
+      "start": 1836.86,
+      "end": 1841.86,
+      "duration": 5.0,
+      "source": "zhz_08"
+    },
+    {
+      "file": "zhz_67_seg0214.wav",
+      "text": "无 论 如 何 加 封 宫 中 各 位 姐 妹 只 请 皇 上 一 定 要 以 端 妃 姐 姐 为 尊 居 于 臣 妾 之 上 否 则 臣 妾 终 究 难 安 端 妃 进 宫 醉 久 皇 贵 妃 这 个 位 置 本 也 当 得",
+      "speaker": "spk_02",
+      "start": 1169.63,
+      "end": 1184.01,
+      "duration": 14.38,
+      "source": "zhz_67"
+    },
+    {
+      "file": "zhz_33_seg0054.wav",
+      "text": "皇 上 若 去 看 看 他 怕 是 姐 姐 的 病 就 好 了 不 是 朕 不 想 去 看 他",
+      "speaker": "spk_02",
+      "start": 246.04,
+      "end": 251.49,
+      "duration": 5.45,
+      "source": "zhz_33"
+    },
+    {
+      "file": "zhz_34_seg0203.wav",
+      "text": "皇 兄 你 有 三 宫 六 院 是 啊 是 有 三 宫 六 院",
+      "speaker": "spk_02",
+      "start": 1086.98,
+      "end": 1092.91,
+      "duration": 5.93,
+      "source": "zhz_34"
+    },
+    {
+      "file": "zhz_36_seg0092.wav",
+      "text": "皇 上 要 如 何 安 置 呢 老 时 七 不 会 在 意 这 些",
+      "speaker": "spk_02",
+      "start": 428.28,
+      "end": 431.39,
+      "duration": 3.12,
+      "source": "zhz_36"
+    },
+    {
+      "file": "zhz_66_seg0356.wav",
+      "text": "朕 的 妻 子 很 早 就 离 开 人 世 了 臣 女 知 道 了 皇 上 可 以 有 很 多 个 皇 后 但 是 妻 子 只 有 一 个",
+      "speaker": "spk_02",
+      "start": 1747.82,
+      "end": 1756.79,
+      "duration": 8.96,
+      "source": "zhz_66"
+    },
+    {
+      "file": "zhz_06_seg0015.wav",
+      "text": "臣 妾 听 说 不 是 每 一 位 嫔 妃 都 侍 寝 过 婉 常 在 一 直 卧 病 淳 常 在 年 纪 太 小 完 全 不 解 世 事 还 有 别 人 吗",
+      "speaker": "spk_02",
+      "start": 76.34,
+      "end": 88.33,
+      "duration": 11.98,
+      "source": "zhz_06"
+    },
+    {
+      "file": "zhz_58_seg0066.wav",
+      "text": "他 犯 了 什 么 错 你 要 这 么 打 他 他 无 视 臣 妾 以 下 犯 上",
+      "speaker": "spk_02",
+      "start": 422.4,
+      "end": 426.81,
+      "duration": 4.41,
+      "source": "zhz_58"
+    }
+  ],
+  "spk_18": [
+    {
+      "file": "zhz_54_seg0340.wav",
+      "text": "皇 后 一 向 端 庄 持 重",
+      "speaker": "spk_18",
+      "start": 1706.7,
+      "end": 1708.74,
+      "duration": 2.04,
+      "source": "zhz_54"
+    },
+    {
+      "file": "zhz_65_seg0185.wav",
+      "text": "恐 怕 要 再 等 七 年",
+      "speaker": "spk_18",
+      "start": 1014.68,
+      "end": 1016.96,
+      "duration": 2.27,
+      "source": "zhz_65"
+    },
+    {
+      "file": "zhz_44_seg0318.wav",
+      "text": "你 不 要 以 朕 的 名 义 胁 迫 镇 元 道",
+      "speaker": "spk_18",
+      "start": 1654.95,
+      "end": 1658.71,
+      "duration": 3.77,
+      "source": "zhz_44"
+    },
+    {
+      "file": "zhz_74_seg0045.wav",
+      "text": "更 何 况 师 叔 也 好 骑 射 也 罢 都 是 皇 阿 玛 细 心 教 导 自 然 样 样 都 胜 过 阵",
+      "speaker": "spk_18",
+      "start": 219.83,
+      "end": 227.81,
+      "duration": 7.97,
+      "source": "zhz_74"
+    },
+    {
+      "file": "zhz_44_seg0300.wav",
+      "text": "并 将 这 些 事 结 合 成 集 刊 印 派 发 全 国",
+      "speaker": "spk_18",
+      "start": 1551.91,
+      "end": 1555.95,
+      "duration": 4.04,
+      "source": "zhz_44"
+    },
+    {
+      "file": "zhz_42_seg0417.wav",
+      "text": "朕 更 在 意 的 是 天 下 人 之 口",
+      "speaker": "spk_18",
+      "start": 1970.42,
+      "end": 1973.62,
+      "duration": 3.21,
+      "source": "zhz_42"
+    },
+    {
+      "file": "zhz_63_seg0104.wav",
+      "text": "那 你 告 诉 朕 是 什 么 讹 传",
+      "speaker": "spk_18",
+      "start": 802.62,
+      "end": 804.63,
+      "duration": 2.02,
+      "source": "zhz_63"
+    },
+    {
+      "file": "zhz_34_seg0204.wav",
+      "text": "可 朕 就 想 缺 个 碎 玉 轩",
+      "speaker": "spk_18",
+      "start": 1093.97,
+      "end": 1096.27,
+      "duration": 2.29,
+      "source": "zhz_34"
+    },
+    {
+      "file": "zhz_23_seg0273.wav",
+      "text": "只 是 今 日 你 若 要 说 半 句 虚 言",
+      "speaker": "spk_18",
+      "start": 1765.41,
+      "end": 1767.84,
+      "duration": 2.42,
+      "source": "zhz_23"
+    },
+    {
+      "file": "zhz_34_seg0235.wav",
+      "text": "再 吸 掉 两 根 蜡 烛 这",
+      "speaker": "spk_18",
+      "start": 1238.37,
+      "end": 1240.81,
+      "duration": 2.44,
+      "source": "zhz_34"
+    }
+  ],
+  "spk_08": [
+    {
+      "file": "zhz_49_seg0154.wav",
+      "text": "哀 家 原 以 为 隆 科 多 晚 年 可 以 得 个 善 终",
+      "speaker": "spk_08",
+      "start": 639.7,
+      "end": 643.29,
+      "duration": 3.6,
+      "source": "zhz_49"
+    },
+    {
+      "file": "zhz_52_seg0391.wav",
+      "text": "但 若 宫 中 一 直 无 人 与 他 抗 衡",
+      "speaker": "spk_08",
+      "start": 2204.95,
+      "end": 2207.43,
+      "duration": 2.48,
+      "source": "zhz_52"
+    },
+    {
+      "file": "zhz_41_seg0329.wav",
+      "text": "再 三 进 言 要 害 死 救 主",
+      "speaker": "spk_08",
+      "start": 1780.38,
+      "end": 1782.52,
+      "duration": 2.13,
+      "source": "zhz_41"
+    },
+    {
+      "file": "zhz_50_seg0184.wav",
+      "text": "就 皇 后 齐 妃 静 妃",
+      "speaker": "spk_08",
+      "start": 828.52,
+      "end": 831.02,
+      "duration": 2.5,
+      "source": "zhz_50"
+    },
+    {
+      "file": "zhz_41_seg0053.wav",
+      "text": "听 说 皇 帝 已 经 赐 年 羹 尧 自 尽",
+      "speaker": "spk_08",
+      "start": 247.84,
+      "end": 250.9,
+      "duration": 3.06,
+      "source": "zhz_41"
+    },
+    {
+      "file": "zhz_52_seg0394.wav",
+      "text": "彼 此 爱 心 觉 罗 所 有 子 私",
+      "speaker": "spk_08",
+      "start": 2213.97,
+      "end": 2216.84,
+      "duration": 2.87,
+      "source": "zhz_52"
+    },
+    {
+      "file": "zhz_32_seg0115.wav",
+      "text": "也 是 皇 后 无 用 才 会 生 出 这 许 多 的 事 端",
+      "speaker": "spk_08",
+      "start": 612.7,
+      "end": 616.43,
+      "duration": 3.73,
+      "source": "zhz_32"
+    },
+    {
+      "file": "zhz_52_seg0339.wav",
+      "text": "反 正 你 做 这 样 害 人 的 事 也 不 是 头 一 回 了",
+      "speaker": "spk_08",
+      "start": 1888.83,
+      "end": 1891.92,
+      "duration": 3.1,
+      "source": "zhz_52"
+    },
+    {
+      "file": "zhz_36_seg0394.wav",
+      "text": "这 点 私 心 后 宫 哪 个 嫔 妃 没 有",
+      "speaker": "spk_08",
+      "start": 2056.37,
+      "end": 2059.8,
+      "duration": 3.42,
+      "source": "zhz_36"
+    },
+    {
+      "file": "zhz_58_seg0125.wav",
+      "text": "再 让 宝 华 殿 诵 经 祈 福 是",
+      "speaker": "spk_08",
+      "start": 731.75,
+      "end": 735.15,
+      "duration": 3.4,
+      "source": "zhz_58"
+    }
+  ],
+  "spk_06": [
+    {
+      "file": "zhz_73_seg0187.wav",
+      "text": "也 不 希 望 你 做 有 去 无 回 的 昭 君",
+      "speaker": "spk_06",
+      "start": 825.98,
+      "end": 828.58,
+      "duration": 2.6,
+      "source": "zhz_73"
+    },
+    {
+      "file": "zhz_29_seg0097.wav",
+      "text": "朕 与 皇 后 要 去 天 坛 主 持 祭 祀 之 礼 宫 中 的 一 切 都 由 华 妃 主 理 你 与 她 一 向 不 睦",
+      "speaker": "spk_06",
+      "start": 562.65,
+      "end": 570.93,
+      "duration": 8.28,
+      "source": "zhz_29"
+    },
+    {
+      "file": "zhz_75_seg0212.wav",
+      "text": "这 个 鸿 雁 呀 最 需 要 玩 伴 可 惜 这 宫 里 头 没 有 跟 他 同 龄 的 阿 克 你 得 空 常 带 着 袁 彻 他 们 来 玩 儿",
+      "speaker": "spk_06",
+      "start": 1155.87,
+      "end": 1165.49,
+      "duration": 9.62,
+      "source": "zhz_75"
+    },
+    {
+      "file": "zhz_43_seg0009.wav",
+      "text": "希 望 镇 联 名 允 峨 一 脉",
+      "speaker": "spk_06",
+      "start": 49.57,
+      "end": 52.41,
+      "duration": 2.85,
+      "source": "zhz_43"
+    },
+    {
+      "file": "zhz_09_seg0162.wav",
+      "text": "红 时 的 耳 朵 听 着 都 起 茧 子 了 朕 也 是",
+      "speaker": "spk_06",
+      "start": 844.31,
+      "end": 847.92,
+      "duration": 3.62,
+      "source": "zhz_09"
+    },
+    {
+      "file": "zhz_20_seg0350.wav",
+      "text": "定 要 做 一 对 儿 千 古 榜 样 人 物 才 好 啊",
+      "speaker": "spk_06",
+      "start": 1899.44,
+      "end": 1902.84,
+      "duration": 3.4,
+      "source": "zhz_20"
+    },
+    {
+      "file": "zhz_58_seg0401.wav",
+      "text": "如 今 更 平 添 了 些",
+      "speaker": "spk_06",
+      "start": 2264.58,
+      "end": 2266.76,
+      "duration": 2.19,
+      "source": "zhz_58"
+    },
+    {
+      "file": "zhz_07_seg0390.wav",
+      "text": "你 亲 手 挑 的 这 心 意 朕 最 喜 欢",
+      "speaker": "spk_06",
+      "start": 2250.15,
+      "end": 2254.28,
+      "duration": 4.12,
+      "source": "zhz_07"
+    },
+    {
+      "file": "zhz_70_seg0144.wav",
+      "text": "你 把 朕 用 的 点 心 送 到 永 寿 宫 去",
+      "speaker": "spk_06",
+      "start": 700.9,
+      "end": 703.76,
+      "duration": 2.86,
+      "source": "zhz_70"
+    },
+    {
+      "file": "zhz_40_seg0036.wav",
+      "text": "年 羹 尧 的 青 海 之 功 正 已 在 许 与 不 许 之 间",
+      "speaker": "spk_06",
+      "start": 233.7,
+      "end": 237.51,
+      "duration": 3.81,
+      "source": "zhz_40"
+    }
+  ],
+  "spk_20": [
+    {
+      "file": "zhz_20_seg0399.wav",
+      "text": "便 是 陪 臣 妾 的 时 候 还 想 着 旁 人 呢",
+      "speaker": "spk_20",
+      "start": 2100.67,
+      "end": 2104.18,
+      "duration": 3.5,
+      "source": "zhz_20"
+    },
+    {
+      "file": "zhz_20_seg0127.wav",
+      "text": "只 是 不 知 这 一 身 蜀 锦 价 值 几 何 呢",
+      "speaker": "spk_20",
+      "start": 728.02,
+      "end": 731.64,
+      "duration": 3.63,
+      "source": "zhz_20"
+    },
+    {
+      "file": "zhz_31_seg0404.wav",
+      "text": "只 见 新 人 笑 不 闻 旧 人 哭",
+      "speaker": "spk_20",
+      "start": 2119.1,
+      "end": 2122.74,
+      "duration": 3.63,
+      "source": "zhz_31"
+    },
+    {
+      "file": "zhz_40_seg0262.wav",
+      "text": "本 宫 兄 长 接 连 被 贬 皇 上 还 不 可 放 过 吗",
+      "speaker": "spk_20",
+      "start": 1544.35,
+      "end": 1548.49,
+      "duration": 4.14,
+      "source": "zhz_40"
+    },
+    {
+      "file": "zhz_11_seg0343.wav",
+      "text": "若 不 是 本 宫 提 拔 你 伺 候 皇 上 你 哪 有 机 会 生 下 公 主 成 为 贵 人",
+      "speaker": "spk_20",
+      "start": 2225.96,
+      "end": 2230.78,
+      "duration": 4.82,
+      "source": "zhz_11"
+    },
+    {
+      "file": "zhz_08_seg0376.wav",
+      "text": "可 是 近 日 皇 上 没 有 照 你 的 缘 故 吧",
+      "speaker": "spk_20",
+      "start": 2360.52,
+      "end": 2363.01,
+      "duration": 2.5,
+      "source": "zhz_08"
+    },
+    {
+      "file": "zhz_09_seg0008.wav",
+      "text": "沈 贵 人 与 莞 贵 人 待 得 久 了 嘴 皮 子 功 夫 也 日 渐 伶 俐 了",
+      "speaker": "spk_20",
+      "start": 60.92,
+      "end": 65.81,
+      "duration": 4.88,
+      "source": "zhz_09"
+    },
+    {
+      "file": "zhz_28_seg0065.wav",
+      "text": "妹 妹 如 今 多 听 一 些 进 封 之 后 便 更 能 以 礼 服 人 以 德 服 人 了 多 谢 皇 后 娘 娘 指 教 来 日 臣 妾 得 以 进 封",
+      "speaker": "spk_20",
+      "start": 387.47,
+      "end": 397.44,
+      "duration": 9.96,
+      "source": "zhz_28"
+    },
+    {
+      "file": "zhz_23_seg0149.wav",
+      "text": "如 今 就 让 他 自 生 自 灭 好 了",
+      "speaker": "spk_20",
+      "start": 920.93,
+      "end": 923.83,
+      "duration": 2.9,
+      "source": "zhz_23"
+    },
+    {
+      "file": "zhz_26_seg0192.wav",
+      "text": "要 是 使 劲 往 脑 袋 上 一 砸 也 是 能 砸 死 人 的",
+      "speaker": "spk_20",
+      "start": 914.42,
+      "end": 918.23,
+      "duration": 3.81,
+      "source": "zhz_26"
+    }
+  ],
+  "spk_13": [
+    {
+      "file": "zhz_69_seg0079.wav",
+      "text": "青 鹰 啊 你 过 来 见 过 三 阿 哥 是",
+      "speaker": "spk_13",
+      "start": 424.27,
+      "end": 427.4,
+      "duration": 3.13,
+      "source": "zhz_69"
+    },
+    {
+      "file": "zhz_41_seg0357.wav",
+      "text": "何 况 呢 还 要 受 人 委 屈 看 人 白 眼 臣 妾 之 心 里 进 了 宫 就 不 像 在 家 里 了 怎 么 样 都 会 有 点 委 屈",
+      "speaker": "spk_13",
+      "start": 2022.78,
+      "end": 2032.6,
+      "duration": 9.82,
+      "source": "zhz_41"
+    },
+    {
+      "file": "zhz_22_seg0395.wav",
+      "text": "莞 贵 人 饱 读 诗 书 啊 连 戏 文 也 是 信 手 拈 来 既 然 就 戏 论 戏 那 就 好 好 看 戏 吧",
+      "speaker": "spk_13",
+      "start": 2272.47,
+      "end": 2280.11,
+      "duration": 7.63,
+      "source": "zhz_22"
+    },
+    {
+      "file": "zhz_29_seg0411.wav",
+      "text": "话 说 回 来 三 阿 哥 虽 然 有 两 个 弟 弟 可 是 各 自 养 在 别 处",
+      "speaker": "spk_13",
+      "start": 2323.7,
+      "end": 2329.05,
+      "duration": 5.34,
+      "source": "zhz_29"
+    },
+    {
+      "file": "zhz_55_seg0421.wav",
+      "text": "娘 娘 会 心 臣 妾 自 叹 不 如 只 是 安 贫 你 一 向 了 解 甄 嬛 的 个 性 一 定 要 好 好 把 握 臣 妾 遵 旨",
+      "speaker": "spk_13",
+      "start": 1967.01,
+      "end": 1977.27,
+      "duration": 10.26,
+      "source": "zhz_55"
+    },
+    {
+      "file": "zhz_41_seg0226.wav",
+      "text": "昔 日 的 华 妃 氏 如 今 的 宛 嫔 也 是",
+      "speaker": "spk_13",
+      "start": 1263.09,
+      "end": 1266.38,
+      "duration": 3.29,
+      "source": "zhz_41"
+    },
+    {
+      "file": "zhz_56_seg0156.wav",
+      "text": "臣 妾 遵 旨 先 坐 下 吧",
+      "speaker": "spk_13",
+      "start": 956.07,
+      "end": 958.62,
+      "duration": 2.54,
+      "source": "zhz_56"
+    },
+    {
+      "file": "zhz_34_seg0076.wav",
+      "text": "虽 然 来 晚 了 却 是 一 场 大 雪 瑞 雪 兆 丰 年 明 年 一 定 会 是 丰 年 安 泰 的 景 象",
+      "speaker": "spk_13",
+      "start": 358.45,
+      "end": 366.29,
+      "duration": 7.83,
+      "source": "zhz_34"
+    },
+    {
+      "file": "zhz_29_seg0073.wav",
+      "text": "花 贵 妃 的 性 子 你 也 知 道 能 忍 就 忍 着",
+      "speaker": "spk_13",
+      "start": 426.57,
+      "end": 430.19,
+      "duration": 3.62,
+      "source": "zhz_29"
+    },
+    {
+      "file": "zhz_69_seg0071.wav",
+      "text": "三 阿 哥 愈 发 长 高 了 难 得 天 气 凉 快 请 你 和 敬 贵 妃 来 坐 坐 也 放 眼 挑 挑 看 看 有 没 有 出 色 的 女 孩 子 呀",
+      "speaker": "spk_13",
+      "start": 377.94,
+      "end": 386.85,
+      "duration": 8.9,
+      "source": "zhz_69"
+    }
+  ],
+  "spk_01": [
+    {
+      "file": "zhz_34_seg0376.wav",
+      "text": "呛 着 您 自 己 了 多 吗",
+      "speaker": "spk_01",
+      "start": 2042.59,
+      "end": 2045.06,
+      "duration": 2.46,
+      "source": "zhz_34"
+    },
+    {
+      "file": "zhz_16_seg0033.wav",
+      "text": "内 务 府 的 人 说 今 年 波 斯 国 出 产 裸 子 带 甚 少 一 共 只 得 三 壶 那 还 有 两 壶 呢",
+      "speaker": "spk_01",
+      "start": 183.58,
+      "end": 190.88,
+      "duration": 7.3,
+      "source": "zhz_16"
+    },
+    {
+      "file": "zhz_33_seg0382.wav",
+      "text": "就 算 本 宫 下 过 夹 竹 桃 的 花 粉 又 如 何",
+      "speaker": "spk_01",
+      "start": 1925.42,
+      "end": 1928.92,
+      "duration": 3.5,
+      "source": "zhz_33"
+    },
+    {
+      "file": "zhz_08_seg0090.wav",
+      "text": "现 在 才 成 幸 也 不 算 什 么 一 指 封 为 贵 人",
+      "speaker": "spk_01",
+      "start": 483.59,
+      "end": 488.11,
+      "duration": 4.51,
+      "source": "zhz_08"
+    },
+    {
+      "file": "zhz_21_seg0227.wav",
+      "text": "内 务 府 的 人 说 皇 上 下 令 节 省 开 销 所 以 今 年 的 赏 银 只 有 往 年 的 一 半",
+      "speaker": "spk_01",
+      "start": 1259.66,
+      "end": 1265.63,
+      "duration": 5.97,
+      "source": "zhz_21"
+    },
+    {
+      "file": "zhz_31_seg0281.wav",
+      "text": "娘 娘 等 一 下 琼 华 岛 在 湖 心 应 该 会 有 船 接 送 的",
+      "speaker": "spk_01",
+      "start": 1431.41,
+      "end": 1435.77,
+      "duration": 4.36,
+      "source": "zhz_31"
+    },
+    {
+      "file": "zhz_51_seg0105.wav",
+      "text": "太 后 别 生 气 嗯 只 不 过 是 身 份 危 险 些 罢 了 就 像 从 前 妙 音 娘 子 那 样 的 下 人 一 样 也 就 是 了",
+      "speaker": "spk_01",
+      "start": 524.33,
+      "end": 532.93,
+      "duration": 8.61,
+      "source": "zhz_51"
+    },
+    {
+      "file": "zhz_50_seg0296.wav",
+      "text": "额 娘 趁 着 皇 后 事 迹 才 能 来 看 看 你",
+      "speaker": "spk_01",
+      "start": 1484.36,
+      "end": 1486.97,
+      "duration": 2.62,
+      "source": "zhz_50"
+    },
+    {
+      "file": "zhz_38_seg0401.wav",
+      "text": "原 来 皇 上 是 心 疼 大 将 军",
+      "speaker": "spk_01",
+      "start": 2212.68,
+      "end": 2214.8,
+      "duration": 2.12,
+      "source": "zhz_38"
+    },
+    {
+      "file": "zhz_14_seg0179.wav",
+      "text": "瞧 您 说 的 跟 自 己 生 过 似 的",
+      "speaker": "spk_01",
+      "start": 980.28,
+      "end": 983.17,
+      "duration": 2.9,
+      "source": "zhz_14"
+    }
+  ],
+  "spk_14": [
+    {
+      "file": "zhz_49_seg0389.wav",
+      "text": "实 在 不 必 和 我 这 样 的 残 局 败 体 上 一 起 啊",
+      "speaker": "spk_14",
+      "start": 1707.93,
+      "end": 1711.32,
+      "duration": 3.38,
+      "source": "zhz_49"
+    },
+    {
+      "file": "zhz_62_seg0225.wav",
+      "text": "你 赶 紧 去 吧 哎 奴 才 高 台",
+      "speaker": "spk_14",
+      "start": 1404.07,
+      "end": 1406.72,
+      "duration": 2.65,
+      "source": "zhz_62"
+    },
+    {
+      "file": "zhz_27_seg0376.wav",
+      "text": "他 下 午 还 欢 蹦 乱 跳 的 放 风 筝 呢",
+      "speaker": "spk_14",
+      "start": 2072.87,
+      "end": 2075.03,
+      "duration": 2.17,
+      "source": "zhz_27"
+    },
+    {
+      "file": "zhz_11_seg0134.wav",
+      "text": "本 宫 一 向 祝 皇 后 协 理 有 功 难 道 这 点 事 儿 还 做 不 了 主 丽 嫔 乃 一 宫 主 位 事 关 重 大 娘 娘 实 在 应 告 知 皇 后 娘 娘 以 免 日 后 皇 上 怪 罪",
+      "speaker": "spk_14",
+      "start": 919.03,
+      "end": 929.88,
+      "duration": 10.86,
+      "source": "zhz_11"
+    },
+    {
+      "file": "zhz_57_seg0223.wav",
+      "text": "可 到 底 是 从 本 宫 这 出 去 的 可 怜 人 就 这 么 没 了",
+      "speaker": "spk_14",
+      "start": 1218.76,
+      "end": 1222.54,
+      "duration": 3.77,
+      "source": "zhz_57"
+    },
+    {
+      "file": "zhz_71_seg0346.wav",
+      "text": "皇 上 若 贤 附 近 真 为 中 毒 此 地 不 宜 久 留 先 回 养 心 殿 吧 皇 上",
+      "speaker": "spk_14",
+      "start": 1826.99,
+      "end": 1831.07,
+      "duration": 4.08,
+      "source": "zhz_71"
+    },
+    {
+      "file": "zhz_42_seg0150.wav",
+      "text": "手 炉 凉 了 再 加 几 块 碳 来",
+      "speaker": "spk_14",
+      "start": 773.09,
+      "end": 775.69,
+      "duration": 2.6,
+      "source": "zhz_42"
+    },
+    {
+      "file": "zhz_49_seg0055.wav",
+      "text": "那 如 今 连 累 我 父 亲 的 人 就 不 是 我",
+      "speaker": "spk_14",
+      "start": 187.43,
+      "end": 189.91,
+      "duration": 2.48,
+      "source": "zhz_49"
+    },
+    {
+      "file": "zhz_18_seg0248.wav",
+      "text": "皇 上 摆 明 了 没 有 把 他 放 入 眼 里 我 倒 要 看 看 他 还 能 生 出 什 么 事 来 是",
+      "speaker": "spk_14",
+      "start": 1232.6,
+      "end": 1238.35,
+      "duration": 5.75,
+      "source": "zhz_18"
+    },
+    {
+      "file": "zhz_37_seg0176.wav",
+      "text": "这 样 咱 们 就 可 以 天 天 在 一 起 了",
+      "speaker": "spk_14",
+      "start": 808.69,
+      "end": 811.99,
+      "duration": 3.29,
+      "source": "zhz_37"
+    }
+  ],
+  "spk_27": [
+    {
+      "file": "zhz_18_seg0228.wav",
+      "text": "你 是 哪 儿 的 宫 女 啊 我 是 莞 贵 人 的 陪 嫁 侍 女",
+      "speaker": "spk_27",
+      "start": 1113.71,
+      "end": 1117.3,
+      "duration": 3.58,
+      "source": "zhz_18"
+    },
+    {
+      "file": "zhz_04_seg0017.wav",
+      "text": "今 儿 早 上 好 歹 应 该 吃 点 东 西 吧",
+      "speaker": "spk_27",
+      "start": 133.59,
+      "end": 135.61,
+      "duration": 2.02,
+      "source": "zhz_04"
+    },
+    {
+      "file": "zhz_56_seg0184.wav",
+      "text": "小 主 惠 嫔 娘 娘 来 了 快 请 她 进 来 哎",
+      "speaker": "spk_27",
+      "start": 1143.48,
+      "end": 1146.92,
+      "duration": 3.44,
+      "source": "zhz_56"
+    },
+    {
+      "file": "zhz_38_seg0286.wav",
+      "text": "奴 婢 街 外 头 热 了 小 主 还 不 回 来 正 想 派 人 去 瞧 瞧 呢",
+      "speaker": "spk_27",
+      "start": 1560.24,
+      "end": 1563.96,
+      "duration": 3.72,
+      "source": "zhz_38"
+    },
+    {
+      "file": "zhz_53_seg0086.wav",
+      "text": "皇 上 身 子 好 了 以 后 最 常 去 的 就 是 延 禧 宫 和 春 禧 殿",
+      "speaker": "spk_27",
+      "start": 394.38,
+      "end": 398.1,
+      "duration": 3.72,
+      "source": "zhz_53"
+    },
+    {
+      "file": "zhz_47_seg0380.wav",
+      "text": "我 知 道 今 日 的 话 伤 了 小 姐 的 心",
+      "speaker": "spk_27",
+      "start": 2181.8,
+      "end": 2184.22,
+      "duration": 2.42,
+      "source": "zhz_47"
+    },
+    {
+      "file": "zhz_48_seg0199.wav",
+      "text": "而 且 小 姐 现 在 身 子 这 样 是 能 腾 挪 奔 波 的 吗",
+      "speaker": "spk_27",
+      "start": 1290.75,
+      "end": 1294.21,
+      "duration": 3.46,
+      "source": "zhz_48"
+    },
+    {
+      "file": "zhz_33_seg0181.wav",
+      "text": "不 知 宫 中 是 哪 位 小 主 能 吹 这 样 好 的 笛 声",
+      "speaker": "spk_27",
+      "start": 883.08,
+      "end": 886.47,
+      "duration": 3.38,
+      "source": "zhz_33"
+    },
+    {
+      "file": "zhz_62_seg0134.wav",
+      "text": "他 不 就 是 一 味 的 装 可 怜 吗 偏 偏 皇 上 要 是 这 样 喜 欢 的 不 得 了",
+      "speaker": "spk_27",
+      "start": 851.95,
+      "end": 855.72,
+      "duration": 3.77,
+      "source": "zhz_62"
+    },
+    {
+      "file": "zhz_32_seg0147.wav",
+      "text": "外 头 乱 哄 哄 的 吊 着 嗓 子 唱 个 没 完 谁 还 能 尽 心",
+      "speaker": "spk_27",
+      "start": 748.77,
+      "end": 752.65,
+      "duration": 3.88,
+      "source": "zhz_32"
+    }
+  ],
+  "spk_15": [
+    {
+      "file": "zhz_64_seg0446.wav",
+      "text": "我 把 我 的 家 传 玉 壶 放 进 了 他 的 罐 内",
+      "speaker": "spk_15",
+      "start": 2138.14,
+      "end": 2141.39,
+      "duration": 3.25,
+      "source": "zhz_64"
+    },
+    {
+      "file": "zhz_50_seg0052.wav",
+      "text": "还 是 你 真 正 的 安 乐 更 要 谨 些 吧",
+      "speaker": "spk_15",
+      "start": 198.28,
+      "end": 200.41,
+      "duration": 2.13,
+      "source": "zhz_50"
+    },
+    {
+      "file": "zhz_44_seg0280.wav",
+      "text": "这 一 点 娘 娘 大 可 放 心 据 微 臣 所 知 娘 娘 的 家 人 并 未 受 到 牵 连",
+      "speaker": "spk_15",
+      "start": 1460.24,
+      "end": 1465.94,
+      "duration": 5.71,
+      "source": "zhz_44"
+    },
+    {
+      "file": "zhz_49_seg0538.wav",
+      "text": "我 来 的 不 巧 无 妨",
+      "speaker": "spk_15",
+      "start": 2388.72,
+      "end": 2390.97,
+      "duration": 2.25,
+      "source": "zhz_49"
+    },
+    {
+      "file": "zhz_62_seg0201.wav",
+      "text": "微 臣 给 娘 娘 请 安 不 必 多 礼",
+      "speaker": "spk_15",
+      "start": 1230.62,
+      "end": 1233.98,
+      "duration": 3.37,
+      "source": "zhz_62"
+    },
+    {
+      "file": "zhz_45_seg0206.wav",
+      "text": "官 二 家 恶 名 的 告 发 句 句 都 犯 在 皇 上 的 大 忌 上 皇 上 能 不 信 吗",
+      "speaker": "spk_15",
+      "start": 1171.2,
+      "end": 1175.89,
+      "duration": 4.7,
+      "source": "zhz_45"
+    },
+    {
+      "file": "zhz_37_seg0072.wav",
+      "text": "有 劳 小 主 挪 动 狱 布 了 只 是 婉 嫔 娘 娘 的 药 还 在 微 着 怕 那 些 小 太 监 们 不 好 好 看 着 过 了 时 辰 施 了 药 性",
+      "speaker": "spk_15",
+      "start": 350.26,
+      "end": 357.98,
+      "duration": 7.71,
+      "source": "zhz_37"
+    },
+    {
+      "file": "zhz_48_seg0164.wav",
+      "text": "幸 好 你 终 于 来 了 给 王 爷 请 安 瞧 瞧 血 液 难 行 恕 微 臣 来 晚 了 啊 微 臣 正 好 带 了 一 些 疏 散 的 药 还 开 了 个 方 子 劳 烦 先 在 王 爷 这 里 见 了 吧 哎 好 快 去 是",
+      "speaker": "spk_15",
+      "start": 1059.71,
+      "end": 1074.11,
+      "duration": 14.39,
+      "source": "zhz_48"
+    },
+    {
+      "file": "zhz_59_seg0104.wav",
+      "text": "小 主 请 吃 安 胎 药 吧 怀 孕 的 时 候 针 线 活 做 久 了 会 伤 眼 睛 多 谢 温 大 人",
+      "speaker": "spk_15",
+      "start": 689.41,
+      "end": 695.35,
+      "duration": 5.93,
+      "source": "zhz_59"
+    },
+    {
+      "file": "zhz_53_seg0073.wav",
+      "text": "你 一 定 要 细 心 调 养 来 我 给 你 爸 爸 卖 吧",
+      "speaker": "spk_15",
+      "start": 299.03,
+      "end": 302.73,
+      "duration": 3.69,
+      "source": "zhz_53"
+    }
+  ],
+  "spk_10": [
+    {
+      "file": "zhz_35_seg0184.wav",
+      "text": "此 事 闹 得 沸 沸 扬 扬 臣 妾 虽 居 后 宫 但 也 略 知 一 二",
+      "speaker": "spk_10",
+      "start": 1161.7,
+      "end": 1166.01,
+      "duration": 4.3,
+      "source": "zhz_35"
+    },
+    {
+      "file": "zhz_12_seg0236.wav",
+      "text": "他 弟 弟 江 慎 是 照 顾 曹 贵 人 母 女 的 太 医 不 错",
+      "speaker": "spk_10",
+      "start": 1489.19,
+      "end": 1492.74,
+      "duration": 3.55,
+      "source": "zhz_12"
+    },
+    {
+      "file": "zhz_24_seg0290.wav",
+      "text": "去 帮 我 拢 个 汤 婆 子 吧",
+      "speaker": "spk_10",
+      "start": 1608.05,
+      "end": 1610.1,
+      "duration": 2.04,
+      "source": "zhz_24"
+    },
+    {
+      "file": "zhz_22_seg0221.wav",
+      "text": "这 对 和 田 玉 钗 玉 质 温 厚 细 腻 是 难 得 的 珍 品 一 会 儿 你 送 去 延 禧 宫 给 玲 容 吧 这 奴 婢 记 得 这 对 玉 钗 可 是 皇 上 私 下 赏 给 小 主 的",
+      "speaker": "spk_10",
+      "start": 1406.56,
+      "end": 1419.04,
+      "duration": 12.47,
+      "source": "zhz_22"
+    },
+    {
+      "file": "zhz_09_seg0311.wav",
+      "text": "奴 才 是 小 伤 害 了 娘 娘 名 誉 事 大 还 望 娘 娘 三 思",
+      "speaker": "spk_10",
+      "start": 1707.93,
+      "end": 1711.96,
+      "duration": 4.04,
+      "source": "zhz_09"
+    },
+    {
+      "file": "zhz_18_seg0285.wav",
+      "text": "听 说 温 宜 公 主 跟 着 姐 姐 回 来 了 我 很 想 念 温 宜 所 以 特 地 过 来 看 看",
+      "speaker": "spk_10",
+      "start": 1394.34,
+      "end": 1399.72,
+      "duration": 5.38,
+      "source": "zhz_18"
+    },
+    {
+      "file": "zhz_27_seg0329.wav",
+      "text": "温 宜 公 主 身 体 近 来 可 好",
+      "speaker": "spk_10",
+      "start": 1843.91,
+      "end": 1846.01,
+      "duration": 2.1,
+      "source": "zhz_27"
+    },
+    {
+      "file": "zhz_07_seg0271.wav",
+      "text": "但 我 担 心 有 一 天 我 也 如 鱼 答 应 般 不 慎 遭 祸",
+      "speaker": "spk_10",
+      "start": 1468.61,
+      "end": 1472.12,
+      "duration": 3.52,
+      "source": "zhz_07"
+    },
+    {
+      "file": "zhz_16_seg0237.wav",
+      "text": "只 是 在 这 胜 暑 天 气 清 新 之 色 总 比 艳 丽 更 令 人 倾 心",
+      "speaker": "spk_10",
+      "start": 1314.88,
+      "end": 1319.64,
+      "duration": 4.76,
+      "source": "zhz_16"
+    },
+    {
+      "file": "zhz_19_seg0328.wav",
+      "text": "当 日 曹 贵 人 以 黄 山 界 十 七 爷 之 名 与 我 相 见 挑 拨",
+      "speaker": "spk_10",
+      "start": 1650.67,
+      "end": 1655.26,
+      "duration": 4.58,
+      "source": "zhz_19"
+    }
+  ],
+  "spk_29": [
+    {
+      "file": "zhz_14_seg0408.wav",
+      "text": "也 没 那 个 机 会 小 主 有 心 就 好 有 心 就 有 机 会",
+      "speaker": "spk_29",
+      "start": 2277.11,
+      "end": 2281.78,
+      "duration": 4.67,
+      "source": "zhz_14"
+    },
+    {
+      "file": "zhz_71_seg0008.wav",
+      "text": "皇 后 娘 娘 贤 惠 起 来 还 真 贤 惠 呢",
+      "speaker": "spk_29",
+      "start": 87.19,
+      "end": 90.43,
+      "duration": 3.24,
+      "source": "zhz_71"
+    },
+    {
+      "file": "zhz_32_seg0424.wav",
+      "text": "你 们 两 个 怎 么 在 外 面 坐 着 呢 也 不 怕 冷 你 怎 么 来 了 安 贵 一 听 说 婉 嫔 小 主 病 了 特 意 跟 御 膳 房 要 了 一 些 桃 花 鸡 叫 我 送 来",
+      "speaker": "spk_29",
+      "start": 2143.55,
+      "end": 2152.32,
+      "duration": 8.78,
+      "source": "zhz_32"
+    },
+    {
+      "file": "zhz_07_seg0108.wav",
+      "text": "否 则 位 分 再 高 那 也 只 不 过 是 卑 贱 之 躯",
+      "speaker": "spk_29",
+      "start": 530.67,
+      "end": 534.59,
+      "duration": 3.92,
+      "source": "zhz_07"
+    },
+    {
+      "file": "zhz_41_seg0219.wav",
+      "text": "但 只 要 皇 上 心 里 记 挂 着 再 远 怕 什 么 奴 婢 是 怕 委 屈 了 小 主 小 主 进 宫 前 大 人 千 叮 万 嘱 了 小 主 进 宫 必 是 要 出 人 头 地 的 出 人 头 地 是 要 紧",
+      "speaker": "spk_29",
+      "start": 1189.78,
+      "end": 1203.49,
+      "duration": 13.71,
+      "source": "zhz_41"
+    },
+    {
+      "file": "zhz_25_seg0057.wav",
+      "text": "奴 婢 真 的 什 么 也 没 干 把 手 伸 出 来",
+      "speaker": "spk_29",
+      "start": 417.94,
+      "end": 420.6,
+      "duration": 2.65,
+      "source": "zhz_25"
+    },
+    {
+      "file": "zhz_07_seg0091.wav",
+      "text": "免 得 让 人 沾 了 晦 气 平 白 招 人 嫌 多 谢 余 答 应 提 醒",
+      "speaker": "spk_29",
+      "start": 451.47,
+      "end": 456.68,
+      "duration": 5.21,
+      "source": "zhz_07"
+    },
+    {
+      "file": "zhz_24_seg0005.wav",
+      "text": "你 说 他 若 是 知 道 了 会 怎 样 按 华 妃 的 性 子 要 不 是 找 年 大 将 军 要 不 就 是 即 刻 杀 了 刘 本 然 后 到 皇 上 面 前 哭 诉 求 情",
+      "speaker": "spk_29",
+      "start": 22.68,
+      "end": 33.1,
+      "duration": 10.42,
+      "source": "zhz_24"
+    },
+    {
+      "file": "zhz_46_seg0273.wav",
+      "text": "甄 嬛 已 经 被 逐 出 宫 他 家 人 流 奉 宁 古 塔 还 有 什 么 不 妥 吗 皇 上 如 此 在 意 胧 月 公 主 让 人 格 外 警 醒",
+      "speaker": "spk_29",
+      "start": 1458.63,
+      "end": 1466.99,
+      "duration": 8.37,
+      "source": "zhz_46"
+    },
+    {
+      "file": "zhz_35_seg0119.wav",
+      "text": "小 主 主 觉 得 冷 就 早 点 去 床 上 卧 着 奴 婢 去 给 您 烫 个 汤 婆 子 暖 上 宝 君",
+      "speaker": "spk_29",
+      "start": 682.46,
+      "end": 688.02,
+      "duration": 5.56,
+      "source": "zhz_35"
+    }
+  ],
+  "spk_00": [
+    {
+      "file": "zhz_57_seg0102.wav",
+      "text": "没 想 到 这 说 话 呀 还 是 这 么 的 寒 酸 黏 醋",
+      "speaker": "spk_00",
+      "start": 567.56,
+      "end": 571.7,
+      "duration": 4.13,
+      "source": "zhz_57"
+    },
+    {
+      "file": "zhz_58_seg0083.wav",
+      "text": "齐 嫔 一 有 什 么 就 拿 佩 尔 出 气 您 看",
+      "speaker": "spk_00",
+      "start": 504.42,
+      "end": 507.66,
+      "duration": 3.24,
+      "source": "zhz_58"
+    },
+    {
+      "file": "zhz_70_seg0406.wav",
+      "text": "你 们 看 这 株 珊 瑚 身 至 通 透 是 所 罕 见",
+      "speaker": "spk_00",
+      "start": 2137.82,
+      "end": 2142.03,
+      "duration": 4.21,
+      "source": "zhz_70"
+    },
+    {
+      "file": "zhz_63_seg0066.wav",
+      "text": "那 时 宫 中 常 有 一 位 年 长 的 姑 姑 前 来 探 望 娘 娘 除 此 之 外 便 只 有 一 位 姓 温 的 太 医 常 来 探 望 的",
+      "speaker": "spk_00",
+      "start": 463.6,
+      "end": 472.3,
+      "duration": 8.7,
+      "source": "zhz_63"
+    },
+    {
+      "file": "zhz_58_seg0082.wav",
+      "text": "皇 上 皇 上 您 瞧",
+      "speaker": "spk_00",
+      "start": 501.42,
+      "end": 503.46,
+      "duration": 2.04,
+      "source": "zhz_58"
+    },
+    {
+      "file": "zhz_12_seg0328.wav",
+      "text": "我 哎 呀 大 家 都 是 姐 妹 有 什 么 可 害 臊 的 快 说 呀",
+      "speaker": "spk_00",
+      "start": 2191.07,
+      "end": 2196.72,
+      "duration": 5.64,
+      "source": "zhz_12"
+    },
+    {
+      "file": "zhz_33_seg0017.wav",
+      "text": "希 望 娘 娘 可 以 收 下 不 养 身 体",
+      "speaker": "spk_00",
+      "start": 76.86,
+      "end": 79.12,
+      "duration": 2.27,
+      "source": "zhz_33"
+    },
+    {
+      "file": "zhz_46_seg0337.wav",
+      "text": "快 点 把 店 里 和 室 外 都 打 扫 干 净 了",
+      "speaker": "spk_00",
+      "start": 1836.52,
+      "end": 1839.24,
+      "duration": 2.73,
+      "source": "zhz_46"
+    },
+    {
+      "file": "zhz_66_seg0202.wav",
+      "text": "那 嫔 妾 就 不 打 扰 了 先 告 辞 了",
+      "speaker": "spk_00",
+      "start": 1031.38,
+      "end": 1034.03,
+      "duration": 2.65,
+      "source": "zhz_66"
+    },
+    {
+      "file": "zhz_03_seg0019.wav",
+      "text": "公 公 我 们 小 主 请 您 喝 茶 多 谢 贵 人 赏 赐 请",
+      "speaker": "spk_00",
+      "start": 171.71,
+      "end": 176.18,
+      "duration": 4.46,
+      "source": "zhz_03"
+    }
+  ],
+  "spk_19": [
+    {
+      "file": "zhz_29_seg0035.wav",
+      "text": "你 放 心 本 宫 不 会 隔 断 你 们 的 母 子 之 情 你 要 见 他 就 到 景 仁 宫 来 这 样 万 一 来 日 有 什 么 话 传 出 去 本 宫 也 算 跟 众 人 有 个 交 代 也 能 暂 且 保 全 了 你",
+      "speaker": "spk_19",
+      "start": 219.84,
+      "end": 234.38,
+      "duration": 14.54,
+      "source": "zhz_29"
+    },
+    {
+      "file": "zhz_62_seg0357.wav",
+      "text": "请 温 太 医 来 请 仁 公 问 话",
+      "speaker": "spk_19",
+      "start": 2150.99,
+      "end": 2153.07,
+      "duration": 2.08,
+      "source": "zhz_62"
+    },
+    {
+      "file": "zhz_21_seg0297.wav",
+      "text": "这 个 玉 坠 子 本 宫 记 得",
+      "speaker": "spk_19",
+      "start": 1800.96,
+      "end": 1803.62,
+      "duration": 2.66,
+      "source": "zhz_21"
+    },
+    {
+      "file": "zhz_26_seg0341.wav",
+      "text": "只 是 虽 然 仓 促 这 礼 数 是 不 能 施 的 皇 额 娘 放 心 臣 妾 已 经 准 备 妥 当",
+      "speaker": "spk_19",
+      "start": 1666.21,
+      "end": 1672.97,
+      "duration": 6.76,
+      "source": "zhz_26"
+    },
+    {
+      "file": "zhz_02_seg0372.wav",
+      "text": "你 此 去 要 多 多 心 疼 自 己",
+      "speaker": "spk_19",
+      "start": 2317.27,
+      "end": 2319.64,
+      "duration": 2.37,
+      "source": "zhz_02"
+    },
+    {
+      "file": "zhz_45_seg0101.wav",
+      "text": "本 宫 真 的 很 希 望 有 自 己 的 阿 哥",
+      "speaker": "spk_19",
+      "start": 597.98,
+      "end": 600.17,
+      "duration": 2.19,
+      "source": "zhz_45"
+    },
+    {
+      "file": "zhz_11_seg0350.wav",
+      "text": "还 不 都 是 你 自 以 为 是 出 的 好 算 呢",
+      "speaker": "spk_19",
+      "start": 2259.45,
+      "end": 2262.3,
+      "duration": 2.85,
+      "source": "zhz_11"
+    },
+    {
+      "file": "zhz_50_seg0287.wav",
+      "text": "也 不 能 这 么 仔 细 的 看 着 皇 上",
+      "speaker": "spk_19",
+      "start": 1437.4,
+      "end": 1440.55,
+      "duration": 3.15,
+      "source": "zhz_50"
+    },
+    {
+      "file": "zhz_54_seg0395.wav",
+      "text": "难 保 他 日 不 成 大 器 勿 格 而 后 诸",
+      "speaker": "spk_19",
+      "start": 2055.41,
+      "end": 2059.72,
+      "duration": 4.3,
+      "source": "zhz_54"
+    },
+    {
+      "file": "zhz_40_seg0274.wav",
+      "text": "皇 上 这 是 周 宁 海 的 供 状",
+      "speaker": "spk_19",
+      "start": 1638.35,
+      "end": 1640.81,
+      "duration": 2.46,
+      "source": "zhz_40"
+    }
+  ],
+  "spk_22": [
+    {
+      "file": "zhz_21_seg0023.wav",
+      "text": "浓 妆 梳 洗 迟",
+      "speaker": "spk_22",
+      "start": 98.27,
+      "end": 101.33,
+      "duration": 3.06,
+      "source": "zhz_21"
+    },
+    {
+      "file": "zhz_55_seg0291.wav",
+      "text": "我 父 亲 的 性 命 我 真 是 彝 族 的 活 路 还 有 我 要 的 荣 华 富 贵",
+      "speaker": "spk_22",
+      "start": 1421.52,
+      "end": 1426.34,
+      "duration": 4.82,
+      "source": "zhz_55"
+    },
+    {
+      "file": "zhz_11_seg0200.wav",
+      "text": "给 太 后 请 安 太 后 金 安",
+      "speaker": "spk_22",
+      "start": 1359.97,
+      "end": 1362.63,
+      "duration": 2.66,
+      "source": "zhz_11"
+    },
+    {
+      "file": "zhz_07_seg0012.wav",
+      "text": "如 今 后 宫 还 安 静 吗 一 切 都 好 嗯 就",
+      "speaker": "spk_22",
+      "start": 50.94,
+      "end": 54.87,
+      "duration": 3.92,
+      "source": "zhz_07"
+    },
+    {
+      "file": "zhz_11_seg0049.wav",
+      "text": "不 要 啊 哎",
+      "speaker": "spk_22",
+      "start": 242.4,
+      "end": 244.56,
+      "duration": 2.16,
+      "source": "zhz_11"
+    },
+    {
+      "file": "zhz_29_seg0339.wav",
+      "text": "小 心 啊 小 心 小 心 啊",
+      "speaker": "spk_22",
+      "start": 1973.71,
+      "end": 1976.01,
+      "duration": 2.29,
+      "source": "zhz_29"
+    },
+    {
+      "file": "zhz_64_seg0040.wav",
+      "text": "怎 么 样 啊 这 这 快 坚 持 住 啊 快 点 快 吃 下 去 快",
+      "speaker": "spk_22",
+      "start": 256.6,
+      "end": 261.18,
+      "duration": 4.58,
+      "source": "zhz_64"
+    },
+    {
+      "file": "zhz_21_seg0394.wav",
+      "text": "那 是 皇 上 喜 欢 婉 姐 姐 才 赐 给 她 的 自 然 是 越 贵 重 越 奢 华 越 好 喽 既 然 皇 上 喜 欢 又 有 什 么 不 可 以 呢 皇 上 您 说 是 不 是",
+      "speaker": "spk_22",
+      "start": 2373.23,
+      "end": 2382.74,
+      "duration": 9.51,
+      "source": "zhz_21"
+    },
+    {
+      "file": "zhz_26_seg0140.wav",
+      "text": "也 是 无 意 的 你 以 为 我 会 怕",
+      "speaker": "spk_22",
+      "start": 640.64,
+      "end": 643.08,
+      "duration": 2.44,
+      "source": "zhz_26"
+    },
+    {
+      "file": "zhz_61_seg0035.wav",
+      "text": "胧 月 喜 欢 这 个 小 兔 子 吗 额 娘 我 想 要 小 老 虎 哎 呀 小 老 虎 太 难 捡 了 额 娘 不 会 呀 额 娘 都 会 额 娘 什 么 都 会",
+      "speaker": "spk_22",
+      "start": 203.67,
+      "end": 216.89,
+      "duration": 13.22,
+      "source": "zhz_61"
+    }
+  ],
+  "spk_23": [
+    {
+      "file": "zhz_19_seg0157.wav",
+      "text": "拿 了 沾 了 血 的 衣 裤 出 来",
+      "speaker": "spk_23",
+      "start": 884.98,
+      "end": 887.02,
+      "duration": 2.04,
+      "source": "zhz_19"
+    },
+    {
+      "file": "zhz_01_seg0311.wav",
+      "text": "从 来 英 雄 不 问 出 身 妹 妹 美 貌 又 何 必 妄 自 菲 薄",
+      "speaker": "spk_23",
+      "start": 2112.69,
+      "end": 2117.11,
+      "duration": 4.42,
+      "source": "zhz_01"
+    },
+    {
+      "file": "zhz_52_seg0329.wav",
+      "text": "太 后 吃 了 药 那 臣 妾 先 告 退",
+      "speaker": "spk_23",
+      "start": 1826.36,
+      "end": 1829.4,
+      "duration": 3.04,
+      "source": "zhz_52"
+    },
+    {
+      "file": "zhz_25_seg0109.wav",
+      "text": "我 记 得 在 我 得 病 的 前 两 日 华 妃 身 边 的 周 宁 海 给 我 送 来 一 套 茶 具 说 是 内 务 府 让 他 送 来 替 换 的 我 看 着 那 茶 具 并 非 嫔 妃 该 有 的 规 置",
+      "speaker": "spk_23",
+      "start": 657.14,
+      "end": 671.78,
+      "duration": 14.64,
+      "source": "zhz_25"
+    },
+    {
+      "file": "zhz_56_seg0303.wav",
+      "text": "太 后 怎 么 先 喝 上 药 来 应 该 臣 妾 来 喂 你 才 是 啊 你 来 的 正 好 除 了 你 孙 姑 姑 也 就 你 伺 候 的 睡 觉 挨 家 舒 坦",
+      "speaker": "spk_23",
+      "start": 1824.2,
+      "end": 1834.34,
+      "duration": 10.13,
+      "source": "zhz_56"
+    },
+    {
+      "file": "zhz_09_seg0447.wav",
+      "text": "是 我 自 己 不 小 心 失 足 落 水",
+      "speaker": "spk_23",
+      "start": 2371.48,
+      "end": 2375.68,
+      "duration": 4.2,
+      "source": "zhz_09"
+    },
+    {
+      "file": "zhz_09_seg0002.wav",
+      "text": "嫔 妾 虽 无 才 愚 钝 德 行 却 万 万 不 敢 有 亏 你 虽 德 行 无 亏 难 保 别 人 不 也 是 这 样",
+      "speaker": "spk_23",
+      "start": 25.52,
+      "end": 33.4,
+      "duration": 7.88,
+      "source": "zhz_09"
+    },
+    {
+      "file": "zhz_10_seg0446.wav",
+      "text": "可 是 我 没 有 想 到 这 件 事 情 玲 容 会 那 么 心 狠",
+      "speaker": "spk_23",
+      "start": 2365.47,
+      "end": 2369.62,
+      "duration": 4.16,
+      "source": "zhz_10"
+    },
+    {
+      "file": "zhz_24_seg0411.wav",
+      "text": "如 今 华 妃 正 是 风 光 无 限",
+      "speaker": "spk_23",
+      "start": 2384.37,
+      "end": 2387.49,
+      "duration": 3.12,
+      "source": "zhz_24"
+    },
+    {
+      "file": "zhz_10_seg0452.wav",
+      "text": "只 是 这 件 事 一 开 始 由 你 而 起 玲 容 也 不 曾 牵 涉 其 中",
+      "speaker": "spk_23",
+      "start": 2383.74,
+      "end": 2388.49,
+      "duration": 4.75,
+      "source": "zhz_10"
+    }
+  ],
+  "spk_07": [
+    {
+      "file": "zhz_36_seg0462.wav",
+      "text": "让 惠 贵 人 如 此 生 气 的 无 非 是 他 知 道 是 婉 嫔 让 皇 上 复 位 华 妃 的 事",
+      "speaker": "spk_07",
+      "start": 2370.76,
+      "end": 2376.76,
+      "duration": 6.0,
+      "source": "zhz_36"
+    },
+    {
+      "file": "zhz_28_seg0347.wav",
+      "text": "可 是 姐 姐 胸 闷 喝 桂 枝 汤 是 大 家 都 知 道 的",
+      "speaker": "spk_07",
+      "start": 2247.68,
+      "end": 2250.43,
+      "duration": 2.75,
+      "source": "zhz_28"
+    },
+    {
+      "file": "zhz_61_seg0381.wav",
+      "text": "玲 容 见 惯 了 世 态 炎 凉 习 惯 了 人 心 清 贱",
+      "speaker": "spk_07",
+      "start": 1960.74,
+      "end": 1964.22,
+      "duration": 3.48,
+      "source": "zhz_61"
+    },
+    {
+      "file": "zhz_20_seg0442.wav",
+      "text": "草 头 去 了 哪 里 呀 姐 姐 的 心 跟 着 皇 上 走 了 连 草 头 也 飞 走 了",
+      "speaker": "spk_07",
+      "start": 2286.72,
+      "end": 2291.8,
+      "duration": 5.08,
+      "source": "zhz_20"
+    },
+    {
+      "file": "zhz_35_seg0120.wav",
+      "text": "你 猜 现 在 别 人 是 不 是 都 在 背 后 笑 话 我 小 主 您 多 心 了",
+      "speaker": "spk_07",
+      "start": 689.82,
+      "end": 695.32,
+      "duration": 5.5,
+      "source": "zhz_35"
+    },
+    {
+      "file": "zhz_32_seg0459.wav",
+      "text": "只 是 怕 皇 上 忙 于 正 事 不 得 空 难",
+      "speaker": "spk_07",
+      "start": 2337.81,
+      "end": 2340.76,
+      "duration": 2.96,
+      "source": "zhz_32"
+    },
+    {
+      "file": "zhz_31_seg0108.wav",
+      "text": "如 此 姐 姐 身 上 便 有 用 过 麝 香 的 迹 象",
+      "speaker": "spk_07",
+      "start": 540.14,
+      "end": 543.79,
+      "duration": 3.65,
+      "source": "zhz_31"
+    },
+    {
+      "file": "zhz_32_seg0405.wav",
+      "text": "臣 妾 只 喜 欢 皇 上 一 直 能 高 高 兴 兴 的",
+      "speaker": "spk_07",
+      "start": 2025.28,
+      "end": 2027.69,
+      "duration": 2.42,
+      "source": "zhz_32"
+    },
+    {
+      "file": "zhz_15_seg0198.wav",
+      "text": "这 些 东 西 要 怎 样 才 能 送 到 我 母 亲 手 里",
+      "speaker": "spk_07",
+      "start": 1115.33,
+      "end": 1118.46,
+      "duration": 3.13,
+      "source": "zhz_15"
+    },
+    {
+      "file": "zhz_62_seg0054.wav",
+      "text": "连 怀 孩 子 都 不 能 自 己 拿 主 意",
+      "speaker": "spk_07",
+      "start": 278.49,
+      "end": 280.69,
+      "duration": 2.2,
+      "source": "zhz_62"
+    }
+  ],
+  "spk_11": [
+    {
+      "file": "zhz_35_seg0067.wav",
+      "text": "所 以 也 不 敢 有 所 怨 言",
+      "speaker": "spk_11",
+      "start": 384.02,
+      "end": 386.58,
+      "duration": 2.56,
+      "source": "zhz_35"
+    },
+    {
+      "file": "zhz_30_seg0022.wav",
+      "text": "娘 娘 服 软 并 非 认 错 而 是 做 给 皇 上 看",
+      "speaker": "spk_11",
+      "start": 137.43,
+      "end": 141.03,
+      "duration": 3.6,
+      "source": "zhz_30"
+    },
+    {
+      "file": "zhz_35_seg0113.wav",
+      "text": "贫 前 愿 做 牛 做 马 为 娘 娘 效 劳",
+      "speaker": "spk_11",
+      "start": 657.33,
+      "end": 659.64,
+      "duration": 2.31,
+      "source": "zhz_35"
+    },
+    {
+      "file": "zhz_38_seg0239.wav",
+      "text": "若 是 在 以 前 他 绝 对 不 会 允 许 身 边 有 姿 色 的 侍 女 贸 然 的 接 近 皇 上",
+      "speaker": "spk_11",
+      "start": 1316.54,
+      "end": 1322.63,
+      "duration": 6.09,
+      "source": "zhz_38"
+    },
+    {
+      "file": "zhz_37_seg0053.wav",
+      "text": "说 的 难 听 些 不 过 是 因 利 而 合 的",
+      "speaker": "spk_11",
+      "start": 261.53,
+      "end": 264.19,
+      "duration": 2.66,
+      "source": "zhz_37"
+    },
+    {
+      "file": "zhz_12_seg0327.wav",
+      "text": "我 问 你 你 这 个 月 的 月 信 来 了 没 有",
+      "speaker": "spk_11",
+      "start": 2186.62,
+      "end": 2189.76,
+      "duration": 3.15,
+      "source": "zhz_12"
+    },
+    {
+      "file": "zhz_35_seg0098.wav",
+      "text": "您 未 向 来 出 手 阔 绰 可 总 有 前 因 短 缺 的 时 候",
+      "speaker": "spk_11",
+      "start": 555.97,
+      "end": 559.87,
+      "duration": 3.9,
+      "source": "zhz_35"
+    },
+    {
+      "file": "zhz_41_seg0322.wav",
+      "text": "这 个 年 答 应 也 是 都 到 这 个 地 步 还 这 么 不 安 分 年 答 应 屡 屡 犯 上 皇 上 一 再 宽 让 他 却 变 本 加 厉 不 知 悔 改 实 在 有 负 皇 恩 呢 那 你 说 应 该 怎 么 办 呢",
+      "speaker": "spk_11",
+      "start": 1724.1,
+      "end": 1738.32,
+      "duration": 14.22,
+      "source": "zhz_41"
+    },
+    {
+      "file": "zhz_11_seg0289.wav",
+      "text": "幸 亏 是 遇 到 了 我 若 是 唤 作 旁 人 早 拉 你 去 慎 行 私 了",
+      "speaker": "spk_11",
+      "start": 1868.24,
+      "end": 1873.51,
+      "duration": 5.26,
+      "source": "zhz_11"
+    },
+    {
+      "file": "zhz_13_seg0237.wav",
+      "text": "这 位 姐 妹 无 论 大 家 表 演 什 么 嫔 妾 都 奉 送 一 串 珠 烙 以 表 示 心 意",
+      "speaker": "spk_11",
+      "start": 1483.64,
+      "end": 1489.34,
+      "duration": 5.7,
+      "source": "zhz_13"
+    }
+  ],
+  "spk_16": [
+    {
+      "file": "zhz_52_seg0408.wav",
+      "text": "这 条 命 也 是 不 要 了 的",
+      "speaker": "spk_16",
+      "start": 2281.53,
+      "end": 2283.57,
+      "duration": 2.04,
+      "source": "zhz_52"
+    },
+    {
+      "file": "zhz_10_seg0247.wav",
+      "text": "毒 药 和 诅 咒 并 没 有 害 死 小 主 倒 还 有 活 命 的 理 由",
+      "speaker": "spk_16",
+      "start": 1312.1,
+      "end": 1316.24,
+      "duration": 4.14,
+      "source": "zhz_10"
+    },
+    {
+      "file": "zhz_60_seg0124.wav",
+      "text": "所 谓 上 梁 不 正 下 梁 歪 那 么 熹 妃 娘 娘 身 为 妃 位 小 主 只 是 个 贵 人 总 该 知 道 尊 卑 有 别 吧",
+      "speaker": "spk_16",
+      "start": 707.14,
+      "end": 717.41,
+      "duration": 10.28,
+      "source": "zhz_60"
+    },
+    {
+      "file": "zhz_22_seg0160.wav",
+      "text": "若 论 绣 宫 肯 定 是 人 外 有 人 天 外 有 天 可 是 若 论 心 意 这 件 就 是 最 好 的",
+      "speaker": "spk_16",
+      "start": 878.71,
+      "end": 886.28,
+      "duration": 7.58,
+      "source": "zhz_22"
+    },
+    {
+      "file": "zhz_69_seg0357.wav",
+      "text": "你 这 丫 头 怎 么 回 事 弄 倒 了 架 子 还 不 快 扶 起 来 不 许 哭 二 位 娘 娘 还 在 外 面 呢 免 得 饶 了 娘 娘 了",
+      "speaker": "spk_16",
+      "start": 1976.59,
+      "end": 1983.58,
+      "duration": 6.99,
+      "source": "zhz_69"
+    },
+    {
+      "file": "zhz_16_seg0076.wav",
+      "text": "你 放 下 吧 小 主 去 试 试 吧 这 骡 子 袋 可 珍 贵 的 很 呢",
+      "speaker": "spk_16",
+      "start": 408.12,
+      "end": 412.55,
+      "duration": 4.42,
+      "source": "zhz_16"
+    },
+    {
+      "file": "zhz_20_seg0085.wav",
+      "text": "若 做 成 衣 裳 怕 是 得 明 年 才 能 上 身 了 解 溪 姑 娘 的 意 思 是",
+      "speaker": "spk_16",
+      "start": 481.08,
+      "end": 486.74,
+      "duration": 5.66,
+      "source": "zhz_20"
+    },
+    {
+      "file": "zhz_35_seg0164.wav",
+      "text": "人 说 年 妃 狠 辣 凌 厉 铁 腕 之 下 人 人 退 避",
+      "speaker": "spk_16",
+      "start": 946.01,
+      "end": 949.42,
+      "duration": 3.42,
+      "source": "zhz_35"
+    },
+    {
+      "file": "zhz_57_seg0001.wav",
+      "text": "方 才 皇 上 来 过 了 听 说 娘 娘 去 了 太 后 那 边 请 安 说 晚 上 再 过 来",
+      "speaker": "spk_16",
+      "start": 4.51,
+      "end": 9.11,
+      "duration": 4.6,
+      "source": "zhz_57"
+    },
+    {
+      "file": "zhz_53_seg0152.wav",
+      "text": "这 世 上 的 事 情 就 是 这 样 千 回 百 转 该 是 谁 身 边 的 人",
+      "speaker": "spk_16",
+      "start": 699.22,
+      "end": 703.62,
+      "duration": 4.4,
+      "source": "zhz_53"
+    }
+  ],
+  "spk_05": [
+    {
+      "file": "zhz_08_seg0285.wav",
+      "text": "皇 上 还 在 书 房 批 阅 奏 折 稍 后 就 到 请 小 主 在 这 里 稍 候 片 刻 我 不 用 先 去 潍 房 更 衣 吗",
+      "speaker": "spk_05",
+      "start": 1775.81,
+      "end": 1784.63,
+      "duration": 8.82,
+      "source": "zhz_08"
+    },
+    {
+      "file": "zhz_48_seg0357.wav",
+      "text": "今 天 天 好 你 也 难 得 愿 意 出 来 走 走",
+      "speaker": "spk_05",
+      "start": 2087.51,
+      "end": 2090.07,
+      "duration": 2.56,
+      "source": "zhz_48"
+    },
+    {
+      "file": "zhz_19_seg0074.wav",
+      "text": "啊 那 我 们 呢 你 们 也 别 闹",
+      "speaker": "spk_05",
+      "start": 470.08,
+      "end": 472.22,
+      "duration": 2.14,
+      "source": "zhz_19"
+    },
+    {
+      "file": "zhz_02_seg0299.wav",
+      "text": "那 得 是 义 宫 的 主 位 还 得 是 嫔 位 之 上 才 行",
+      "speaker": "spk_05",
+      "start": 1860.09,
+      "end": 1864.17,
+      "duration": 4.08,
+      "source": "zhz_02"
+    },
+    {
+      "file": "zhz_44_seg0454.wav",
+      "text": "免 得 入 宫 后 受 此 罪 过",
+      "speaker": "spk_05",
+      "start": 2323.09,
+      "end": 2325.59,
+      "duration": 2.5,
+      "source": "zhz_44"
+    },
+    {
+      "file": "zhz_47_seg0115.wav",
+      "text": "可 有 些 事 情 太 后 也 只 能 明 白 不 能 插 手",
+      "speaker": "spk_05",
+      "start": 767.86,
+      "end": 771.23,
+      "duration": 3.37,
+      "source": "zhz_47"
+    },
+    {
+      "file": "zhz_02_seg0330.wav",
+      "text": "皇 后 娘 娘 人 品 贵 重 母 仪 天 下 啊 奴 婢 失 言 了",
+      "speaker": "spk_05",
+      "start": 2057.63,
+      "end": 2063.41,
+      "duration": 5.79,
+      "source": "zhz_02"
+    },
+    {
+      "file": "zhz_02_seg0350.wav",
+      "text": "实 在 没 有 皇 子 公 主 也 好",
+      "speaker": "spk_05",
+      "start": 2200.98,
+      "end": 2203.8,
+      "duration": 2.82,
+      "source": "zhz_02"
+    },
+    {
+      "file": "zhz_02_seg0349.wav",
+      "text": "当 然 这 不 是 最 要 紧 的 最 要 紧 的 还 是 子 嗣",
+      "speaker": "spk_05",
+      "start": 2195.24,
+      "end": 2199.68,
+      "duration": 4.44,
+      "source": "zhz_02"
+    },
+    {
+      "file": "zhz_49_seg0444.wav",
+      "text": "守 得 云 开 见 月 明 我 心 里 十 分 安 慰 啊",
+      "speaker": "spk_05",
+      "start": 1930.63,
+      "end": 1934.29,
+      "duration": 3.66,
+      "source": "zhz_49"
+    }
+  ],
+  "spk_26": [
+    {
+      "file": "zhz_64_seg0346.wav",
+      "text": "好 歹 皇 上 后 代 贵 妃 一 切 丧 仪 皆 按 贵 妃 一 致",
+      "speaker": "spk_26",
+      "start": 1592.79,
+      "end": 1597.32,
+      "duration": 4.53,
+      "source": "zhz_64"
+    },
+    {
+      "file": "zhz_04_seg0380.wav",
+      "text": "都 治 了 两 个 月 了 不 见 好 前 两 日 我 听 温 太 医 的 口 风",
+      "speaker": "spk_26",
+      "start": 2251.37,
+      "end": 2255.95,
+      "duration": 4.58,
+      "source": "zhz_04"
+    },
+    {
+      "file": "zhz_67_seg0389.wav",
+      "text": "男 女 欢 好 以 此 迷 情",
+      "speaker": "spk_26",
+      "start": 2349.66,
+      "end": 2351.8,
+      "duration": 2.14,
+      "source": "zhz_67"
+    },
+    {
+      "file": "zhz_09_seg0273.wav",
+      "text": "简 直 是 糊 涂 啊 你 们 是 沈 贵 人 最 贴 身 服 侍 的 人 岂 又 不 清 楚 的 道 理 奴 才 冤 枉 奴 才 真 的 不 清 楚 小 主 在 千 里 池 喂 鱼 奴 才 去 拿 鱼 食 了 走 到 半 路 才 听 到 说 小 主 落 水 了",
+      "speaker": "spk_26",
+      "start": 1487.92,
+      "end": 1500.9,
+      "duration": 12.98,
+      "source": "zhz_09"
+    },
+    {
+      "file": "zhz_68_seg0273.wav",
+      "text": "这 些 麝 香 香 气 浓 郁 都 是 极 珍 贵 的 当 蚊 子 药 力 极 强",
+      "speaker": "spk_26",
+      "start": 1547.62,
+      "end": 1552.79,
+      "duration": 5.17,
+      "source": "zhz_68"
+    },
+    {
+      "file": "zhz_45_seg0165.wav",
+      "text": "要 你 办 的 事 情 都 办 妥 了 吗 办 妥 了 按 小 主 的 吩 咐 奴 才 刚 听 到 里 头 叫 他 一 语 很 好",
+      "speaker": "spk_26",
+      "start": 929.09,
+      "end": 937.13,
+      "duration": 8.04,
+      "source": "zhz_45"
+    },
+    {
+      "file": "zhz_50_seg0317.wav",
+      "text": "可 连 个 影 子 也 没 看 见 额 娘 也 是",
+      "speaker": "spk_26",
+      "start": 1564.41,
+      "end": 1568.26,
+      "duration": 3.85,
+      "source": "zhz_50"
+    },
+    {
+      "file": "zhz_64_seg0366.wav",
+      "text": "娘 娘 若 没 有 其 他 吩 咐 微 臣 告 退 了 去 吧",
+      "speaker": "spk_26",
+      "start": 1658.55,
+      "end": 1662.59,
+      "duration": 4.04,
+      "source": "zhz_64"
+    },
+    {
+      "file": "zhz_68_seg0253.wav",
+      "text": "此 雾 中 有 极 重 的 麝 香",
+      "speaker": "spk_26",
+      "start": 1444.48,
+      "end": 1446.92,
+      "duration": 2.44,
+      "source": "zhz_68"
+    },
+    {
+      "file": "zhz_04_seg0395.wav",
+      "text": "师 傅 既 得 了 丽 嫔 的 喜 欢 还 叫 师 傅 可 怜 我",
+      "speaker": "spk_26",
+      "start": 2362.56,
+      "end": 2365.74,
+      "duration": 3.17,
+      "source": "zhz_04"
+    }
+  ],
+  "spk_28": [
+    {
+      "file": "zhz_76_seg0455.wav",
+      "text": "那 儿 子 先 行 告 退 改 日 再 来 请 安",
+      "speaker": "spk_28",
+      "start": 2196.3,
+      "end": 2198.74,
+      "duration": 2.44,
+      "source": "zhz_76"
+    },
+    {
+      "file": "zhz_34_seg0384.wav",
+      "text": "外 头 天 寒 让 他 回 去 吧 就 不 必 来 请 安 了 年 妃 娘 娘 说 知 道 皇 上 不 愿 见 所 以 只 求 进 来 远 远 向 皇 上 叩 头 请 安",
+      "speaker": "spk_28",
+      "start": 2081.34,
+      "end": 2090.76,
+      "duration": 9.42,
+      "source": "zhz_34"
+    },
+    {
+      "file": "zhz_48_seg0252.wav",
+      "text": "娘 子 放 心 我 们 王 爷 断 不 敢 轻 薄 娘 子 那 日 娘 子 穿 的 整 整 齐 齐 的",
+      "speaker": "spk_28",
+      "start": 1562.11,
+      "end": 1566.63,
+      "duration": 4.53,
+      "source": "zhz_48"
+    },
+    {
+      "file": "zhz_50_seg0208.wav",
+      "text": "请 娘 子 有 空 的 时 候 互 为 唱 和 阿 静 每 日 会 来 一 次",
+      "speaker": "spk_28",
+      "start": 992.71,
+      "end": 996.28,
+      "duration": 3.58,
+      "source": "zhz_50"
+    },
+    {
+      "file": "zhz_10_seg0433.wav",
+      "text": "回 小 主 的 话 于 是 自 尽 啊",
+      "speaker": "spk_28",
+      "start": 2286.82,
+      "end": 2288.91,
+      "duration": 2.08,
+      "source": "zhz_10"
+    },
+    {
+      "file": "zhz_72_seg0220.wav",
+      "text": "皇 上 这 两 天 怎 么 了 咱 们 动 不 动 就 得 罪 真 不 知 道 怎 么 伺 候 啊",
+      "speaker": "spk_28",
+      "start": 1081.31,
+      "end": 1085.95,
+      "duration": 4.64,
+      "source": "zhz_72"
+    },
+    {
+      "file": "zhz_04_seg0244.wav",
+      "text": "华 妃 娘 娘 这 菊 花",
+      "speaker": "spk_28",
+      "start": 1412.0,
+      "end": 1414.02,
+      "duration": 2.02,
+      "source": "zhz_04"
+    },
+    {
+      "file": "zhz_69_seg0419.wav",
+      "text": "可 是 那 是 三 哥 不 要 的 人 三 哥 不 要 的 人 却 给 我",
+      "speaker": "spk_28",
+      "start": 2316.52,
+      "end": 2320.07,
+      "duration": 3.54,
+      "source": "zhz_69"
+    },
+    {
+      "file": "zhz_75_seg0056.wav",
+      "text": "但 无 论 发 生 什 么 事 儿 子 也 不 会 弃 额 娘 于 不 顾 红 颜 和 灵 汐 还 年 幼",
+      "speaker": "spk_28",
+      "start": 292.84,
+      "end": 298.49,
+      "duration": 5.64,
+      "source": "zhz_75"
+    },
+    {
+      "file": "zhz_05_seg0035.wav",
+      "text": "奴 才 愚 笨 怕 是 伺 候 不 好 小 主",
+      "speaker": "spk_28",
+      "start": 200.82,
+      "end": 203.47,
+      "duration": 2.65,
+      "source": "zhz_05"
+    }
+  ],
+  "spk_21": [
+    {
+      "file": "zhz_41_seg0385.wav",
+      "text": "这 算 什 么 回 去 不 成 便 耍 赖 竟 学 足 了 小 家 子 气",
+      "speaker": "spk_21",
+      "start": 2239.07,
+      "end": 2243.71,
+      "duration": 4.64,
+      "source": "zhz_41"
+    },
+    {
+      "file": "zhz_67_seg0336.wav",
+      "text": "两 位 太 医 一 同 查 看 便 更 妥 当 些",
+      "speaker": "spk_21",
+      "start": 2005.23,
+      "end": 2007.92,
+      "duration": 2.69,
+      "source": "zhz_67"
+    },
+    {
+      "file": "zhz_67_seg0362.wav",
+      "text": "你 怎 么 知 道 本 宫 猜 测 黎 妃 的 孩 子 生 不 下 来",
+      "speaker": "spk_21",
+      "start": 2191.16,
+      "end": 2193.8,
+      "duration": 2.64,
+      "source": "zhz_67"
+    },
+    {
+      "file": "zhz_33_seg0194.wav",
+      "text": "人 人 都 到 果 郡 王 闯 入 翊 坤 宫 救 本 宫",
+      "speaker": "spk_21",
+      "start": 993.21,
+      "end": 995.67,
+      "duration": 2.46,
+      "source": "zhz_33"
+    },
+    {
+      "file": "zhz_55_seg0498.wav",
+      "text": "静 白 是 娘 娘 本 宫 这 般 安 排 可 好",
+      "speaker": "spk_21",
+      "start": 2359.93,
+      "end": 2363.99,
+      "duration": 4.06,
+      "source": "zhz_55"
+    },
+    {
+      "file": "zhz_51_seg0038.wav",
+      "text": "这 位 大 人 以 后 出 门 还 是 小 心 点 为 好",
+      "speaker": "spk_21",
+      "start": 148.96,
+      "end": 151.09,
+      "duration": 2.12,
+      "source": "zhz_51"
+    },
+    {
+      "file": "zhz_75_seg0368.wav",
+      "text": "本 以 为 是 哪 个 宫 的 宫 女 和 太 监 不 解 女",
+      "speaker": "spk_21",
+      "start": 1911.5,
+      "end": 1914.01,
+      "duration": 2.5,
+      "source": "zhz_75"
+    },
+    {
+      "file": "zhz_42_seg0091.wav",
+      "text": "在 温 宜 公 主 食 物 里 下 木 舒 粉 也 是 你 做 的",
+      "speaker": "spk_21",
+      "start": 515.41,
+      "end": 518.43,
+      "duration": 3.02,
+      "source": "zhz_42"
+    },
+    {
+      "file": "zhz_59_seg0143.wav",
+      "text": "如 今 你 身 上 倚 着 本 宫 与 惠 嫔 两 对 母 子 的 安 危 难 免 受 累",
+      "speaker": "spk_21",
+      "start": 939.74,
+      "end": 944.44,
+      "duration": 4.7,
+      "source": "zhz_59"
+    },
+    {
+      "file": "zhz_21_seg0268.wav",
+      "text": "嗯 碎 玉 轩 只 住 着 臣 妾 一 人 怪 冷 清 的 若 能 和 纯 常 在 作 伴 臣 妾 也 很 高 兴 你 要 搬 过 去 自 然 是 好",
+      "speaker": "spk_21",
+      "start": 1547.77,
+      "end": 1557.82,
+      "duration": 10.04,
+      "source": "zhz_21"
+    }
+  ],
+  "spk_12": [
+    {
+      "file": "zhz_42_seg0315.wav",
+      "text": "说 那 药 服 用 之 后 常 有 梦 魇 之 状",
+      "speaker": "spk_12",
+      "start": 1424.72,
+      "end": 1426.91,
+      "duration": 2.19,
+      "source": "zhz_42"
+    },
+    {
+      "file": "zhz_37_seg0171.wav",
+      "text": "这 船 飘 得 远 便 嫁 得 远",
+      "speaker": "spk_12",
+      "start": 791.94,
+      "end": 794.05,
+      "duration": 2.12,
+      "source": "zhz_37"
+    },
+    {
+      "file": "zhz_57_seg0232.wav",
+      "text": "可 你 到 底 是 新 贵 人 的 人 他 也 不 为 你 说 句 话 吗",
+      "speaker": "spk_12",
+      "start": 1282.99,
+      "end": 1286.38,
+      "duration": 3.4,
+      "source": "zhz_57"
+    },
+    {
+      "file": "zhz_55_seg0096.wav",
+      "text": "皇 上 做 主 自 然 是 好 的",
+      "speaker": "spk_12",
+      "start": 564.63,
+      "end": 567.02,
+      "duration": 2.4,
+      "source": "zhz_55"
+    },
+    {
+      "file": "zhz_61_seg0380.wav",
+      "text": "想 必 心 寒 又 胜 天 寒",
+      "speaker": "spk_12",
+      "start": 1956.52,
+      "end": 1958.9,
+      "duration": 2.38,
+      "source": "zhz_61"
+    },
+    {
+      "file": "zhz_12_seg0214.wav",
+      "text": "仔 细 算 来 姐 姐 服 侍 皇 上 也 快 有 一 年 了",
+      "speaker": "spk_12",
+      "start": 1373.04,
+      "end": 1378.1,
+      "duration": 5.05,
+      "source": "zhz_12"
+    },
+    {
+      "file": "zhz_37_seg0118.wav",
+      "text": "姐 姐 不 能 容 忍 的 妹 妹 我 深 受 之 苦 并 不 亚 于 姐 姐",
+      "speaker": "spk_12",
+      "start": 594.65,
+      "end": 598.86,
+      "duration": 4.21,
+      "source": "zhz_37"
+    },
+    {
+      "file": "zhz_16_seg0070.wav",
+      "text": "这 两 日 夜 里 有 点 凉",
+      "speaker": "spk_12",
+      "start": 374.8,
+      "end": 376.96,
+      "duration": 2.17,
+      "source": "zhz_16"
+    },
+    {
+      "file": "zhz_56_seg0121.wav",
+      "text": "无 论 你 的 生 母 是 谁 你 有 多 想 的",
+      "speaker": "spk_12",
+      "start": 749.39,
+      "end": 752.03,
+      "duration": 2.65,
+      "source": "zhz_56"
+    },
+    {
+      "file": "zhz_43_seg0094.wav",
+      "text": "臣 妾 就 能 和 皇 上 对 着 满 院 的 海 棠 饮 酒",
+      "speaker": "spk_12",
+      "start": 510.73,
+      "end": 514.29,
+      "duration": 3.56,
+      "source": "zhz_43"
+    }
+  ],
+  "spk_17": [
+    {
+      "file": "zhz_50_seg0402.wav",
+      "text": "我 在 宫 中 事 纪 三 十 七 日 虽 然 只 听 皇 兄 在 睡 梦 中 含 糊 的 喊 过 一 次 你 的 名 字",
+      "speaker": "spk_17",
+      "start": 2091.31,
+      "end": 2097.15,
+      "duration": 5.84,
+      "source": "zhz_50"
+    },
+    {
+      "file": "zhz_30_seg0332.wav",
+      "text": "是 皇 兄 的 亲 弟 弟 只 是 在 谈 论 家 事",
+      "speaker": "spk_17",
+      "start": 1709.34,
+      "end": 1712.33,
+      "duration": 2.98,
+      "source": "zhz_30"
+    },
+    {
+      "file": "zhz_19_seg0232.wav",
+      "text": "这 已 经 是 今 夏 最 后 一 垄 荷 花 了 小 王 夜 访 藕 花 深 处 方 才 得 了 这 些",
+      "speaker": "spk_17",
+      "start": 1242.33,
+      "end": 1247.3,
+      "duration": 4.96,
+      "source": "zhz_19"
+    },
+    {
+      "file": "zhz_17_seg0147.wav",
+      "text": "我 也 记 不 得 了 告 辞",
+      "speaker": "spk_17",
+      "start": 818.94,
+      "end": 821.18,
+      "duration": 2.25,
+      "source": "zhz_17"
+    },
+    {
+      "file": "zhz_17_seg0090.wav",
+      "text": "如 将 此 粮 液 奉 与 公 筹 交 错 实 在 是 浪 费 了",
+      "speaker": "spk_17",
+      "start": 545.18,
+      "end": 549.83,
+      "duration": 4.64,
+      "source": "zhz_17"
+    },
+    {
+      "file": "zhz_13_seg0367.wav",
+      "text": "皇 兄 怎 么 也 要 看 在 新 嫂 的 面 子 上 放 臣 第 一 马",
+      "speaker": "spk_17",
+      "start": 2339.57,
+      "end": 2342.89,
+      "duration": 3.33,
+      "source": "zhz_13"
+    },
+    {
+      "file": "zhz_46_seg0389.wav",
+      "text": "每 个 月 我 总 会 有 十 来 日 居 住 在 那",
+      "speaker": "spk_17",
+      "start": 2105.49,
+      "end": 2107.64,
+      "duration": 2.15,
+      "source": "zhz_46"
+    },
+    {
+      "file": "zhz_33_seg0209.wav",
+      "text": "刚 刚 去 向 皇 兄 请 安 的 时 候 碰 到 了 一 位 唱 歌 的 安 贵 人 似 曾 相 识",
+      "speaker": "spk_17",
+      "start": 1053.86,
+      "end": 1059.18,
+      "duration": 5.33,
+      "source": "zhz_33"
+    },
+    {
+      "file": "zhz_55_seg0309.wav",
+      "text": "若 非 我 自 幼 熟 悉 水 性 现 在 恐 怕 早 已 沉 尸 河 底",
+      "speaker": "spk_17",
+      "start": 1479.24,
+      "end": 1482.67,
+      "duration": 3.44,
+      "source": "zhz_55"
+    },
+    {
+      "file": "zhz_66_seg0268.wav",
+      "text": "若 是 熹 贵 妃 求 情 皇 上 肯 赐 婚 就 好",
+      "speaker": "spk_17",
+      "start": 1340.38,
+      "end": 1343.08,
+      "duration": 2.69,
+      "source": "zhz_66"
+    }
+  ],
+  "spk_03": [
+    {
+      "file": "zhz_56_seg0254.wav",
+      "text": "你 刚 刚 回 宫 他 可 能 还 不 认 识 你 呢",
+      "speaker": "spk_03",
+      "start": 1591.04,
+      "end": 1594.02,
+      "duration": 2.98,
+      "source": "zhz_56"
+    },
+    {
+      "file": "zhz_64_seg0318.wav",
+      "text": "什 么 事 儿 你 怎 么 连 衣 裳 都 来 不 及 换",
+      "speaker": "spk_03",
+      "start": 1453.05,
+      "end": 1456.11,
+      "duration": 3.06,
+      "source": "zhz_64"
+    },
+    {
+      "file": "zhz_63_seg0272.wav",
+      "text": "皇 上 如 若 不 是 温 太 医 常 去 探 望 熹 贵 妃 可 能 现 在 都 不 在 这 里 了",
+      "speaker": "spk_03",
+      "start": 1945.43,
+      "end": 1952.37,
+      "duration": 6.93,
+      "source": "zhz_63"
+    },
+    {
+      "file": "zhz_59_seg0128.wav",
+      "text": "真 想 把 龙 月 从 我 这 夺 走 吗",
+      "speaker": "spk_03",
+      "start": 854.5,
+      "end": 856.5,
+      "duration": 2.0,
+      "source": "zhz_59"
+    },
+    {
+      "file": "zhz_61_seg0075.wav",
+      "text": "好 在 皇 上 心 里 是 有 妹 妹 的",
+      "speaker": "spk_03",
+      "start": 402.49,
+      "end": 405.56,
+      "duration": 3.06,
+      "source": "zhz_61"
+    },
+    {
+      "file": "zhz_75_seg0403.wav",
+      "text": "现 在 是 留 谁 在 这 儿 服 侍 还 是 咱 们 轮 流 照 顾 着",
+      "speaker": "spk_03",
+      "start": 2107.64,
+      "end": 2112.09,
+      "duration": 4.46,
+      "source": "zhz_75"
+    },
+    {
+      "file": "zhz_64_seg0316.wav",
+      "text": "碧 姐 姐 你 别 跟 着 了 去 伺 候 姐 姐 吧",
+      "speaker": "spk_03",
+      "start": 1432.05,
+      "end": 1435.06,
+      "duration": 3.0,
+      "source": "zhz_64"
+    },
+    {
+      "file": "zhz_46_seg0040.wav",
+      "text": "是 你 体 恤 我 没 有 孩 子 可 以 依 靠",
+      "speaker": "spk_03",
+      "start": 159.28,
+      "end": 161.48,
+      "duration": 2.2,
+      "source": "zhz_46"
+    },
+    {
+      "file": "zhz_34_seg0079.wav",
+      "text": "惠 贵 人 现 在 也 还 没 来 呢",
+      "speaker": "spk_03",
+      "start": 389.76,
+      "end": 392.29,
+      "duration": 2.52,
+      "source": "zhz_34"
+    },
+    {
+      "file": "zhz_15_seg0341.wav",
+      "text": "让 他 允 许 以 后 你 的 饭 师 在 这 里 单 坐",
+      "speaker": "spk_03",
+      "start": 1832.51,
+      "end": 1834.62,
+      "duration": 2.1,
+      "source": "zhz_15"
+    }
+  ],
+  "spk_04": [
+    {
+      "file": "zhz_59_seg0385.wav",
+      "text": "皇 上 可 曾 听 说 过 一 句 话",
+      "speaker": "spk_04",
+      "start": 2314.31,
+      "end": 2316.43,
+      "duration": 2.12,
+      "source": "zhz_59"
+    },
+    {
+      "file": "zhz_26_seg0124.wav",
+      "text": "当 年 你 不 分 青 红 皂 白 把 所 有 的 事 情 都 加 在 我 的 头 上",
+      "speaker": "spk_04",
+      "start": 576.09,
+      "end": 581.01,
+      "duration": 4.92,
+      "source": "zhz_26"
+    },
+    {
+      "file": "zhz_69_seg0367.wav",
+      "text": "因 为 只 有 有 了 孩 子 才 能 让 王 爷 的 心 拘 留 在 妾 身 身 上",
+      "speaker": "spk_04",
+      "start": 2048.14,
+      "end": 2053.11,
+      "duration": 4.96,
+      "source": "zhz_69"
+    },
+    {
+      "file": "zhz_75_seg0284.wav",
+      "text": "对 了 这 两 日 食 气 不 大 好 贵 妃 的 腿 疾 只 怕 是 又 要 犯 了 贵 妃 自 己 要 珍 重 才 是 啊 从 桐 花 台 摔 下 来 腿 疼 成 了 老 毛 病",
+      "speaker": "spk_04",
+      "start": 1482.55,
+      "end": 1493.97,
+      "duration": 11.42,
+      "source": "zhz_75"
+    },
+    {
+      "file": "zhz_17_seg0410.wav",
+      "text": "那 日 啊 我 见 你 带 着 侍 婢 从 畅 春 园 而 来 经 过 我 宫 门 口",
+      "speaker": "spk_04",
+      "start": 2227.14,
+      "end": 2233.0,
+      "duration": 5.86,
+      "source": "zhz_17"
+    },
+    {
+      "file": "zhz_26_seg0013.wav",
+      "text": "华 妃 若 是 猛 虎 曹 芹 墨 就 是 猛 虎 上 的 利 爪",
+      "speaker": "spk_04",
+      "start": 58.26,
+      "end": 62.7,
+      "duration": 4.45,
+      "source": "zhz_26"
+    },
+    {
+      "file": "zhz_17_seg0435.wav",
+      "text": "何 况 本 宫 与 莞 贵 人 不 见 面 才 多 有 裨 益 呀 是",
+      "speaker": "spk_04",
+      "start": 2326.5,
+      "end": 2333.07,
+      "duration": 6.57,
+      "source": "zhz_17"
+    },
+    {
+      "file": "zhz_69_seg0343.wav",
+      "text": "刚 才 过 来 给 皇 上 请 安 顺 便 看 望 娘 娘",
+      "speaker": "spk_04",
+      "start": 1903.3,
+      "end": 1906.61,
+      "duration": 3.31,
+      "source": "zhz_69"
+    },
+    {
+      "file": "zhz_17_seg0190.wav",
+      "text": "嗯 近 日 常 听 到 有 女 子 唱 歌 声 音 宛 若 黄 鹂 那 应 该 是 安 常 在",
+      "speaker": "spk_04",
+      "start": 1068.92,
+      "end": 1076.21,
+      "duration": 7.29,
+      "source": "zhz_17"
+    },
+    {
+      "file": "zhz_70_seg0216.wav",
+      "text": "纯 元 皇 后 奉 旨 入 府 陪 伴 出 有 身 孕 的 妹 妹 谁 知 在 王 府 就 遇 上 了 皇 上",
+      "speaker": "spk_04",
+      "start": 1083.26,
+      "end": 1089.22,
+      "duration": 5.96,
+      "source": "zhz_70"
+    }
+  ]
+}

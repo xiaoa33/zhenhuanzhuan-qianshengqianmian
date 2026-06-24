@@ -1,0 +1,24 @@
+# 甄嬛传 CosyVoice 数据集构建 — 依赖清单
+# 云端一键安装: pip install -r requirements.txt
+
+# 音频处理
+torch>=2.0.0
+torchaudio>=2.0.0
+soundfile>=0.12.0
+librosa>=0.10.0
+pydub>=0.25.0
+
+# ASR / VAD / 说话人识别
+funasr>=1.0.0
+modelscope>=1.10.0
+
+# 数据处理
+numpy>=1.24.0
+pandas>=2.0.0
+tqdm>=4.65.0
+
+# UVR5 人声分离命令行（云端用）
+# audio-separator  # 需要额外安装，取消注释
+
+# CosyVoice（云端 git clone 后安装）
+# 参考: https://github.com/FunAudioLLM/CosyVoice

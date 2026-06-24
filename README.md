@@ -392,15 +392,47 @@ curl -X POST http://localhost:8003/synthesize \
 
 ---
 
+## 六、数据集与模型权重下载
+
+以下数据产物因体积较大，统一上传到百度网盘，不随代码仓库分发：
+
+> **网盘链接**：https://pan.baidu.com/s/1_uacMyl9y5YvrWsh77Mtww?pwd=kcs7
+> **提取码**：kcs7
+
+网盘目录结构：
+
+```
+甄嬛传千声千面_相关数据/
+├── zero_shot_data/           ← 127 条精选参考音频（14 角色子目录）
+├── emotion_examples/         ← 107 条情绪参考音频（4 角色 × 4 情绪）
+├── 甄嬛传14人物数据.tar      ← 清洗后全量数据集（13,605 段 WAV + Kaldi 元数据）
+└── model_weights/            ← （待上传）CosyVoice3-0.5B 微调模型权重
+```
+
+| 数据 | 说明 | 使用方式 |
+|---|---|---|
+| `zero_shot_data/` | 14 角色 Zero-shot 声纹参考音频 | 解压到 `siting_data_prepare/data/zero_shot_data/`，运行 `register_speakers.py` |
+| `emotion_examples/` | 4 角色 × 4 情绪参考音频 | 供 `register_emotion_speakers_v2.py` 注册情绪 Speaker |
+| `甄嬛传14人物数据.tar` | 13,605 段 WAV + Kaldi 格式 | 解压到 `siting_data_prepare/data/`，用于重训练或转其他格式 |
+| `model_weights/`（待上传） | CosyVoice3-0.5B LLM 微调权重 | 解压到 CosyVoice 项目 `exp/zhenhuan/llm/` |
+
+数据处理与模型代码见：
+- [`siting_data_prepare/`](siting_data_prepare/) — 数据 Pipeline（UVR5 → ASR → 聚类 → 清洗 → Kaldi/Parquet）
+- [`siting_cosyvoice_tts/`](siting_cosyvoice_tts/) — CosyVoice 微调、Zero-shot 注册、TTS 服务部署
+
+---
+
 ## 目录结构
 
 ```
 /
-├── yiping-frontend/     # React 前端
-├── yiping-backend/      # FastAPI 主后端
-├── xiao-asr_llm/        # 模块A：ASR + LLM 对话生成
-├── gpt-sovits-service/  # 模块B：GPT-SoVITS 语音合成
-├── SadTalker/           # 数字人（克隆后生成）
+├── yiping-frontend/         # React 前端
+├── yiping-backend/          # FastAPI 主后端
+├── xiao-asr_llm/            # 模块A：ASR + LLM 对话生成
+├── gpt-sovits-service/      # 模块B：GPT-SoVITS 语音合成
+├── siting_data_prepare/     # 数据处理 Pipeline（代码 + 文档）
+├── siting_cosyvoice_tts/    # CosyVoice 微调与部署（代码 + 文档）
+├── SadTalker/               # 数字人（克隆后生成）
 └── docs/
     ├── 后端设计文档.md
     └── 外部模块接口规范.md
