@@ -1,0 +1,10 @@
+{
+  "role": "huafei",
+  "version": "v4",
+  "output_wav": "/mnt/sdb/wangxinran/zhangxiao/template/VIP_BigHW/zhenhuanzhuan-qianshengqianmian/inference_outputs/web/v4/huafei/huafei_v4_3b91459f0f724cd088fd27aacca29931_gpt10_sovits10.wav",
+  "sample_rate": 48000,
+  "text": "哼，一心人？你配吗？皇上心中只有本宫一人！",
+  "reference_audio": "/mnt/sdb/wangxinran/zhangxiao/template/VIP_BigHW/dataset/segments/zhz_29_seg0341.wav",
+  "reference_text": "你若再敢偷懒你的好姐妹就得替你受罚贵妃娘娘",
+  "backend": "persistent"
+}

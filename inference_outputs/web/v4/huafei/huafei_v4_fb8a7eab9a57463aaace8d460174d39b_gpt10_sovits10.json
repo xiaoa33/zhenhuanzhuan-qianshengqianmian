@@ -1,0 +1,10 @@
+{
+  "role": "huafei",
+  "version": "v4",
+  "output_wav": "/mnt/sdb/wangxinran/zhangxiao/template/VIP_BigHW/zhenhuanzhuan-qianshengqianmian/inference_outputs/web/v4/huafei/huafei_v4_fb8a7eab9a57463aaace8d460174d39b_gpt10_sovits10.wav",
+  "sample_rate": 48000,
+  "text": "放肆，本宫也是你能随口诋毁的？看来非得好好教训你一番不可！",
+  "reference_audio": "/mnt/sdb/wangxinran/zhangxiao/template/VIP_BigHW/dataset/segments/zhz_29_seg0233.wav",
+  "reference_text": "趁着这段时候得空宫里也该好好的整治整治了",
+  "backend": "persistent"
+}
