@@ -167,7 +167,7 @@ bash scripts/run_all.sh --auto    # 自动模式（跳过人工暂停）
 ├── zero_shot_data/           ← 127 条精选参考音频（14 角色子目录）
 ├── emotion_examples/         ← 107 条情绪参考音频（华妃/皇后，4 情绪）
 ├── 甄嬛传14人物数据.tar      ← 清洗后全量数据集（13,605 段 WAV + Kaldi 元数据）
-└── model_weights/            ← （待上传）CosyVoice3 微调模型权重
+└── exp_zhenhuan_llm.tar       ← CosyVoice3 微调权重（12GB，epoch 0~4 checkpoint）
 ```
 
 | 数据 | 内容 | 使用方式 |
@@ -175,7 +175,7 @@ bash scripts/run_all.sh --auto    # 自动模式（跳过人工暂停）
 | `zero_shot_data/` | 14 角色 × 3~10 条参考音频，共 127 段 WAV | 解压到 `data/zero_shot_data/`，供 `../siting_cosyvoice_tts/scripts/register_speakers.py` 注册 Zero-shot Speaker |
 | `emotion_examples/` | 华妃 + 皇后 × 4 情绪，共 107 段 WAV | 供 `../siting_cosyvoice_tts/scripts/register_emotion_speakers_v2.py` 注册情绪 Speaker |
 | `甄嬛传14人物数据.tar` | 完整清洗数据（13,605 段 + Kaldi 格式） | 解压到 `data/`，用于重新微调 CosyVoice3、转 GPT-SoVITS/VITS 等格式 |
-| `model_weights/`（待上传） | CosyVoice3-0.5B LLM 微调权重 | 解压到 CosyVoice 项目的 `exp/zhenhuan/llm/` |
+| `exp_zhenhuan_llm.tar` | CosyVoice3-0.5B LLM 微调权重（12GB，epoch 0~4 checkpoint） | 解压到 CosyVoice 项目的 `exp/zhenhuan/llm/` |
 
 zero_shot_data 各角色音频数量：
 

@@ -406,7 +406,7 @@ curl -X POST http://localhost:8003/synthesize \
 ├── zero_shot_data/           ← 127 条精选参考音频（14 角色子目录）
 ├── emotion_examples/         ← 107 条情绪参考音频（4 角色 × 4 情绪）
 ├── 甄嬛传14人物数据.tar      ← 清洗后全量数据集（13,605 段 WAV + Kaldi 元数据）
-└── model_weights/            ← （待上传）CosyVoice3-0.5B 微调模型权重
+└── exp_zhenhuan_llm.tar       ← CosyVoice3-0.5B 微调权重（12GB，epoch 0~4 checkpoint）
 ```
 
 | 数据 | 说明 | 使用方式 |
@@ -414,7 +414,7 @@ curl -X POST http://localhost:8003/synthesize \
 | `zero_shot_data/` | 14 角色 Zero-shot 声纹参考音频 | 解压到 `siting_data_prepare/data/zero_shot_data/`，运行 `register_speakers.py` |
 | `emotion_examples/` | 4 角色 × 4 情绪参考音频 | 供 `register_emotion_speakers_v2.py` 注册情绪 Speaker |
 | `甄嬛传14人物数据.tar` | 13,605 段 WAV + Kaldi 格式 | 解压到 `siting_data_prepare/data/`，用于重训练或转其他格式 |
-| `model_weights/`（待上传） | CosyVoice3-0.5B LLM 微调权重 | 解压到 CosyVoice 项目 `exp/zhenhuan/llm/` |
+| `exp_zhenhuan_llm.tar` | CosyVoice3-0.5B LLM 微调权重（12GB，epoch 0~4 checkpoint） | 解压到 CosyVoice 项目 `exp/zhenhuan/llm/` |
 
 数据处理与模型代码见：
 - [`siting_data_prepare/`](siting_data_prepare/) — 数据 Pipeline（UVR5 → ASR → 聚类 → 清洗 → Kaldi/Parquet）
