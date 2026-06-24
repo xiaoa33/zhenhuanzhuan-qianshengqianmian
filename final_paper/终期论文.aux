@@ -3,72 +3,125 @@
 \providecommand*\HyPL@Entry[1]{}
 \HyPL@Entry{0<</S/D>>}
 \HyPL@Entry{1<</S/R>>}
-\HyPL@Entry{3<</S/D>>}
+\HyPL@Entry{4<</S/D>>}
 \@writefile{toc}{\contentsline {section}{\numberline {1}选题背景}{1}{section.1}\protected@file@percent }
 \newlabel{sec:background}{{1}{1}{选题背景}{section.1}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.1}研究背景}{1}{subsection.1.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.2}课程要求}{1}{subsection.1.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {2}实验目标}{1}{section.2}\protected@file@percent }
 \newlabel{sec:objectives}{{2}{1}{实验目标}{section.2}{}}
+\citation{uvr5}
+\citation{defossez2021demucs}
 \@writefile{toc}{\contentsline {section}{\numberline {3}方法流程}{2}{section.3}\protected@file@percent }
 \newlabel{sec:methods}{{3}{2}{方法流程}{section.3}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.1}数据集构建}{2}{subsection.3.1}\protected@file@percent }
 \newlabel{sec:data}{{3.1}{2}{数据集构建}{subsection.3.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}CosyVoice3 语音克隆}{2}{subsection.3.2}\protected@file@percent }
-\newlabel{sec:cosyvoice}{{3.2}{2}{CosyVoice3 语音克隆}{subsection.3.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}GPT-SoVITS 微调}{2}{subsection.3.3}\protected@file@percent }
-\newlabel{sec:gptsovits}{{3.3}{2}{GPT-SoVITS 微调}{subsection.3.3}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}ASR + LLM 对话模块}{2}{subsection.3.4}\protected@file@percent }
-\newlabel{sec:asr-llm}{{3.4}{2}{ASR + LLM 对话模块}{subsection.3.4}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.5}前端设计与系统集成}{2}{subsection.3.5}\protected@file@percent }
-\newlabel{sec:frontend}{{3.5}{2}{前端设计与系统集成}{subsection.3.5}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.1}整体架构}{2}{subsubsection.3.5.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces 系统整体架构图}}{2}{figure.caption.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.1}数据来源与规模}{2}{subsubsection.3.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.2}数据处理 Pipeline}{2}{subsubsection.3.1.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces 数据处理 Pipeline 流程图}}{2}{figure.caption.2}\protected@file@percent }
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
-\newlabel{fig:system-arch}{{1}{2}{系统整体架构图}{figure.caption.2}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces yiping-backend 接口列表}}{3}{table.caption.3}\protected@file@percent }
-\newlabel{tab:api}{{1}{3}{yiping-backend 接口列表}{table.caption.3}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.2}前端技术栈与视觉设计}{3}{subsubsection.3.5.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.3}页面架构}{3}{subsubsection.3.5.3}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces 前端页面导航流程}}{3}{figure.caption.4}\protected@file@percent }
-\newlabel{fig:page-flow}{{2}{3}{前端页面导航流程}{figure.caption.4}{}}
-\@writefile{toc}{\contentsline {paragraph}{主页（HomePage）}{3}{section*.5}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces 系统主页界面}}{4}{figure.caption.6}\protected@file@percent }
-\newlabel{fig:ui-home}{{3}{4}{系统主页界面}{figure.caption.6}{}}
-\@writefile{toc}{\contentsline {paragraph}{角色选择页（CharacterSelectPage）}{4}{section*.7}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces 角色选择页------现代来客模式}}{4}{figure.caption.8}\protected@file@percent }
-\newlabel{fig:ui-select-modern}{{4}{4}{角色选择页------现代来客模式}{figure.caption.8}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces 角色选择页------宫廷中人模式（左：选择扮演角色，右：选择对话角色）}}{5}{figure.caption.9}\protected@file@percent }
-\newlabel{fig:ui-select-palace}{{5}{5}{角色选择页------宫廷中人模式（左：选择扮演角色，右：选择对话角色）}{figure.caption.9}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces 角色选择页------即兴对话模式（左右各选一位角色 + 场景描述）}}{5}{figure.caption.10}\protected@file@percent }
-\newlabel{fig:ui-select-duet}{{6}{5}{角色选择页------即兴对话模式（左右各选一位角色 + 场景描述）}{figure.caption.10}{}}
-\@writefile{toc}{\contentsline {paragraph}{对话页（ChatPage）}{5}{section*.11}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{即兴对话页（DuetPage）}{6}{section*.12}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.4}流式 TTS 链路}{6}{subsubsection.3.5.4}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces CosyVoice 流式 TTS 播放链路}}{6}{figure.caption.13}\protected@file@percent }
-\newlabel{fig:stream-tts}{{7}{6}{CosyVoice 流式 TTS 播放链路}{figure.caption.13}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4}实验结果}{6}{section.4}\protected@file@percent }
-\newlabel{sec:results}{{4}{6}{实验结果}{section.4}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}数据集构建结果}{6}{subsection.4.1}\protected@file@percent }
-\newlabel{sec:result-data}{{4.1}{6}{数据集构建结果}{subsection.4.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}语音合成效果对比}{6}{subsection.4.2}\protected@file@percent }
-\newlabel{sec:result-tts}{{4.2}{6}{语音合成效果对比}{subsection.4.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}对话系统功能验证}{6}{subsection.4.3}\protected@file@percent }
-\newlabel{sec:result-dialogue}{{4.3}{6}{对话系统功能验证}{subsection.4.3}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5}问题分析}{6}{section.5}\protected@file@percent }
-\newlabel{sec:problems}{{5}{6}{问题分析}{section.5}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}CosyVoice3 微调过拟合}{7}{subsection.5.1}\protected@file@percent }
-\newlabel{sec:prob-overfit}{{5.1}{7}{CosyVoice3 微调过拟合}{subsection.5.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}GPT-SoVITS 训练与调优}{7}{subsection.5.2}\protected@file@percent }
-\newlabel{sec:prob-gptsovits}{{5.2}{7}{GPT-SoVITS 训练与调优}{subsection.5.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}情绪控制与音色保真的矛盾}{7}{subsection.5.3}\protected@file@percent }
-\newlabel{sec:prob-emotion}{{5.3}{7}{情绪控制与音色保真的矛盾}{subsection.5.3}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {6}总结与展望}{7}{section.6}\protected@file@percent }
-\newlabel{sec:conclusion}{{6}{7}{总结与展望}{section.6}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}项目成果}{7}{subsection.6.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.2}未来展望}{7}{subsection.6.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{参考文献}{8}{section*.14}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{小组成员分工}{9}{section*.16}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces 小组成员分工详情}}{9}{table.caption.18}\protected@file@percent }
-\newlabel{tab:team}{{2}{9}{小组成员分工详情}{table.caption.18}{}}
-\gdef \@abspage@last{12}
+\newlabel{fig:data-pipeline}{{1}{2}{数据处理 Pipeline 流程图}{figure.caption.2}{}}
+\citation{funasr}
+\citation{3d-speaker}
+\citation{sklearn}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces KMeans 聚类结果 Top 15（$n=30$，按片段数降序）}}{3}{table.caption.3}\protected@file@percent }
+\newlabel{tab:cluster-top15}{{1}{3}{KMeans 聚类结果 Top 15（$n=30$，按片段数降序）}{table.caption.3}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces 数据清洗各步骤过滤效果}}{4}{table.caption.4}\protected@file@percent }
+\newlabel{tab:data-clean}{{2}{4}{数据清洗各步骤过滤效果}{table.caption.4}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.3}最终数据集统计}{4}{subsubsection.3.1.3}\protected@file@percent }
+\citation{du2025cosyvoice3}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces 14 角色数据分布}}{5}{table.caption.5}\protected@file@percent }
+\newlabel{tab:data-dist}{{3}{5}{14 角色数据分布}{table.caption.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces 14 角色数据分布饼图}}{5}{figure.caption.6}\protected@file@percent }
+\newlabel{fig:pie-dist}{{2}{5}{14 角色数据分布饼图}{figure.caption.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}CosyVoice3 语音克隆}{6}{subsection.3.2}\protected@file@percent }
+\newlabel{sec:cosyvoice}{{3.2}{6}{CosyVoice3 语音克隆}{subsection.3.2}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.1}CosyVoice3-0.5B 微调实验}{6}{subsubsection.3.2.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces CosyVoice3-0.5B SFT 微调配置}}{6}{table.caption.7}\protected@file@percent }
+\newlabel{tab:sft-config}{{4}{6}{CosyVoice3-0.5B SFT 微调配置}{table.caption.7}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces CosyVoice3-0.5B SFT 训练过程记录}}{6}{table.caption.8}\protected@file@percent }
+\newlabel{tab:sft-loss}{{5}{6}{CosyVoice3-0.5B SFT 训练过程记录}{table.caption.8}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces SFT 训练过程 Train Loss 与 CV Loss 曲线}}{7}{figure.caption.9}\protected@file@percent }
+\newlabel{fig:loss-curve}{{3}{7}{SFT 训练过程 Train Loss 与 CV Loss 曲线}{figure.caption.9}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.2}从微调转向 Zero-shot 方案的决策分析}{7}{subsubsection.3.2.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces SFT 微调与 Zero-shot 方案对比}}{8}{table.caption.10}\protected@file@percent }
+\newlabel{tab:sft-vs-zeroshot}{{6}{8}{SFT 微调与 Zero-shot 方案对比}{table.caption.10}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.3}14 角色 Zero-shot Speaker 注册}{8}{subsubsection.3.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.4}情绪 Speaker 创新方案}{8}{subsubsection.3.2.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{问题分析}{8}{section*.11}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{解决方案}{8}{section*.12}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{情绪数据采集}{9}{section*.13}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces 情绪 Speaker 数据采集统计}}{9}{table.caption.14}\protected@file@percent }
+\newlabel{tab:emotion-data}{{7}{9}{情绪 Speaker 数据采集统计}{table.caption.14}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces 情绪 Speaker 路由机制}}{9}{figure.caption.15}\protected@file@percent }
+\newlabel{fig:emotion-route}{{4}{9}{情绪 Speaker 路由机制}{figure.caption.15}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}GPT-SoVITS 微调}{10}{subsection.3.3}\protected@file@percent }
+\newlabel{sec:gptsovits}{{3.3}{10}{GPT-SoVITS 微调}{subsection.3.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}ASR + LLM 对话模块}{10}{subsection.3.4}\protected@file@percent }
+\newlabel{sec:asr-llm}{{3.4}{10}{ASR + LLM 对话模块}{subsection.3.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5}前端设计与系统集成}{10}{subsection.3.5}\protected@file@percent }
+\newlabel{sec:frontend}{{3.5}{10}{前端设计与系统集成}{subsection.3.5}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.1}整体架构}{10}{subsubsection.3.5.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces 系统整体架构图}}{10}{figure.caption.16}\protected@file@percent }
+\newlabel{fig:system-arch}{{5}{10}{系统整体架构图}{figure.caption.16}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces yiping-backend 接口列表}}{11}{table.caption.17}\protected@file@percent }
+\newlabel{tab:api}{{8}{11}{yiping-backend 接口列表}{table.caption.17}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.2}前端技术栈与视觉设计}{11}{subsubsection.3.5.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.3}页面架构}{11}{subsubsection.3.5.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces 前端页面导航流程}}{11}{figure.caption.18}\protected@file@percent }
+\newlabel{fig:page-flow}{{6}{11}{前端页面导航流程}{figure.caption.18}{}}
+\@writefile{toc}{\contentsline {paragraph}{主页（HomePage）}{11}{section*.19}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces 系统主页界面}}{12}{figure.caption.20}\protected@file@percent }
+\newlabel{fig:ui-home}{{7}{12}{系统主页界面}{figure.caption.20}{}}
+\@writefile{toc}{\contentsline {paragraph}{角色选择页（CharacterSelectPage）}{12}{section*.21}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces 角色选择页------现代来客模式}}{12}{figure.caption.22}\protected@file@percent }
+\newlabel{fig:ui-select-modern}{{8}{12}{角色选择页------现代来客模式}{figure.caption.22}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces 角色选择页------宫廷中人模式（左：选择扮演角色，右：选择对话角色）}}{13}{figure.caption.23}\protected@file@percent }
+\newlabel{fig:ui-select-palace}{{9}{13}{角色选择页------宫廷中人模式（左：选择扮演角色，右：选择对话角色）}{figure.caption.23}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces 角色选择页------即兴对话模式（左右各选一位角色 + 场景描述）}}{13}{figure.caption.24}\protected@file@percent }
+\newlabel{fig:ui-select-duet}{{10}{13}{角色选择页------即兴对话模式（左右各选一位角色 + 场景描述）}{figure.caption.24}{}}
+\@writefile{toc}{\contentsline {paragraph}{对话页（ChatPage）}{13}{section*.25}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{即兴对话页（DuetPage）}{14}{section*.26}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.4}流式 TTS 链路}{14}{subsubsection.3.5.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces CosyVoice 流式 TTS 播放链路}}{14}{figure.caption.27}\protected@file@percent }
+\newlabel{fig:stream-tts}{{11}{14}{CosyVoice 流式 TTS 播放链路}{figure.caption.27}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}实验结果}{14}{section.4}\protected@file@percent }
+\newlabel{sec:results}{{4}{14}{实验结果}{section.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}数据集构建结果}{14}{subsection.4.1}\protected@file@percent }
+\newlabel{sec:result-data}{{4.1}{14}{数据集构建结果}{subsection.4.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces 自建数据资产全景：全量训练集 + 精选参考音频 + 情绪音频}}{15}{figure.caption.28}\protected@file@percent }
+\newlabel{fig:data-assets}{{12}{15}{自建数据资产全景：全量训练集 + 精选参考音频 + 情绪音频}{figure.caption.28}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}语音合成效果对比}{15}{subsection.4.2}\protected@file@percent }
+\newlabel{sec:result-tts}{{4.2}{15}{语音合成效果对比}{subsection.4.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}对话系统功能验证}{15}{subsection.4.3}\protected@file@percent }
+\newlabel{sec:result-dialogue}{{4.3}{15}{对话系统功能验证}{subsection.4.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}问题分析}{15}{section.5}\protected@file@percent }
+\newlabel{sec:problems}{{5}{15}{问题分析}{section.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}CosyVoice3 微调过拟合}{16}{subsection.5.1}\protected@file@percent }
+\newlabel{sec:prob-overfit}{{5.1}{16}{CosyVoice3 微调过拟合}{subsection.5.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces 数据不均衡导致过拟合的因果链路}}{16}{figure.caption.29}\protected@file@percent }
+\newlabel{fig:overfit-chain}{{13}{16}{数据不均衡导致过拟合的因果链路}{figure.caption.29}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}GPT-SoVITS 训练与调优}{16}{subsection.5.2}\protected@file@percent }
+\newlabel{sec:prob-gptsovits}{{5.2}{16}{GPT-SoVITS 训练与调优}{subsection.5.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}情绪控制与音色保真的矛盾}{16}{subsection.5.3}\protected@file@percent }
+\newlabel{sec:prob-emotion}{{5.3}{16}{情绪控制与音色保真的矛盾}{subsection.5.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6}总结与展望}{17}{section.6}\protected@file@percent }
+\newlabel{sec:conclusion}{{6}{17}{总结与展望}{section.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}项目成果}{17}{subsection.6.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2}未来展望}{17}{subsection.6.2}\protected@file@percent }
+\bibcite{du2025cosyvoice3}{1}
+\bibcite{funasr}{2}
+\bibcite{3d-speaker}{3}
+\bibcite{uvr5}{4}
+\bibcite{defossez2021demucs}{5}
+\bibcite{sklearn}{6}
+\bibcite{gptsovits}{7}
+\bibcite{faster-whisper}{8}
+\@writefile{toc}{\contentsline {section}{参考文献}{18}{section*.30}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{附录\tmspace  +\thickmuskip {.2777em}A\tmspace  +\thickmuskip {.2777em}\tmspace  +\thickmuskip {.2777em} 网盘数据说明}{19}{section*.32}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {9}{\ignorespaces 网盘数据目录一览}}{19}{table.caption.34}\protected@file@percent }
+\newlabel{tab:pan-data}{{9}{19}{网盘数据目录一览}{table.caption.34}{}}
+\@writefile{toc}{\contentsline {section}{附录\tmspace  +\thickmuskip {.2777em}B\tmspace  +\thickmuskip {.2777em}\tmspace  +\thickmuskip {.2777em} 小组成员分工}{20}{section*.35}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {10}{\ignorespaces 小组成员分工详情}}{20}{table.caption.37}\protected@file@percent }
+\newlabel{tab:team}{{10}{20}{小组成员分工详情}{table.caption.37}{}}
+\gdef \@abspage@last{24}
