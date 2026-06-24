@@ -1,0 +1,31 @@
+\contentsline {section}{\numberline {1}选题背景}{1}{section.1}%
+\contentsline {subsection}{\numberline {1.1}研究背景}{1}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}课程要求}{1}{subsection.1.2}%
+\contentsline {section}{\numberline {2}实验目标}{1}{section.2}%
+\contentsline {section}{\numberline {3}方法流程}{2}{section.3}%
+\contentsline {subsection}{\numberline {3.1}数据集构建}{2}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}CosyVoice3 语音克隆}{2}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}GPT-SoVITS 微调}{2}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}ASR + LLM 对话模块}{2}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}前端设计与系统集成}{2}{subsection.3.5}%
+\contentsline {subsubsection}{\numberline {3.5.1}整体架构}{2}{subsubsection.3.5.1}%
+\contentsline {subsubsection}{\numberline {3.5.2}前端技术栈与视觉设计}{3}{subsubsection.3.5.2}%
+\contentsline {subsubsection}{\numberline {3.5.3}页面架构}{3}{subsubsection.3.5.3}%
+\contentsline {paragraph}{主页（HomePage）}{3}{section*.5}%
+\contentsline {paragraph}{角色选择页（CharacterSelectPage）}{4}{section*.7}%
+\contentsline {paragraph}{对话页（ChatPage）}{5}{section*.11}%
+\contentsline {paragraph}{即兴对话页（DuetPage）}{6}{section*.12}%
+\contentsline {subsubsection}{\numberline {3.5.4}流式 TTS 链路}{6}{subsubsection.3.5.4}%
+\contentsline {section}{\numberline {4}实验结果}{6}{section.4}%
+\contentsline {subsection}{\numberline {4.1}数据集构建结果}{6}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}语音合成效果对比}{6}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}对话系统功能验证}{6}{subsection.4.3}%
+\contentsline {section}{\numberline {5}问题分析}{6}{section.5}%
+\contentsline {subsection}{\numberline {5.1}CosyVoice3 微调过拟合}{7}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}GPT-SoVITS 训练与调优}{7}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}情绪控制与音色保真的矛盾}{7}{subsection.5.3}%
+\contentsline {section}{\numberline {6}总结与展望}{7}{section.6}%
+\contentsline {subsection}{\numberline {6.1}项目成果}{7}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}未来展望}{7}{subsection.6.2}%
+\contentsline {section}{参考文献}{8}{section*.14}%
+\contentsline {section}{小组成员分工}{9}{section*.16}%
