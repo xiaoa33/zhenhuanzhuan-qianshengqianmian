@@ -73,12 +73,50 @@
     backgrounds,
     calc
 }
-% 成员C专属配色（红色系）
+% 成员A专属配色（蓝色系——李思婷：数据处理与CosyVoice）
+\definecolor{Alight}{RGB}{214, 234, 248}
+\definecolor{Amid}{RGB}{41, 128, 185}
+\definecolor{Adark}{RGB}{27, 79, 114}
+\definecolor{Agray}{RGB}{235, 242, 250}
+% 成员B专属配色（绿色系——张笑：GPT-SoVITS与ASR+LLM）
+\definecolor{Blight}{RGB}{220, 245, 225}
+\definecolor{Bmid}{RGB}{39, 174, 96}
+\definecolor{Bdark}{RGB}{25, 120, 65}
+\definecolor{Bgray}{RGB}{245, 247, 245}
+% 成员C专属配色（红色系——黄艺平：前端设计与系统集成）
 \definecolor{Clight}{RGB}{253, 236, 234}
 \definecolor{Cmid}{RGB}{192, 57, 43}
 \definecolor{Cdark}{RGB}{145, 35, 28}
 \definecolor{Cgray}{RGB}{253, 248, 247}
-% 成员C流程图样式
+% 成员A流程图样式（蓝色系）
+\tikzset{
+    aproc/.style={
+        rectangle, rounded corners=6pt, draw=Amid, line width=1.0pt,
+        fill=white, text=black, minimum width=2.6cm, minimum height=0.9cm,
+        align=center, font=\footnotesize\sffamily, inner sep=6pt
+    },
+    aterm/.style={
+        rectangle, rounded corners=8pt, draw=Adark, line width=1.2pt,
+        fill=Amid, text=white, minimum width=2.6cm, minimum height=0.95cm,
+        align=center, font=\footnotesize\bfseries\sffamily, inner sep=6pt
+    },
+    aarr/.style={-{Stealth[length=7pt, width=5pt]}, line width=0.9pt, Adark},
+}
+% 成员B流程图样式（绿色系）
+\tikzset{
+    bproc/.style={
+        rectangle, rounded corners=6pt, draw=Bmid, line width=1.0pt,
+        fill=white, text=black, minimum width=2.6cm, minimum height=0.9cm,
+        align=center, font=\footnotesize\sffamily, inner sep=6pt
+    },
+    bterm/.style={
+        rectangle, rounded corners=8pt, draw=Bdark, line width=1.2pt,
+        fill=Bmid, text=white, minimum width=2.6cm, minimum height=0.95cm,
+        align=center, font=\footnotesize\bfseries\sffamily, inner sep=6pt
+    },
+    barr/.style={-{Stealth[length=7pt, width=5pt]}, line width=0.9pt, Bdark},
+}
+% 成员C流程图样式（红色系）
 \tikzset{
     cproc/.style={
         rectangle, rounded corners=6pt, draw=Cmid, line width=1.0pt,
