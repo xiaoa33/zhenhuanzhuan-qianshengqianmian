@@ -8,6 +8,6 @@ uvicorn main:app --reload --port 8000
 cd yiping-frontend
 npm run dev
 4.latex常用指令：
-cd final_report\final_paper
+cd final_paper
 xelatex -interaction=nonstopmode "终期论文.tex"
 可以画一个系统整体架构图
