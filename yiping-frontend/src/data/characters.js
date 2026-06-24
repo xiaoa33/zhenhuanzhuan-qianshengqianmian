@@ -11,7 +11,7 @@ export const characters = [
     name: '华妃·年世兰',
     quote: '贱人就是矫情',
     photo: '/resource/角色剧照/华妃剧照.jpg',
-    bg: '/resource/背景图/华妃背景.jpg',
+    bg: '/resource/背景图/华妃、曹贵人背景.jpg',
   },
   {
     id: 'yixiu',
@@ -82,5 +82,19 @@ export const characters = [
     quote: '嬛儿，我不愿让你为难',
     photo: '/resource/角色剧照/果郡王剧照.jpg',
     bg: '/resource/背景图/果郡王背景.jpg',
+  },
+  {
+    id: 'taihou',
+    name: '太后',
+    quote: '哀家自有主张',
+    photo: '/resource/角色剧照/太后剧照.jpg',
+    bg: '/resource/背景图/太后背景.jpg',
+  },
+  {
+    id: 'caoguiren',
+    name: '曹贵人',
+    quote: '娘娘，嫔妾都是为了您',
+    photo: '/resource/角色剧照/曹贵人剧照.jpg',
+    bg: '/resource/背景图/华妃、曹贵人背景.jpg',
   },
 ]

@@ -137,13 +137,13 @@
 /* ── 角色卡片网格 ── */
 .char-grid {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(7, 1fr);
   gap: 1rem;
   width: 100%;
 }
 
 .char-grid--role {
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(7, 1fr);
 }
 
 /* ── 单个角色卡片 ── */
