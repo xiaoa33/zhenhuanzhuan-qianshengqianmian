@@ -15,13 +15,19 @@ from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 
 
-APP_ROOT = Path(__file__).resolve().parents[1]
-VIP_ROOT = APP_ROOT.parent
-GSV_ROOT = Path(os.getenv("GSV_ROOT", VIP_ROOT / "GPT-SoVITS")).resolve()
-GSV_PYTHON = os.getenv("GSV_PYTHON", "/mnt/sdc/zhangyuxuan/envs/zx_VIP/bin/python")
-OUTPUT_DIR = Path(os.getenv("GSV_OUTPUT_DIR", VIP_ROOT / "inference_outputs" / "web")).resolve()
-EMOTION_SAMPLE_ROOT = Path(os.getenv("GSV_EMOTION_SAMPLE_ROOT", APP_ROOT / "emotion_samples")).resolve()
-LIST_DIR = Path(os.getenv("GSV_LIST_DIR", VIP_ROOT / "dataset" / "gpt_sovits_lists" / "by_role")).resolve()
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+SERVICE_ROOT = Path(__file__).resolve().parent
+GSV_ROOT = Path(os.getenv("GSV_ROOT", PROJECT_ROOT / "GPT-SoVITS")).resolve()
+GSV_PYTHON = os.getenv("GSV_PYTHON", sys.executable)
+OUTPUT_DIR = Path(os.getenv("GSV_OUTPUT_DIR", PROJECT_ROOT / "inference_outputs" / "web")).resolve()
+EMOTION_SAMPLE_ROOT = Path(os.getenv("GSV_EMOTION_SAMPLE_ROOT", PROJECT_ROOT / "emotion_samples")).resolve()
+LIST_DIR = Path(
+    os.getenv(
+        "GSV_LIST_DIR",
+        PROJECT_ROOT / "gpt_sovits finetune_data" / "gpt_sovits_lists" / "by_role",
+    )
+).resolve()
+INFERENCE_SCRIPT = SERVICE_ROOT / "fine_tuning_scripts" / "run_role_inference.py"
 
 DEFAULT_VERSION = os.getenv("GSV_VERSION", "v4")
 FALLBACK_VERSION = os.getenv("GSV_FALLBACK_VERSION", "v2ProPlus")
@@ -161,7 +167,11 @@ async def _run_inference(
 ) -> Path:
     cmd = [
         GSV_PYTHON,
-        "scripts/run_role_inference.py",
+        str(INFERENCE_SCRIPT),
+        "--gsv-root",
+        str(GSV_ROOT),
+        "--list-dir",
+        str(LIST_DIR),
         "--roles",
         role,
         "--version",

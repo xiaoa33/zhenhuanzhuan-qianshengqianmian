@@ -69,8 +69,9 @@ VERSION_CONFIGS: dict[str, VersionConfig] = {
 
 
 def parse_args() -> argparse.Namespace:
-    default_root = Path(__file__).resolve().parents[1]
-    default_list_dir = default_root.parent / "dataset" / "gpt_sovits_lists" / "by_role"
+    project_root = Path(__file__).resolve().parents[2]
+    default_root = project_root / "GPT-SoVITS"
+    default_list_dir = project_root / "gpt_sovits finetune_data" / "gpt_sovits_lists" / "by_role"
 
     parser = argparse.ArgumentParser(
         description="Batch fine-tune GPT-SoVITS by_role/*.list files for v4 and v2ProPlus."

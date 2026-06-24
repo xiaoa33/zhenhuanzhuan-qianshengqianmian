@@ -25,7 +25,7 @@ ASR + LLM 模块，监听 `8001`，供 `yiping-backend` 调用。
 ## 启动
 
 ```bash
-cd zhenhuanzhuan-qianshengqianmian/xiao-asr_llm
+cd xiao-asr_llm
 pip install -r requirements.txt
 uvicorn main:app --reload --port 8001
 ```

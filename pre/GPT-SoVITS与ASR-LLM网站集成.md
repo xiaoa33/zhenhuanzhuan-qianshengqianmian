@@ -282,9 +282,9 @@ GPT-SoVITS 微调使用已经清洗和角色标注后的剧集语音片段。数
 按角色拆分后保存为：
 
 ```text
-dataset/gpt_sovits_lists/by_role/{role}_all.list
-dataset/gpt_sovits_lists/by_role/{role}_train.list
-dataset/gpt_sovits_lists/by_role/{role}_dev.list
+gpt_sovits finetune_data/gpt_sovits_lists/by_role/{role}_all.list
+gpt_sovits finetune_data/gpt_sovits_lists/by_role/{role}_train.list
+gpt_sovits finetune_data/gpt_sovits_lists/by_role/{role}_dev.list
 ```
 
 覆盖 14 个角色：

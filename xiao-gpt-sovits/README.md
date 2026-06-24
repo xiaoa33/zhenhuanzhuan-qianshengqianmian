@@ -7,7 +7,7 @@
 稳定测试模式：
 
 ```bash
-cd zhenhuanzhuan-qianshengqianmian/gpt-sovits-service
+cd xiao-gpt-sovits
 pip install -r requirements.txt
 uvicorn main:app --reload --port 8004
 ```
@@ -15,25 +15,26 @@ uvicorn main:app --reload --port 8004
 实时演示推荐模式：
 
 ```bash
-cd /mnt/sdb/wangxinran/zhangxiao/template/VIP_BigHW/zhenhuanzhuan-qianshengqianmian/gpt-sovits-service
+cd xiao-gpt-sovits
 GSV_BACKEND=persistent GSV_CACHE_SIZE=1 \
-  /mnt/sdc/zhangyuxuan/envs/zx_VIP/bin/python -m uvicorn main:app --port 8004
+  python -m uvicorn main:app --port 8004
 ```
 
 `persistent` 模式会按 `(role, version)` 缓存 GPT-SoVITS 的 `TTS` 对象。第一次请求某个角色仍需加载模型，之后同一角色只执行推理，不再每轮重新加载权重。
 
-服务会调用已有 GPT-SoVITS 推理脚本：
+服务默认调用项目根目录内的 GPT-SoVITS 推理环境：
 
 ```bash
-/mnt/sdc/zhangyuxuan/envs/zx_VIP/bin/python \
-  /mnt/sdb/wangxinran/zhangxiao/template/VIP_BigHW/GPT-SoVITS/scripts/run_role_inference.py
+GSV_ROOT=../GPT-SoVITS
+GSV_LIST_DIR="../gpt_sovits finetune_data/gpt_sovits_lists/by_role"
 ```
 
 ## 关键环境变量
 
 ```env
-GSV_ROOT=/mnt/sdb/wangxinran/zhangxiao/template/VIP_BigHW/GPT-SoVITS
-GSV_PYTHON=/mnt/sdc/zhangyuxuan/envs/zx_VIP/bin/python
+GSV_ROOT=../GPT-SoVITS
+GSV_PYTHON=python
+GSV_LIST_DIR="../gpt_sovits finetune_data/gpt_sovits_lists/by_role"
 GSV_VERSION=v4
 GSV_FALLBACK_VERSION=v2ProPlus
 GSV_GPT_EPOCH=10
@@ -50,8 +51,8 @@ GSV_REF_MAX_SEC=10.0
 
 ## 参考音频选择
 
-- `zhenhuan` 和 `huangshang`：优先从 `zhenhuanzhuan-qianshengqianmian/emotion_samples/{role}/{emotion}/` 随机取一条。
-- 其他角色：从 `dataset/gpt_sovits_lists/by_role/{role}_all.list` 中随机取一条可读音频。
+- `zhenhuan` 和 `huangshang`：优先从 `../emotion_samples/{role}/{emotion}/` 随机取一条。
+- 其他角色：从 `../gpt_sovits finetune_data/gpt_sovits_lists/by_role/{role}_all.list` 中随机取一条可读音频。
 - 情绪样本的参考文本会按 wav 文件名去角色 list 中查找。
 - 参考音频默认只选择 `3-10` 秒范围内的音频。GPT-SoVITS 内部也会校验这个范围，不建议放宽。
 

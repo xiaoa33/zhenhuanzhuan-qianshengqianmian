@@ -13,6 +13,7 @@ import json
 import os
 import random
 import re
+import sys
 from datetime import datetime
 from pathlib import Path
 
@@ -25,6 +26,11 @@ import soundfile as sf
 import torch
 import torchaudio
 import yaml
+
+DEFAULT_PROJECT_ROOT = Path(__file__).resolve().parents[2]
+DEFAULT_GSV_ROOT = Path(os.getenv("GSV_ROOT", DEFAULT_PROJECT_ROOT / "GPT-SoVITS")).resolve()
+if str(DEFAULT_GSV_ROOT) not in sys.path:
+    sys.path.insert(0, str(DEFAULT_GSV_ROOT))
 
 from GPT_SoVITS.TTS_infer_pack.TTS import TTS, TTS_Config
 
@@ -44,9 +50,12 @@ def patch_torchaudio_load() -> None:
 
 
 def parse_args() -> argparse.Namespace:
-    root = Path(__file__).resolve().parents[1]
+    project_root = DEFAULT_PROJECT_ROOT
+    root = DEFAULT_GSV_ROOT
+    list_dir = project_root / "gpt_sovits finetune_data" / "gpt_sovits_lists" / "by_role"
     parser = argparse.ArgumentParser(description="Run GPT-SoVITS inference for role fine-tuned models.")
     parser.add_argument("--gsv-root", type=Path, default=root)
+    parser.add_argument("--list-dir", type=Path, default=list_dir, help="Directory containing *_all.list files.")
     parser.add_argument("--roles", nargs="+", help="Role slugs. Default: all *_all.list roles.")
     parser.add_argument("--version", default="v4", choices=["v4", "v2ProPlus"])
     parser.add_argument("--gpt-epoch", type=int, help="Use a specific GPT epoch, for example 5, 10, or 15.")
@@ -58,7 +67,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--ref-text", help="Reference text matching --ref-audio.")
     parser.add_argument("--random-ref", action="store_true", help="Randomly choose one valid reference audio per role.")
     parser.add_argument("--ref-seed", type=int, help="Seed for --random-ref. Omit for non-deterministic random choice.")
-    parser.add_argument("--output-dir", type=Path, default=root.parent / "inference_outputs")
+    parser.add_argument("--output-dir", type=Path, default=project_root / "inference_outputs")
     parser.add_argument("--output-suffix", default="test")
     parser.add_argument("--timestamp-output", action="store_true", help="Append a timestamp to the output suffix.")
     parser.add_argument("--device", default="auto", help='Use "auto", "cuda", "cuda:0", or "cpu".')
@@ -143,8 +152,8 @@ def find_weights(
     return gpt, sovits
 
 
-def role_list_path(root: Path, role: str) -> Path:
-    path = root.parent / "dataset" / "gpt_sovits_lists" / "by_role" / f"{role}_all.list"
+def role_list_path(list_dir: Path, role: str) -> Path:
+    path = list_dir / f"{role}_all.list"
     if not path.exists():
         raise FileNotFoundError(path)
     return path
@@ -238,7 +247,7 @@ def infer_one(args: argparse.Namespace, role: str, rng: random.Random | None = N
         ref_sec = float(sf.info(str(ref_audio)).duration)
     else:
         ref_audio, prompt_text, ref_sec = choose_reference(
-            role_list_path(root, role),
+            role_list_path(args.list_dir, role),
             min_sec=args.min_ref_sec,
             max_sec=args.max_ref_sec,
             random_ref=args.random_ref,
@@ -328,8 +337,9 @@ def infer_one(args: argparse.Namespace, role: str, rng: random.Random | None = N
 def main() -> None:
     patch_torchaudio_load()
     args = parse_args()
-    list_dir = args.gsv_root.resolve().parent / "dataset" / "gpt_sovits_lists" / "by_role"
-    roles = discover_roles(list_dir, args.roles)
+    args.gsv_root = args.gsv_root.resolve()
+    args.list_dir = args.list_dir.resolve()
+    roles = discover_roles(args.list_dir, args.roles)
     rng = random.Random(args.ref_seed) if args.ref_seed is not None else random.Random()
     outputs = [infer_one(args, role, rng=rng) for role in roles]
     print("\nGenerated files:")

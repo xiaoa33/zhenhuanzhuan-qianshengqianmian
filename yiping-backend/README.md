@@ -84,7 +84,7 @@ uvicorn main:app --reload --port 8000
    - `{ "audio_base64": "...", "format": "wav" }`
 4. 若响应格式不同，在 `call_synthesize()` 函数中修改解析逻辑
 
-GPT-SoVITS 本地服务位于 `../gpt-sovits-service`，启动后同样监听 `8002` 并返回 `{ "audio_path": "..." }`。
+GPT-SoVITS 本地服务位于 `../xiao-gpt-sovits`，启动后监听 `8004` 并返回 `{ "audio_path": "..." }`。
 
 ### 接入 SadTalker（/digital-human）
 
@@ -126,7 +126,7 @@ GPT-SoVITS 本地服务位于 `../gpt-sovits-service`，启动后同样监听 `8
 3. 在 `.env` 中设置：
    ```env
    SADTALKER_PATH=../SadTalker/SadTalker
-   SADTALKER_PYTHON=D:/path/to/SadTalker/SadTalker/.venv/Scripts/python.exe
+   SADTALKER_PYTHON=<SadTalker项目路径>/.venv/Scripts/python.exe
    ```
 4. 确认 `resource/portraits/` 下有对应角色的参考图
 4. `/digital-human` 接口无需 `USE_MOCK` 控制，始终调用 SadTalker；失败时自动返回 `{"video_url": null}`，前端降级显示静态剧照

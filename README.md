@@ -186,7 +186,7 @@ SadTalker/SadTalker/
 
 ```env
 SADTALKER_PATH=../SadTalker/SadTalker
-SADTALKER_PYTHON=D:/path/to/SadTalker/SadTalker/.venv/Scripts/python.exe
+SADTALKER_PYTHON=<SadTalker项目路径>/.venv/Scripts/python.exe
 ```
 
 `SADTALKER_PYTHON` 填 SadTalker 专属 Python 3.8 虚拟环境的解释器绝对路径，避免与主后端 Python 环境冲突。
@@ -225,10 +225,9 @@ STATIC_BASE_URL=http://localhost:8003
 
 ### 0. 可选：下载 ASR 模型
 
-如果服务器不能在线下载模型，先手动下载 faster-whisper 模型：
+如果服务器不能在线下载模型，先在项目根目录手动下载 faster-whisper 模型：
 
 ```bash
-cd /mnt/sdb/wangxinran/zhangxiao/template/VIP_BigHW
 mkdir -p models
 
 hf download Systran/faster-whisper-small \
@@ -238,7 +237,7 @@ hf download Systran/faster-whisper-small \
 然后在 `xiao-asr_llm/.env` 中配置：
 
 ```env
-ASR_MODEL=/mnt/sdb/wangxinran/zhangxiao/template/VIP_BigHW/models/faster-whisper-small
+ASR_MODEL=../models/faster-whisper-small
 ASR_DEVICE=cuda
 ASR_COMPUTE_TYPE=int8_float16
 ASR_LANGUAGE=zh
@@ -247,7 +246,7 @@ ASR_LANGUAGE=zh
 ### 1. 启动 ASR + LLM 模块
 
 ```bash
-cd /mnt/sdb/wangxinran/zhangxiao/template/VIP_BigHW/zhenhuanzhuan-qianshengqianmian/xiao-asr_llm
+cd xiao-asr_llm
 uvicorn main:app --reload --host 0.0.0.0 --port 8001
 ```
 
@@ -256,10 +255,10 @@ uvicorn main:app --reload --host 0.0.0.0 --port 8001
 推荐使用常驻缓存模式，避免每轮重新加载权重：
 
 ```bash
-cd /mnt/sdb/wangxinran/zhangxiao/template/VIP_BigHW/zhenhuanzhuan-qianshengqianmian/gpt-sovits-service
+cd xiao-gpt-sovits
 
 GSV_BACKEND=persistent GSV_CACHE_SIZE=1 \
-  /mnt/sdc/zhangyuxuan/envs/zx_VIP/bin/python -m uvicorn main:app --host 0.0.0.0 --port 8004
+  python -m uvicorn main:app --host 0.0.0.0 --port 8004
 ```
 
 ### 3. 启动或接入 CosyVoice
@@ -287,14 +286,14 @@ COSYVOICE_SERVICE_URL=http://localhost:8002
 本机调试：
 
 ```bash
-cd /mnt/sdb/wangxinran/zhangxiao/template/VIP_BigHW/zhenhuanzhuan-qianshengqianmian/yiping-backend
+cd yiping-backend
 uvicorn main:app --reload --port 8003
 ```
 
 多人异地联调：
 
 ```bash
-cd /mnt/sdb/wangxinran/zhangxiao/template/VIP_BigHW/zhenhuanzhuan-qianshengqianmian/yiping-backend
+cd yiping-backend
 uvicorn main:app --host 0.0.0.0 --port 8003
 ```
 
@@ -316,7 +315,7 @@ CORS_ORIGINS=*
 本机调试：
 
 ```bash
-cd /mnt/sdb/wangxinran/zhangxiao/template/VIP_BigHW/zhenhuanzhuan-qianshengqianmian/yiping-frontend
+cd yiping-frontend
 npm install
 npm run dev
 ```
@@ -324,7 +323,7 @@ npm run dev
 多人异地联调：
 
 ```bash
-cd /mnt/sdb/wangxinran/zhangxiao/template/VIP_BigHW/zhenhuanzhuan-qianshengqianmian/yiping-frontend
+cd yiping-frontend
 npm run dev -- --host 0.0.0.0
 ```
 
@@ -406,6 +405,8 @@ curl -X POST http://localhost:8003/synthesize \
 ├── zero_shot_data/           ← 127 条精选参考音频（14 角色子目录）
 ├── emotion_examples/         ← 107 条情绪参考音频（4 角色 × 4 情绪）
 ├── 甄嬛传14人物数据.tar      ← 清洗后全量数据集（13,605 段 WAV + Kaldi 元数据）
+├── gpt_sovits finetune_data/ ← GPT-SoVITS 微调数据与脚本索引
+├── exp_GPTSoVITS_weights/    ← GPT-SoVITS 14 角色微调权重
 └── exp_zhenhuan_llm.tar       ← CosyVoice3-0.5B 微调权重（12GB，epoch 0~4 checkpoint）
 ```
 
@@ -414,11 +415,80 @@ curl -X POST http://localhost:8003/synthesize \
 | `zero_shot_data/` | 14 角色 Zero-shot 声纹参考音频 | 解压到 `siting_data_prepare/data/zero_shot_data/`，运行 `register_speakers.py` |
 | `emotion_examples/` | 4 角色 × 4 情绪参考音频 | 供 `register_emotion_speakers_v2.py` 注册情绪 Speaker |
 | `甄嬛传14人物数据.tar` | 13,605 段 WAV + Kaldi 格式 | 解压到 `siting_data_prepare/data/`，用于重训练或转其他格式 |
+| `gpt_sovits finetune_data/gpt_sovits_lists/` | GPT-SoVITS 微调清单，包含 `all.list`、`all_train.list`、`all_dev.list`、`by_role/*_{all,train,dev}.list`、`summary.tsv`、`manifest.json` | 放到项目根目录的 `gpt_sovits finetune_data/gpt_sovits_lists/`；`xiao-gpt-sovits` 默认读取 `../gpt_sovits finetune_data/gpt_sovits_lists/by_role` |
+| `gpt_sovits finetune_data/scripts/` | GPT-SoVITS 批量微调与离线推理脚本备份 | 代码仓库中已整理到 `xiao-gpt-sovits/fine_tuning_scripts/`，重训时优先使用仓库内版本 |
+| `exp_GPTSoVITS_weights/` | GPT-SoVITS 14 角色微调权重，包含 `v4` 和 `v2ProPlus` 两套 GPT/SoVITS 权重 | 将 4 个子目录放到项目根目录的 `GPT-SoVITS/` 下，使其成为 `GPT-SoVITS/GPT_weights_v4/`、`GPT-SoVITS/SoVITS_weights_v4/` 等目录 |
 | `exp_zhenhuan_llm.tar` | CosyVoice3-0.5B LLM 微调权重（12GB，epoch 0~4 checkpoint） | 解压到 CosyVoice 项目 `exp/zhenhuan/llm/` |
+
+GPT-SoVITS 推理服务目录为：
+
+```text
+xiao-gpt-sovits/
+```
+
+服务默认约定：
+
+```text
+GSV_ROOT=../GPT-SoVITS
+GSV_LIST_DIR="../gpt_sovits finetune_data/gpt_sovits_lists/by_role"
+GSV_VERSION=v4
+GSV_FALLBACK_VERSION=v2ProPlus
+GSV_GPT_EPOCH=10
+GSV_SOVITS_EPOCH=10
+```
+
+放置完成后，推荐目录结构为：
+
+```
+./
+├── dataset/
+├── gpt_sovits finetune_data/
+│   └── gpt_sovits_lists/
+│       ├── all.list
+│       ├── summary.tsv
+│       └── by_role/
+├── GPT-SoVITS/
+│   ├── GPT_weights_v2ProPlus/
+│   ├── GPT_weights_v4/
+│   ├── SoVITS_weights_v2ProPlus/
+│   └── SoVITS_weights_v4/
+└── xiao-gpt-sovits/
+    ├── main.py
+    └── fine_tuning_scripts/
+```
+
+启动 GPT-SoVITS 服务：
+
+```bash
+cd xiao-gpt-sovits
+GSV_BACKEND=persistent GSV_CACHE_SIZE=1 \
+  python -m uvicorn main:app --host 0.0.0.0 --port 8004
+```
+
+如需重新微调，脚本位于：
+
+```text
+xiao-gpt-sovits/fine_tuning_scripts/
+```
+
+单角色 dry-run 示例：
+
+```bash
+cd xiao-gpt-sovits/fine_tuning_scripts
+
+python batch_finetune_roles.py \
+  --gsv-root ../../GPT-SoVITS \
+  --list-dir "../../gpt_sovits finetune_data/gpt_sovits_lists/by_role" \
+  --roles zhenhuan \
+  --versions v4
+```
+
+真正执行训练时再加 `--run`，并按显存情况调整 `--prep-gpus`、`--s2-gpus`、`--gpt-gpus`、batch size 和 epoch 参数。默认推荐网站推理优先使用 `v4`，异常时回退到 `v2ProPlus`。
 
 数据处理与模型代码见：
 - [`siting_data_prepare/`](siting_data_prepare/) — 数据 Pipeline（UVR5 → ASR → 聚类 → 清洗 → Kaldi/Parquet）
 - [`siting_cosyvoice_tts/`](siting_cosyvoice_tts/) — CosyVoice 微调、Zero-shot 注册、TTS 服务部署
+- [`xiao-gpt-sovits/`](xiao-gpt-sovits/) — GPT-SoVITS 推理服务与微调脚本
 
 ---
 
@@ -429,7 +499,7 @@ curl -X POST http://localhost:8003/synthesize \
 ├── yiping-frontend/         # React 前端
 ├── yiping-backend/          # FastAPI 主后端
 ├── xiao-asr_llm/            # 模块A：ASR + LLM 对话生成
-├── gpt-sovits-service/      # 模块B：GPT-SoVITS 语音合成
+├── xiao-gpt-sovits/         # 模块B：GPT-SoVITS 语音合成 + 微调脚本
 ├── siting_data_prepare/     # 数据处理 Pipeline（代码 + 文档）
 ├── siting_cosyvoice_tts/    # CosyVoice 微调与部署（代码 + 文档）
 ├── SadTalker/               # 数字人（克隆后生成）

@@ -50,14 +50,14 @@ ssh -L 8002:localhost:8003 -p 11755 root@connect.bjb2.seetacloud.com（最新服
 ### 终端3 — 后端
 
 ```bash
-cd zhenhuanzhuan-qianshengqianmian\yiping-backend
+cd yiping-backend
 uvicorn main:app --reload --port 8000
 ```
 
 ### 终端4 — 前端
 
 ```bash
-cd zhenhuanzhuan-qianshengqianmian\yiping-frontend
+cd yiping-frontend
 npm install   # 仅首次
 npm run dev
 ```

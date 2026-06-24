@@ -2,11 +2,15 @@
 set -euo pipefail
 
 SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
-GSV_ROOT="$(cd -- "$SCRIPT_DIR/.." && pwd)"
+PROJECT_ROOT="$(cd -- "$SCRIPT_DIR/../.." && pwd)"
+GSV_ROOT="${GSV_ROOT:-$PROJECT_ROOT/GPT-SoVITS}"
+GSV_LIST_DIR="${GSV_LIST_DIR:-$PROJECT_ROOT/gpt_sovits finetune_data/gpt_sovits_lists/by_role}"
 PYTHON_BIN="${PYTHON_BIN:-python}"
 
 cd "$GSV_ROOT"
-exec "$PYTHON_BIN" scripts/batch_finetune_roles.py \
+exec "$PYTHON_BIN" "$SCRIPT_DIR/batch_finetune_roles.py" \
+  --gsv-root "$GSV_ROOT" \
+  --list-dir "$GSV_LIST_DIR" \
   --run \
   --versions v4 v2ProPlus \
   --s2-epochs-v4 10 \
