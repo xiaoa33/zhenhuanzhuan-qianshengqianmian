@@ -1,509 +1,86 @@
-# 甄嬛传·千声千面
+# 甄嬛传·千声千面 —— AI 角色语音对话系统
 
-基于大语言模型与语音合成的甄嬛传角色互动系统，支持 AI 角色对话、情感语音合成与数字人视频生成。
+> 语音信息处理课程大作业 · 北京邮电大学 · 2026 年 6 月
 
----
+## 项目简介
+
+**甄嬛传·千声千面**是一个面向电视剧《甄嬛传》的多角色 AI 语音对话系统。系统从 76 集原剧音频中自主构建了包含 **14 个角色、13,605 段语音片段（总时长约 16.7 小时）** 的高质量中文语音数据集，并基于 **CosyVoice3-0.5B**（Zero-shot 语音克隆）和 **GPT-SoVITS**（微调语音合成）双引擎实现了多角色语音克隆与情感语音合成。
+
+系统结合大语言模型（LLM）实现角色性格建模与对话生成，支持**单人智能对话**与**双人即兴对戏**两种交互模式，并通过 SSE 流式传输与 Web Audio API 实现了低延迟的语音播放体验。
+
+## 核心特性
+
+- **自主构建多角色语音数据集**：从原剧音频出发，经人声分离 → VAD 切分 → ASR 转写 → 声纹聚类 → 人工标注 → 数据清洗的完整 Pipeline，覆盖 14 个剧中角色
+- **双引擎语音合成**：CosyVoice3 Zero-shot（30 个 Speaker）与 GPT-SoVITS 微调（14 角色 × 2 版本 = 28 组权重），前端可实时切换对比
+- **情绪 Speaker 创新方案**：从原剧中手工采集 107 段真实情绪音频，注册为独立 Zero-shot Speaker，在不损失音色保真度的前提下实现喜悦、愤怒、悲伤、平静四种情感语音合成
+- **角色智能对话**：LLM 驱动的角色性格建模，支持「现代来客」和「宫廷中人」两种身份的单人对话，以及双角色自动即兴对戏
+- **流式语音播放**：SSE + Web Audio API 排队播放，首音延迟约 1.5 秒
+- **古风宫廷 UI**：React 前端，深墨绿 + 宫廷金配色，毛笔体标题，Ken Burns 动效背景，14 张角色剧照 + 11 张场景背景图
 
 ## 系统架构
 
 ```
-前端 React (:5173)
+React 前端 (:5173)
     │
     ▼
-yiping-backend FastAPI (:8003)   ← 主后端，负责路由、TTS分发和 SadTalker 调用
+yiping-backend FastAPI (:8003)     ← 中间层，统一 API 网关
     │
-    ├── xiao-asr_llm (:8001)     ← 模块A：ASR + LLM 对话生成 + 情绪分析
-    ├── CosyVoice TTS (:8002)    ← 队友模块：CosyVoice 语音合成
-    └── GPT-SoVITS TTS (:8004)   ← 本机模块：GPT-SoVITS 语音合成
+    ├── xiao-asr_llm (:8001)       ← ASR + LLM 对话生成 + 情绪分析
+    ├── CosyVoice TTS (:8002)      ← CosyVoice3 Zero-shot 语音合成（云端）
+    └── GPT-SoVITS TTS (:8004)     ← GPT-SoVITS 微调语音合成
 ```
 
-各模块独立运行，主后端通过 `USE_MOCK=true` 可在外部模块未就绪时用预设数据运行。
-
----
-
-## 环境要求
-
-| 工具 | 版本要求 |
-|------|---------|
-| Python | 3.10+（主后端）；3.8（SadTalker 专用虚拟环境） |
-| Node.js | 18+ |
-| npm | 9+ |
-| uv（可选） | 用于管理 SadTalker Python 3.8 虚拟环境 |
-
----
-
-## 一、配置并启动前端
-
-```bash
-cd yiping-frontend
-npm install
-```
-
-复制环境变量模板：
-
-```bash
-# Windows
-copy .env.example .env.local
-
-# macOS / Linux
-cp .env.example .env.local
-```
-
-编辑 `.env.local`，确认后端地址：
-
-```env
-VITE_API_BASE_URL=http://localhost:8003
-VITE_TTS_ENGINE=gpt_sovits
-```
-
-启动开发服务器：
-
-```bash
-npm run dev
-```
-
-浏览器访问 `http://localhost:5173`。
-
----
-
-## 二、配置并启动主后端
-
-```bash
-cd yiping-backend
-pip install -r requirements.txt
-```
-
-复制环境变量模板：
-
-```bash
-# Windows
-copy .env.example .env
-
-# macOS / Linux
-cp .env.example .env
-```
-
-**`.env` 关键配置说明：**
-
-| 变量 | 默认值 | 说明 |
-|------|--------|------|
-| `USE_MOCK` | `true` | `true` 时 /chat、/synthesize、/summary 使用预设数据，外部模块未就绪时保持 true |
-| `USE_MOCK_ASR` | `false` | `true` 时 /asr 返回固定演示文本 |
-| `LLM_SERVICE_URL` | `http://localhost:8001` | LLM 模块地址，默认无需修改 |
-| `TTS_SERVICE_URL` | `http://localhost:8002` | 默认 TTS 地址，当前通常指向 CosyVoice |
-| `GPT_SOVITS_SERVICE_URL` | `http://localhost:8004` | GPT-SoVITS 服务地址 |
-| `COSYVOICE_SERVICE_URL` | `http://localhost:8002` | CosyVoice 服务地址 |
-| `SADTALKER_PATH` | `../SadTalker/SadTalker` | SadTalker 仓库路径（数字人功能必填） |
-| `SADTALKER_PYTHON` | `python` | SadTalker 专属 Python 3.8 解释器路径（Windows 必填） |
-| `STATIC_BASE_URL` | `http://localhost:8003` | 返回给前端的静态资源基础 URL |
-| `CORS_ORIGINS` | `http://localhost:5173,http://127.0.0.1:5173` | 允许访问主后端的前端地址 |
-| `PORT` | `8003` | 主后端端口 |
-
-准备角色参考图（数字人功能需要）：
-
-将 `yiping-frontend/resource/角色剧照/` 下的图片复制到 `yiping-backend/resource/portraits/`，并按下表重命名：
-
-| 原文件名 | 重命名为 |
-|---------|---------|
-| 甄嬛剧照.jpg | zhenhuan.jpg |
-| 华妃剧照.jpg | huafei.jpg |
-| 宜修剧照.jpg | yixiu.jpg |
-| 眉庄剧照.jpg | meizhuang.jpg |
-| 安陵容剧照.jpg | anlinrong.jpg |
-| 苏培盛剧照.jpg | supeisheng.jpg |
-| 叶澜依剧照.jpg | yelanyi.jpg |
-| 崔槿汐剧照.jpg | cuijinxi.jpg |
-| 温实初剧照.jpeg | wensichu.jpg |
-| 浣碧剧照.jpg | huanbi.jpg |
-| 皇上剧照.jpg | huangshang.jpg |
-| 果郡王剧照.jpg | guojunwang.jpg |
-
-准备 mock 音频（mock 模式需要）：
-
-在 `yiping-backend/static/audio/` 放一个名为 `mock_silence.wav` 的音频文件（16kHz 单声道 WAV）。
-
-启动服务：
-
-```bash
-uvicorn main:app --reload --port 8003
-```
-
-访问 `http://localhost:8003/docs` 可查看 Swagger 接口文档。
-
----
-
-## 三、配置 SadTalker（数字人功能）
-
-> 如暂不需要数字人视频，可跳过此节。未配置时 `/digital-human` 接口返回 `video_url: null`，前端自动降级显示静态剧照。
-
-### 1. 克隆仓库并安装依赖
-
-SadTalker 需要独立的 Python 3.8 环境（与主后端隔离）：
-
-```powershell
-# 在项目根目录执行
-git clone https://github.com/OpenTalker/SadTalker.git
-cd SadTalker\SadTalker
-
-uv venv --python 3.8 .venv
-.venv\Scripts\activate
-
-# lmdb 2.x 与 Python 3.8 不兼容，先单独安装旧版
-uv pip install "lmdb==1.4.1" --only-binary :all:
-uv pip install -r requirements.txt
-```
-
-### 2. 下载预训练模型权重（约 3–4 GB）
-
-Windows 不支持官方的 bash 下载脚本，手动从以下任一地址下载后按目录结构放置：
-
-| 资源 | 下载地址 |
-|------|---------|
-| 预训练模型 checkpoints | 百度云盘：https://pan.baidu.com/s/1kb1BCPaLOWX1JJb9Czbn6w 密码：`sadt` |
-| 预训练模型 checkpoints（备用） | GitHub Releases：https://github.com/OpenTalker/SadTalker/releases |
-| GFPGAN 离线补丁 gfpgan/ | 百度云盘：https://pan.baidu.com/s/1P4fRgk9gaSutZnn8YW034Q 密码：`sadt` |
-
-解压后确保目录结构为：
-
-```
-SadTalker/SadTalker/
-├── checkpoints/
-│   ├── mapping_00109-model.pth.tar
-│   ├── mapping_00229-model.pth.tar
-│   ├── SadTalker_V0.0.2_256.safetensors
-│   └── SadTalker_V0.0.2_512.safetensors
-└── gfpgan/
-    └── weights/
-        ├── alignment_WFLW_4HG.pth
-        ├── detection_Resnet50_Final.pth
-        ├── GFPGANv1.4.pth
-        └── parsing_parsenet.pth
-```
-
-### 3. 配置 .env
-
-在 `yiping-backend/.env` 中填入 SadTalker 路径：
-
-```env
-SADTALKER_PATH=../SadTalker/SadTalker
-SADTALKER_PYTHON=<SadTalker项目路径>/.venv/Scripts/python.exe
-```
-
-`SADTALKER_PYTHON` 填 SadTalker 专属 Python 3.8 虚拟环境的解释器绝对路径，避免与主后端 Python 环境冲突。
-
----
-
-## 四、接入外部模块（ASR + LLM + TTS）
-
-外部模块就绪后，修改 `yiping-backend/.env`：
-
-```env
-USE_MOCK=false
-USE_MOCK_ASR=false
-LLM_SERVICE_URL=http://localhost:8001
-TTS_SERVICE_URL=http://localhost:8002
-GPT_SOVITS_SERVICE_URL=http://localhost:8004
-COSYVOICE_SERVICE_URL=http://localhost:8002
-STATIC_BASE_URL=http://localhost:8003
-```
-
-接口规范见 [`docs/外部模块接口规范.md`](docs/外部模块接口规范.md)。
-
----
-
-## 五、完整启动（所有模块就绪后）
-
-当前约定端口：
-
-| 服务 | 端口 |
-|---|---|
-| 前端 | `5173` |
-| xiao-asr_llm | `8001` |
-| CosyVoice | `8002` |
-| yiping-backend | `8003` |
-| GPT-SoVITS | `8004` |
-
-### 0. 可选：下载 ASR 模型
-
-如果服务器不能在线下载模型，先在项目根目录手动下载 faster-whisper 模型：
-
-```bash
-mkdir -p models
-
-hf download Systran/faster-whisper-small \
-  --local-dir models/faster-whisper-small
-```
-
-然后在 `xiao-asr_llm/.env` 中配置：
-
-```env
-ASR_MODEL=../models/faster-whisper-small
-ASR_DEVICE=cuda
-ASR_COMPUTE_TYPE=int8_float16
-ASR_LANGUAGE=zh
-```
-
-### 1. 启动 ASR + LLM 模块
-
-```bash
-cd xiao-asr_llm
-uvicorn main:app --reload --host 0.0.0.0 --port 8001
-```
-
-### 2. 启动 GPT-SoVITS 模块
-
-推荐使用常驻缓存模式，避免每轮重新加载权重：
-
-```bash
-cd xiao-gpt-sovits
-
-GSV_BACKEND=persistent GSV_CACHE_SIZE=1 \
-  python -m uvicorn main:app --host 0.0.0.0 --port 8004
-```
-
-### 3. 启动或接入 CosyVoice
-
-CosyVoice 维持原来的 `8002`。如果 CosyVoice 队友的服务可以直接访问，在 `yiping-backend/.env` 中配置：
-
-```env
-COSYVOICE_SERVICE_URL=http://队友CosyVoice地址:8002
-```
-
-如果 CosyVoice 是云端 `8003`，并通过 SSH 隧道接到本机 `8002`：
-
-```bash
-ssh -L 8002:localhost:8003 -p 28281 root@connect.bjb1.seetacloud.com
-```
-
-然后 `yiping-backend/.env` 中保持：
-
-```env
-COSYVOICE_SERVICE_URL=http://localhost:8002
-```
-
-### 4. 启动主后端
-
-本机调试：
-
-```bash
-cd yiping-backend
-uvicorn main:app --reload --port 8003
-```
-
-多人异地联调：
-
-```bash
-cd yiping-backend
-uvicorn main:app --host 0.0.0.0 --port 8003
-```
-
-多人联调时，`yiping-backend/.env` 需要把 `localhost` 改成你的服务器可访问地址，例如：
-
-```env
-STATIC_BASE_URL=http://你的校内IP:8003
-CORS_ORIGINS=http://你的校内IP:5173
-```
-
-临时联调也可以：
-
-```env
-CORS_ORIGINS=*
-```
-
-### 5. 启动前端
-
-本机调试：
-
-```bash
-cd yiping-frontend
-npm install
-npm run dev
-```
-
-多人异地联调：
-
-```bash
-cd yiping-frontend
-npm run dev -- --host 0.0.0.0
-```
-
-前端 `.env.local` 本机调试：
-
-```env
-VITE_API_BASE_URL=http://localhost:8003
-VITE_TTS_ENGINE=gpt_sovits
-```
-
-多人联调时改成：
-
-```env
-VITE_API_BASE_URL=http://你的校内IP:8003
-VITE_TTS_ENGINE=gpt_sovits
-```
-
-浏览器访问：
-
-```text
-http://localhost:5173
-```
-
-多人联调时访问：
-
-```text
-http://你的校内IP:5173
-```
-
-### 6. 启动后验证
-
-在服务器本机执行：
-
-```bash
-curl http://localhost:8001/
-curl http://localhost:8003/
-curl http://localhost:8004/
-```
-
-通过主后端测试 GPT-SoVITS：
-
-```bash
-curl -X POST http://localhost:8003/synthesize \
-  -H "Content-Type: application/json" \
-  -d '{
-    "character_id": "zhenhuan",
-    "text": "本宫今日心情尚可，你倒是有眼力见儿。",
-    "emotion": "喜悦",
-    "engine": "gpt_sovits"
-  }'
-```
-
-通过主后端测试 CosyVoice：
-
-```bash
-curl -X POST http://localhost:8003/synthesize \
-  -H "Content-Type: application/json" \
-  -d '{
-    "character_id": "zhenhuan",
-    "text": "[laughter]本宫今日心情尚可，你倒是有<strong>眼力见儿</strong>。",
-    "emotion": "喜悦",
-    "engine": "cosyvoice"
-  }'
-```
-
----
-
-## 六、数据集与模型权重下载
-
-以下数据产物因体积较大，统一上传到百度网盘，不随代码仓库分发：
-
-> **网盘链接**：https://pan.baidu.com/s/1_uacMyl9y5YvrWsh77Mtww?pwd=kcs7
-> **提取码**：kcs7
-
-网盘目录结构：
-
-```
-甄嬛传千声千面_相关数据/
-├── zero_shot_data/           ← 127 条精选参考音频（14 角色子目录）
-├── emotion_examples/         ← 107 条情绪参考音频（4 角色 × 4 情绪）
-├── 甄嬛传14人物数据.tar      ← 清洗后全量数据集（13,605 段 WAV + Kaldi 元数据）
-├── gpt_sovits finetune_data/ ← GPT-SoVITS 微调数据与脚本索引
-├── exp_GPTSoVITS_weights/    ← GPT-SoVITS 14 角色微调权重
-└── exp_zhenhuan_llm.tar       ← CosyVoice3-0.5B 微调权重（12GB，epoch 0~4 checkpoint）
-```
-
-| 数据 | 说明 | 使用方式 |
-|---|---|---|
-| `zero_shot_data/` | 14 角色 Zero-shot 声纹参考音频 | 解压到 `siting_data_prepare/data/zero_shot_data/`，运行 `register_speakers.py` |
-| `emotion_examples/` | 4 角色 × 4 情绪参考音频 | 供 `register_emotion_speakers_v2.py` 注册情绪 Speaker |
-| `甄嬛传14人物数据.tar` | 13,605 段 WAV + Kaldi 格式 | 解压到 `siting_data_prepare/data/`，用于重训练或转其他格式 |
-| `gpt_sovits finetune_data/gpt_sovits_lists/` | GPT-SoVITS 微调清单，包含 `all.list`、`all_train.list`、`all_dev.list`、`by_role/*_{all,train,dev}.list`、`summary.tsv`、`manifest.json` | 放到项目根目录的 `gpt_sovits finetune_data/gpt_sovits_lists/`；`xiao-gpt-sovits` 默认读取 `../gpt_sovits finetune_data/gpt_sovits_lists/by_role` |
-| `gpt_sovits finetune_data/scripts/` | GPT-SoVITS 批量微调与离线推理脚本备份 | 代码仓库中已整理到 `xiao-gpt-sovits/fine_tuning_scripts/`，重训时优先使用仓库内版本 |
-| `exp_GPTSoVITS_weights/` | GPT-SoVITS 14 角色微调权重，包含 `v4` 和 `v2ProPlus` 两套 GPT/SoVITS 权重 | 将 4 个子目录放到项目根目录的 `GPT-SoVITS/` 下，使其成为 `GPT-SoVITS/GPT_weights_v4/`、`GPT-SoVITS/SoVITS_weights_v4/` 等目录 |
-| `exp_zhenhuan_llm.tar` | CosyVoice3-0.5B LLM 微调权重（12GB，epoch 0~4 checkpoint） | 解压到 CosyVoice 项目 `exp/zhenhuan/llm/` |
-
-GPT-SoVITS 推理服务目录为：
-
-```text
-xiao-gpt-sovits/
-```
-
-服务默认约定：
-
-```text
-GSV_ROOT=../GPT-SoVITS
-GSV_LIST_DIR="../gpt_sovits finetune_data/gpt_sovits_lists/by_role"
-GSV_VERSION=v4
-GSV_FALLBACK_VERSION=v2ProPlus
-GSV_GPT_EPOCH=10
-GSV_SOVITS_EPOCH=10
-```
-
-放置完成后，推荐目录结构为：
-
-```
-./
-├── dataset/
-├── gpt_sovits finetune_data/
-│   └── gpt_sovits_lists/
-│       ├── all.list
-│       ├── summary.tsv
-│       └── by_role/
-├── GPT-SoVITS/
-│   ├── GPT_weights_v2ProPlus/
-│   ├── GPT_weights_v4/
-│   ├── SoVITS_weights_v2ProPlus/
-│   └── SoVITS_weights_v4/
-└── xiao-gpt-sovits/
-    ├── main.py
-    └── fine_tuning_scripts/
-```
-
-启动 GPT-SoVITS 服务：
-
-```bash
-cd xiao-gpt-sovits
-GSV_BACKEND=persistent GSV_CACHE_SIZE=1 \
-  python -m uvicorn main:app --host 0.0.0.0 --port 8004
-```
-
-如需重新微调，脚本位于：
-
-```text
-xiao-gpt-sovits/fine_tuning_scripts/
-```
-
-单角色 dry-run 示例：
-
-```bash
-cd xiao-gpt-sovits/fine_tuning_scripts
-
-python batch_finetune_roles.py \
-  --gsv-root ../../GPT-SoVITS \
-  --list-dir "../../gpt_sovits finetune_data/gpt_sovits_lists/by_role" \
-  --roles zhenhuan \
-  --versions v4
-```
-
-真正执行训练时再加 `--run`，并按显存情况调整 `--prep-gpus`、`--s2-gpus`、`--gpt-gpus`、batch size 和 epoch 参数。默认推荐网站推理优先使用 `v4`，异常时回退到 `v2ProPlus`。
-
-数据处理与模型代码见：
-- [`siting_data_prepare/`](siting_data_prepare/) — 数据 Pipeline（UVR5 → ASR → 聚类 → 清洗 → Kaldi/Parquet）
-- [`siting_cosyvoice_tts/`](siting_cosyvoice_tts/) — CosyVoice 微调、Zero-shot 注册、TTS 服务部署
-- [`xiao-gpt-sovits/`](xiao-gpt-sovits/) — GPT-SoVITS 推理服务与微调脚本
-
----
+前端与中间层运行在本地，三个 AI 服务部署于 AutoDL 云端（RTX 4080 SUPER），通过 SSH 隧道连接。
+
+## 技术栈
+
+| 层级 | 技术 |
+|------|------|
+| 前端 | React + Vite + CSS Variables + Web Audio API |
+| 中间层 | FastAPI + httpx + SSE |
+| 语音合成 | CosyVoice3-0.5B（Zero-shot）、GPT-SoVITS（LoRA 微调） |
+| 语音识别 | faster-whisper-small |
+| 对话生成 | LLM（角色 Prompt + JSON 结构化输出） |
+| 数据处理 | UVR5 + FunASR + 3D-Speaker eres2netv2 + KMeans |
 
 ## 目录结构
 
 ```
 /
-├── yiping-frontend/         # React 前端
-├── yiping-backend/          # FastAPI 主后端
-├── xiao-asr_llm/            # 模块A：ASR + LLM 对话生成
-├── xiao-gpt-sovits/         # 模块B：GPT-SoVITS 语音合成 + 微调脚本
-├── siting_data_prepare/     # 数据处理 Pipeline（代码 + 文档）
-├── siting_cosyvoice_tts/    # CosyVoice 微调与部署（代码 + 文档）
-├── SadTalker/               # 数字人（克隆后生成）
-└── docs/
-    ├── 后端设计文档.md
-    └── 外部模块接口规范.md
+├── yiping-frontend/         # React 前端（古风宫廷 UI）
+├── yiping-backend/          # FastAPI 中间层（API 网关 + 服务路由）
+├── xiao-asr_llm/            # ASR + LLM 对话生成模块
+├── xiao-gpt-sovits/         # GPT-SoVITS 推理服务 + 微调脚本
+├── siting_data_prepare/     # 数据处理 Pipeline（UVR5 → ASR → 聚类 → 清洗）
+├── siting_cosyvoice_tts/    # CosyVoice 微调、Zero-shot 注册、TTS 部署
+├── final_paper/             # 终期论文（LaTeX 源码 + 图表）
+├── 手动启动指令.md           # 完整的启动与部署指南
+└── docs/                    # 设计文档与接口规范
 ```
+
+## 数据集与模型权重
+
+以下数据因体积较大，统一上传至百度网盘：
+
+> **链接**：https://pan.baidu.com/s/1_uacMyl9y5YvrWsh77Mtww?pwd=kcs7
+> **提取码**：kcs7
+
+| 数据 | 说明 |
+|------|------|
+| `zero_shot_data/` | 127 条精选参考音频（14 角色），用于 Zero-shot Speaker 注册 |
+| `emotion_examples/` | 107 条情绪参考音频（4 角色 × 4 情绪），用于情绪 Speaker 注册 |
+| `甄嬛传14人物数据.tar` | 全量数据集（13,605 段 WAV + Kaldi 元数据） |
+| `exp_GPTSoVITS_weights/` | GPT-SoVITS 14 角色微调权重（v4 + v2ProPlus） |
+| `exp_zhenhuan_llm.tar` | CosyVoice3-0.5B 微调权重（12 GB） |
+
+## 快速开始
+
+详细的环境配置、依赖安装与各模块启动指令请参考 [手动启动指令.md](手动启动指令.md)。
+
+## 小组成员
+
+| 成员 | 姓名 | 学号 | 负责内容 |
+|------|------|------|---------|
+| 成员 A | 李思婷 | 2023212061 | 数据集构建、CosyVoice3 微调与 Zero-shot 方案、情绪 Speaker 创新方案 |
+| 成员 B | 张笑 | 2023212062 | GPT-SoVITS 微调、ASR 模块、LLM 对话模块、GPT-SoVITS 服务部署 |
+| 成员 C | 黄艺平 | 2023212179 | 前端设计（React 古风 UI）、yiping-backend 中间层、流式 TTS 链路集成 |

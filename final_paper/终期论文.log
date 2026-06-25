@@ -1,14 +1,14 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (MiKTeX 26.2) (preloaded format=xelatex 2026.4.22)  25 JUN 2026 07:43
+This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.12) (preloaded format=xelatex 2026.6.1)  25 JUN 2026 14:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **./终期论文.tex
 (终期论文.tex
 LaTeX2e <2025-11-01>
-L3 programming layer <2026-01-19>
-(D:\APP\MikTex\tex/latex/base\article.cls
+L3 programming layer <2025-12-24>
+(D:\soft\latex\tex/latex/base\article.cls
 Document Class: article 2025/01/22 v1.4n Standard LaTeX document class
-(D:\APP\MikTex\tex/latex/base\size12.clo
+(D:\soft\latex\tex/latex/base\size12.clo
 File: size12.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
 )
 \c@part=\count271
@@ -23,11 +23,11 @@ File: size12.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
 \belowcaptionskip=\skip50
 \bibindent=\dimen148
 )
-(D:\APP\MikTex\tex/latex/ctex\ctex.sty
-(D:\APP\MikTex\tex/latex/l3kernel\expl3.sty
-Package: expl3 2026-01-19 L3 programming layer (loader) 
+(D:\soft\latex\tex/latex/ctex\ctex.sty
+(D:\soft\latex\tex/latex/l3kernel\expl3.sty
+Package: expl3 2025-12-24 L3 programming layer (loader) 
 
-(D:\APP\MikTex\tex/latex/l3backend\l3backend-xetex.def
+(D:\soft\latex\tex/latex/l3backend\l3backend-xetex.def
 File: l3backend-xetex.def 2025-10-09 L3 backend support: XeTeX
 \g__graphics_track_int=\count279
 \g__pdfannot_backend_int=\count280
@@ -35,16 +35,16 @@ File: l3backend-xetex.def 2025-10-09 L3 backend support: XeTeX
 ))
 Package: ctex 2022/07/14 v2.5.10 Chinese adapter in LaTeX (CTEX)
 
-(D:\APP\MikTex\tex/latex/ctex\ctexhook.sty
+(D:\soft\latex\tex/latex/ctex\ctexhook.sty
 Package: ctexhook 2022/07/14 v2.5.10 Document and package hooks (CTEX)
 )
-(D:\APP\MikTex\tex/latex/ctex\ctexpatch.sty
+(D:\soft\latex\tex/latex/ctex\ctexpatch.sty
 Package: ctexpatch 2022/07/14 v2.5.10 Patching commands (CTEX)
 )
-(D:\APP\MikTex\tex/latex/base\fix-cm.sty
+(D:\soft\latex\tex/latex/base\fix-cm.sty
 Package: fix-cm 2020/11/24 v1.1t fixes to LaTeX
 
-(D:\APP\MikTex\tex/latex/base\ts1enc.def
+(D:\soft\latex\tex/latex/base\ts1enc.def
 File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding TS1 on input line 47.
 LaTeX Encoding Info:    Redeclaring text command \capitalcedilla (encoding TS1)
@@ -308,16 +308,16 @@ t line 194.
 \g__ctex_section_depth_int=\count283
 \g__ctex_font_size_int=\count284
 
-(D:\APP\MikTex\tex/latex/ctex/config\ctexopts.cfg
+(D:\soft\latex\tex/latex/ctex/config\ctexopts.cfg
 File: ctexopts.cfg 2022/07/14 v2.5.10 Option configuration file (CTEX)
 )
-(D:\APP\MikTex\tex/latex/ctex/engine\ctex-engine-xetex.def
+(D:\soft\latex\tex/latex/ctex/engine\ctex-engine-xetex.def
 File: ctex-engine-xetex.def 2022/07/14 v2.5.10 XeLaTeX adapter (CTEX)
 
-(D:\APP\MikTex\tex/xelatex/xecjk\xeCJK.sty
+(D:\soft\latex\tex/xelatex/xecjk\xeCJK.sty
 Package: xeCJK 2022/08/05 v3.9.1 Typesetting CJK scripts with XeLaTeX
 
-(D:\APP\MikTex\tex/latex/l3packages/xtemplate\xtemplate.sty
+(D:\soft\latex\tex/latex/l3packages/xtemplate\xtemplate.sty
 Package: xtemplate 2025-10-09 L3 Experimental prototype document functions
 )
 \l__xeCJK_tmp_int=\count285
@@ -381,13 +381,13 @@ LaTeX template Info: Declaring template type 'xeCJK/punctuation' taking 0
 \l__xeCJK_verb_case_int=\count296
 \l__xeCJK_verb_exspace_skip=\skip57
 
-(D:\APP\MikTex\tex/latex/fontspec\fontspec.sty
-(D:\APP\MikTex\tex/latex/l3packages/xparse\xparse.sty
+(D:\soft\latex\tex/latex/fontspec\fontspec.sty
+(D:\soft\latex\tex/latex/l3packages/xparse\xparse.sty
 Package: xparse 2025-10-09 L3 Experimental document command parser
 )
 Package: fontspec 2025/09/29 v2.9g Font selection for XeLaTeX and LuaLaTeX
 
-(D:\APP\MikTex\tex/latex/fontspec\fontspec-xetex.sty
+(D:\soft\latex\tex/latex/fontspec\fontspec-xetex.sty
 Package: fontspec-xetex 2025/09/29 v2.9g Font selection for XeLaTeX and LuaLaTe
 X
 \l__fontspec_script_int=\count297
@@ -405,11 +405,11 @@ X
 \l__fontspec_tmpb_dim=\dimen178
 \l__fontspec_tmpc_dim=\dimen179
 
-(D:\APP\MikTex\tex/latex/base\fontenc.sty
+(D:\soft\latex\tex/latex/base\fontenc.sty
 Package: fontenc 2025/07/18 v2.1d Standard LaTeX package
 )
-(D:\APP\MikTex\tex/latex/fontspec\fontspec.cfg)))
-(D:\APP\MikTex\tex/xelatex/xecjk\xeCJK.cfg
+(D:\soft\latex\tex/latex/fontspec\fontspec.cfg)))
+(D:\soft\latex\tex/xelatex/xecjk\xeCJK.cfg
 File: xeCJK.cfg 2022/08/05 v3.9.1 Configuration file for xeCJK package
 ))
 \ccwd=\dimen180
@@ -417,25 +417,25 @@ File: xeCJK.cfg 2022/08/05 v3.9.1 Configuration file for xeCJK package
 )
 \l__ctex_ziju_dim=\dimen181
 
-(D:\APP\MikTex\tex/latex/zhnumber\zhnumber.sty
+(D:\soft\latex\tex/latex/zhnumber\zhnumber.sty
 Package: zhnumber 2022/07/14 v3.0 Typesetting numbers with Chinese glyphs
 \l__zhnum_scale_int=\count308
 \l__zhnum_tmp_int=\count309
 
-(D:\APP\MikTex\tex/latex/zhnumber\zhnumber-utf8.cfg
+(D:\soft\latex\tex/latex/zhnumber\zhnumber-utf8.cfg
 File: zhnumber-utf8.cfg 2022/07/14 v3.0 Chinese numerals with UTF8 encoding
 ))
-(D:\APP\MikTex\tex/latex/ctex/scheme\ctex-scheme-chinese.def
+(D:\soft\latex\tex/latex/ctex/scheme\ctex-scheme-chinese.def
 File: ctex-scheme-chinese.def 2022/07/14 v2.5.10 Chinese scheme for generic (CT
 EX)
 
-(D:\APP\MikTex\tex/latex/ctex/config\ctex-name-utf8.cfg
+(D:\soft\latex\tex/latex/ctex/config\ctex-name-utf8.cfg
 File: ctex-name-utf8.cfg 2022/07/14 v2.5.10 Caption with encoding UTF-8 (CTEX)
 ))
-(D:\APP\MikTex\tex/latex/tools\indentfirst.sty
+(D:\soft\latex\tex/latex/tools\indentfirst.sty
 Package: indentfirst 2023/07/02 v1.03 Indent first paragraph (DPC)
 ))
-(D:\APP\MikTex\tex/latex/ctex/config\ctex.cfg
+(D:\soft\latex\tex/latex/ctex/config\ctex.cfg
 File: ctex.cfg 2022/07/14 v2.5.10 Configuration file (CTEX)
 )
 
@@ -491,17 +491,17 @@ ext;"
 text;"
 
 
-(D:\APP\MikTex\tex/latex/geometry\geometry.sty
+(D:\soft\latex\tex/latex/geometry\geometry.sty
 Package: geometry 2026/03/07 v6.0 Page Geometry
 
-(D:\APP\MikTex\tex/latex/graphics\keyval.sty
+(D:\soft\latex\tex/latex/graphics\keyval.sty
 Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
 \KV@toks@=\toks17
 )
-(D:\APP\MikTex\tex/generic/iftex\ifvtex.sty
+(D:\soft\latex\tex/generic/iftex\ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 
-(D:\APP\MikTex\tex/generic/iftex\iftex.sty
+(D:\soft\latex\tex/generic/iftex\iftex.sty
 Package: iftex 2024/12/12 v1.0g TeX engine tests
 ))
 \Gm@cnth=\count310
@@ -517,31 +517,31 @@ Package: iftex 2024/12/12 v1.0g TeX engine tests
 \Gm@layoutvoffset=\dimen189
 \Gm@dimlist=\toks18
 
-(D:\APP\MikTex\tex/latex/geometry\geometry.cfg))
-(D:\APP\MikTex1\tex/latex/setspace\setspace.sty
+(D:\soft\latex\tex/latex/geometry\geometry.cfg))
+(D:\soft\latex\tex/latex/setspace\setspace.sty
 Package: setspace 2022/12/04 v6.7b set line spacing
 )
-(D:\APP\MikTex\tex/latex/graphics\graphicx.sty
+(D:\soft\latex\tex/latex/graphics\graphicx.sty
 Package: graphicx 2024/12/31 v1.2e Enhanced LaTeX Graphics (DPC,SPQR)
 
-(D:\APP\MikTex\tex/latex/graphics\graphics.sty
+(D:\soft\latex\tex/latex/graphics\graphics.sty
 Package: graphics 2024/08/06 v1.4g Standard LaTeX Graphics (DPC,SPQR)
 
-(D:\APP\MikTex\tex/latex/graphics\trig.sty
+(D:\soft\latex\tex/latex/graphics\trig.sty
 Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
 )
-(D:\APP\MikTex\tex/latex/graphics-cfg\graphics.cfg
+(D:\soft\latex\tex/latex/graphics-cfg\graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: xetex.def on input line 106.
 
-(D:\APP\MikTex\tex/latex/graphics-def\xetex.def
+(D:\soft\latex\tex/latex/graphics-def\xetex.def
 File: xetex.def 2025/11/01 v5.0p Graphics/color driver for xetex
 ))
 \Gin@req@height=\dimen190
 \Gin@req@width=\dimen191
 )
-(D:\APP\MikTex\tex/latex/float\float.sty
+(D:\soft\latex\tex/latex/float\float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count313
 \float@exts=\toks19
@@ -549,7 +549,7 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@everytoks=\toks20
 \@floatcapt=\box57
 )
-(D:\APP\MikTex\tex/latex/booktabs\booktabs.sty
+(D:\soft\latex\tex/latex/booktabs\booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \heavyrulewidth=\dimen192
 \lightrulewidth=\dimen193
@@ -569,7 +569,7 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \@lastruleclass=\count317
 \@thisrulewidth=\dimen260
 )
-(D:\APP\MikTex\tex/latex/tools\longtable.sty
+(D:\soft\latex\tex/latex/tools\longtable.sty
 Package: longtable 2025-10-13 v4.24 Multi-page Table package (DPC)
 \LTleft=\skip59
 \LTright=\skip60
@@ -588,14 +588,14 @@ Package: longtable 2025-10-13 v4.24 Multi-page Table package (DPC)
 \c@LT@chunks=\count322
 \LT@p@ftn=\toks21
 )
-(D:\APP\MikTex\tex/latex/multirow\multirow.sty
+(D:\soft\latex\tex/latex/multirow\multirow.sty
 Package: multirow 2024/11/12 v2.9 Span multiple rows of a table
 \multirow@colwidth=\skip63
 \multirow@cntb=\count323
 \multirow@dima=\skip64
 \bigstrutjot=\dimen262
 )
-(D:\APP\MikTex\tex/latex/tools\array.sty
+(D:\soft\latex\tex/latex/tools\array.sty
 Package: array 2025/09/25 v2.6n Tabular extension package (FMi)
 \col@sep=\dimen263
 \ar@mcellbox=\box63
@@ -605,7 +605,7 @@ Package: array 2025/09/25 v2.6n Tabular extension package (FMi)
 \backup@length=\skip66
 \ar@cellbox=\box64
 )
-(D:\APP\MikTex\tex/latex/tools\tabularx.sty
+(D:\soft\latex\tex/latex/tools\tabularx.sty
 Package: tabularx 2023/12/11 v2.12a `tabularx' package (DPC)
 \TX@col@width=\dimen265
 \TX@old@table=\dimen266
@@ -615,10 +615,10 @@ Package: tabularx 2023/12/11 v2.12a `tabularx' package (DPC)
 \TX@cols=\count324
 \TX@ftn=\toks23
 )
-(D:\APP\MikTex\tex/latex/caption\caption.sty
+(D:\soft\latex\tex/latex/caption\caption.sty
 Package: caption 2023/08/05 v3.6o Customizing captions (AR)
 
-(D:\APP\MikTex\tex/latex/caption\caption3.sty
+(D:\soft\latex\tex/latex/caption\caption3.sty
 Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
 \caption@tempdima=\dimen270
 \captionmargin=\dimen271
@@ -635,17 +635,17 @@ Package caption Info: Standard document class detected.
 Package caption Info: float package is loaded.
 Package caption Info: longtable package is loaded.
 
-(D:\APP\MikTex\tex/latex/caption\ltcaption.sty
+(D:\soft\latex\tex/latex/caption\ltcaption.sty
 Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
 ))
-(D:\APP\MikTex\tex/latex/caption\subcaption.sty
+(D:\soft\latex\tex/latex/caption\subcaption.sty
 Package: subcaption 2023/07/28 v1.6b Sub-captions (AR)
 Package caption Info: New subtype `subfigure' on input line 238.
 \c@subfigure=\count327
 Package caption Info: New subtype `subtable' on input line 238.
 \c@subtable=\count328
 )
-(D:\APP\MikTex\tex/latex/listings\listings.sty
+(D:\soft\latex\tex/latex/listings\listings.sty
 \lst@mode=\count329
 \lst@gtempboxa=\box65
 \lst@token=\toks24
@@ -659,21 +659,21 @@ Package caption Info: New subtype `subtable' on input line 238.
 \lst@lineno=\count334
 \lst@maxwidth=\dimen281
 
-(D:\APP\MikTex\tex/latex/listings\lstpatch.sty
+(D:\soft\latex\tex/latex/listings\lstpatch.sty
 File: lstpatch.sty 2025/11/14 1.11b (Carsten Heinz)
 )
-(D:\APP\MikTex\tex/latex/listings\lstmisc.sty
+(D:\soft\latex\tex/latex/listings\lstmisc.sty
 File: lstmisc.sty 2025/11/14 1.11b (Carsten Heinz)
 \c@lstnumber=\count335
 \lst@skipnumbers=\count336
 \lst@framebox=\box66
 )
-(D:\APP\MikTex\tex/latex/listings\listings.cfg
+(D:\soft\latex\tex/latex/listings\listings.cfg
 File: listings.cfg 2025/11/14 1.11b listings configuration
 ))
 Package: listings 2025/11/14 1.11b (Carsten Heinz)
 
-(D:\APP\MikTex\tex/xelatex/xecjk\xeCJK-listings.sty
+(D:\soft\latex\tex/xelatex/xecjk\xeCJK-listings.sty
 Package: xeCJK-listings 2022/08/05 v3.9.1 xeCJK patch file for listings
 \l__xeCJK_listings_max_char_int=\count337
 \l__xeCJK_listings_flag_int=\count338
@@ -684,15 +684,15 @@ Package: xeCJK-listings 2022/08/05 v3.9.1 xeCJK patch file for listings
     but found:
         2025/11/14 1.11b (Carsten Heinz)
     so I'm assuming it got fixed.
-(D:\APP\MikTex\tex/latex/xcolor\xcolor.sty
+(D:\soft\latex\tex/latex/xcolor\xcolor.sty
 Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
 
-(D:\APP\MikTex\tex/latex/graphics-cfg\color.cfg
+(D:\soft\latex\tex/latex/graphics-cfg\color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: xetex.def on input line 274.
 
-(D:\APP\MikTex\tex/latex/graphics\mathcolor.ltx)
+(D:\soft\latex\tex/latex/graphics\mathcolor.ltx)
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1349.
 Package xcolor Info: Model `RGB' extended on input line 1365.
 Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1367.
@@ -702,60 +702,60 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1370.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
 )
-(D:\APP\MikTex1\tex/latex/colortbl\colortbl.sty
+(D:\soft\latex\tex/latex/colortbl\colortbl.sty
 Package: colortbl 2026/05/01 v1.0l Color table columns (DPC)
 \everycr=\toks25
 \minrowclearance=\skip67
 \rownum=\count339
 )
-(D:\APP\MikTex\tex/latex/hyperref\hyperref.sty
-Package: hyperref 2026-01-29 v7.01p Hypertext links for LaTeX
+(D:\soft\latex\tex/latex/hyperref\hyperref.sty
+Package: hyperref 2025-07-12 v7.01o Hypertext links for LaTeX
 
-(D:\APP\MikTex\tex/latex/kvsetkeys\kvsetkeys.sty
+(D:\soft\latex\tex/latex/kvsetkeys\kvsetkeys.sty
 Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
 )
-(D:\APP\MikTex\tex/generic/kvdefinekeys\kvdefinekeys.sty
+(D:\soft\latex\tex/generic/kvdefinekeys\kvdefinekeys.sty
 Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
 )
-(D:\APP\MikTex\tex/generic/pdfescape\pdfescape.sty
+(D:\soft\latex\tex/generic/pdfescape\pdfescape.sty
 Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
 
-(D:\APP\MikTex\tex/generic/ltxcmds\ltxcmds.sty
+(D:\soft\latex\tex/generic/ltxcmds\ltxcmds.sty
 Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
 )
-(D:\APP\MikTex\tex/generic/pdftexcmds\pdftexcmds.sty
+(D:\soft\latex\tex/generic/pdftexcmds\pdftexcmds.sty
 Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
 )
 
-(D:\APP\MikTex\tex/generic/infwarerr\infwarerr.sty
+(D:\soft\latex\tex/generic/infwarerr\infwarerr.sty
 Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
 )
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode not found.
 ))
-(D:\APP\MikTex\tex/latex/hycolor\hycolor.sty
+(D:\soft\latex\tex/latex/hycolor\hycolor.sty
 Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
 )
-(D:\APP\MikTex\tex/latex/hyperref\nameref.sty
-Package: nameref 2026-01-29 v2.58 Cross-referencing by name of section
+(D:\soft\latex\tex/latex/hyperref\nameref.sty
+Package: nameref 2025-06-21 v2.57 Cross-referencing by name of section
 
-(D:\APP\MikTex\tex/latex/refcount\refcount.sty
+(D:\soft\latex\tex/latex/refcount\refcount.sty
 Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 )
-(D:\APP\MikTex\tex/generic/gettitlestring\gettitlestring.sty
+(D:\soft\latex\tex/generic/gettitlestring\gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 
-(D:\APP\MikTex\tex/latex/kvoptions\kvoptions.sty
+(D:\soft\latex\tex/latex/kvoptions\kvoptions.sty
 Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 ))
 \c@section@level=\count340
 )
-(D:\APP\MikTex\tex/latex/etoolbox\etoolbox.sty
+(D:\soft\latex\tex/latex/etoolbox\etoolbox.sty
 Package: etoolbox 2025/10/02 v2.5m e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count341
 )
-(D:\APP\MikTex\tex/generic/stringenc\stringenc.sty
+(D:\soft\latex\tex/generic/stringenc\stringenc.sty
 Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
 )
 )
@@ -763,70 +763,70 @@ Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
 \Hy@linkcounter=\count342
 \Hy@pagecounter=\count343
 
-(D:\APP\MikTex\tex/latex/hyperref\pd1enc.def
-File: pd1enc.def 2026-01-29 v7.01p Hyperref: PDFDocEncoding definition (HO)
+(D:\soft\latex\tex/latex/hyperref\pd1enc.def
+File: pd1enc.def 2025-07-12 v7.01o Hyperref: PDFDocEncoding definition (HO)
 )
-(D:\APP\MikTex\tex/generic/intcalc\intcalc.sty
+(D:\soft\latex\tex/generic/intcalc\intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
 \Hy@SavedSpaceFactor=\count344
 
-(D:\APP\MikTex\tex/latex/hyperref\puenc.def
-File: puenc.def 2026-01-29 v7.01p Hyperref: PDF Unicode definition (HO)
+(D:\soft\latex\tex/latex/hyperref\puenc.def
+File: puenc.def 2025-07-12 v7.01o Hyperref: PDF Unicode definition (HO)
 )
-Package hyperref Info: Option `unicode' set `true' on input line 4072.
-Package hyperref Info: Option `colorlinks' set `true' on input line 4072.
-Package hyperref Info: Hyper figures OFF on input line 4201.
-Package hyperref Info: Link nesting OFF on input line 4206.
-Package hyperref Info: Hyper index ON on input line 4209.
-Package hyperref Info: Plain pages OFF on input line 4216.
-Package hyperref Info: Backreferencing OFF on input line 4221.
+Package hyperref Info: Option `unicode' set `true' on input line 4066.
+Package hyperref Info: Option `colorlinks' set `true' on input line 4066.
+Package hyperref Info: Hyper figures OFF on input line 4195.
+Package hyperref Info: Link nesting OFF on input line 4200.
+Package hyperref Info: Hyper index ON on input line 4203.
+Package hyperref Info: Plain pages OFF on input line 4210.
+Package hyperref Info: Backreferencing OFF on input line 4215.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
-Package hyperref Info: Bookmarks ON on input line 4468.
+Package hyperref Info: Bookmarks ON on input line 4462.
 \c@Hy@tempcnt=\count345
 
-(D:\APP\MikTex\tex/latex/url\url.sty
+(D:\soft\latex\tex/latex/url\url.sty
 \Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-LaTeX Info: Redefining \url on input line 4807.
+LaTeX Info: Redefining \url on input line 4801.
 \XeTeXLinkMargin=\dimen283
 
-(D:\APP\MikTex\tex/generic/bitset\bitset.sty
+(D:\soft\latex\tex/generic/bitset\bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 
-(D:\APP\MikTex\tex/generic/bigintcalc\bigintcalc.sty
+(D:\soft\latex\tex/generic/bigintcalc\bigintcalc.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
 \Fld@menulength=\count346
 \Field@Width=\dimen284
 \Fld@charsize=\dimen285
-Package hyperref Info: Hyper figures OFF on input line 6084.
-Package hyperref Info: Link nesting OFF on input line 6089.
-Package hyperref Info: Hyper index ON on input line 6092.
-Package hyperref Info: backreferencing OFF on input line 6099.
-Package hyperref Info: Link coloring ON on input line 6102.
-Package hyperref Info: Link coloring with OCG OFF on input line 6109.
-Package hyperref Info: PDF/A mode OFF on input line 6114.
+Package hyperref Info: Hyper figures OFF on input line 6078.
+Package hyperref Info: Link nesting OFF on input line 6083.
+Package hyperref Info: Hyper index ON on input line 6086.
+Package hyperref Info: backreferencing OFF on input line 6093.
+Package hyperref Info: Link coloring ON on input line 6096.
+Package hyperref Info: Link coloring with OCG OFF on input line 6103.
+Package hyperref Info: PDF/A mode OFF on input line 6108.
 \Hy@abspage=\count347
 \c@Item=\count348
 \c@Hfootnote=\count349
 )
 Package hyperref Info: Driver (autodetected): hxetex.
 
-(D:\APP\MikTex\tex/latex/hyperref\hxetex.def
-File: hxetex.def 2026-01-29 v7.01p Hyperref driver for XeTeX
+(D:\soft\latex\tex/latex/hyperref\hxetex.def
+File: hxetex.def 2025-07-12 v7.01o Hyperref driver for XeTeX
 \pdfm@box=\box67
 \c@Hy@AnnotLevel=\count350
 \HyField@AnnotCount=\count351
 \Fld@listcount=\count352
 \c@bookmark@seq@number=\count353
 
-(D:\APP\MikTex\tex/latex/rerunfilecheck\rerunfilecheck.sty
+(D:\soft\latex\tex/latex/rerunfilecheck\rerunfilecheck.sty
 Package: rerunfilecheck 2025-06-21 v1.11 Rerun checks for auxiliary files (HO)
 
-(D:\APP\MikTex\tex/generic/uniquecounter\uniquecounter.sty
+(D:\soft\latex\tex/generic/uniquecounter\uniquecounter.sty
 Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
@@ -834,24 +834,24 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip68
 )
-(D:\APP\MikTex\tex/latex/amsmath\amsmath.sty
+(D:\soft\latex\tex/latex/amsmath\amsmath.sty
 Package: amsmath 2025/07/09 v2.17z AMS math features
 \@mathmargin=\skip69
 
 For additional information on amsmath, use the `?' option.
-(D:\APP\MikTex\tex/latex/amsmath\amstext.sty
+(D:\soft\latex\tex/latex/amsmath\amstext.sty
 Package: amstext 2024/11/17 v2.01 AMS text
 
-(D:\APP\MikTex\tex/latex/amsmath\amsgen.sty
+(D:\soft\latex\tex/latex/amsmath\amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks26
 \ex@=\dimen286
 ))
-(D:\APP\MikTex\tex/latex/amsmath\amsbsy.sty
+(D:\soft\latex\tex/latex/amsmath\amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen287
 )
-(D:\APP\MikTex\tex/latex/amsmath\amsopn.sty
+(D:\soft\latex\tex/latex/amsmath\amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
 )
 \inf@bad=\count354
@@ -902,10 +902,10 @@ LaTeX Info: Redefining \Relbar on input line 970.
 LaTeX Info: Redefining \[ on input line 2950.
 LaTeX Info: Redefining \] on input line 2951.
 )
-(D:\APP\MikTex\tex/latex/amsfonts\amssymb.sty
+(D:\soft\latex\tex/latex/amsfonts\amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 
-(D:\APP\MikTex\tex/latex/amsfonts\amsfonts.sty
+(D:\soft\latex\tex/latex/amsfonts\amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
@@ -913,7 +913,7 @@ LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
-(D:\APP\MikTex\tex/latex/enumitem\enumitem.sty
+(D:\soft\latex\tex/latex/enumitem\enumitem.sty
 Package: enumitem 2025/02/06 v3.11 Customized lists
 \labelindent=\skip72
 \enit@outerparindent=\dimen295
@@ -922,33 +922,33 @@ Package: enumitem 2025/02/06 v3.11 Customized lists
 \enit@count@id=\count366
 \enitdp@description=\count367
 )
-(D:\APP\MikTex\tex/latex/pgf/frontendlayer\tikz.sty
-(D:\APP\MikTex\tex/latex/pgf/basiclayer\pgf.sty
-(D:\APP\MikTex\tex/latex/pgf/utilities\pgfrcs.sty
-(D:\APP\MikTex\tex/generic/pgf/utilities\pgfutil-common.tex
+(D:\soft\latex\tex/latex/pgf/frontendlayer\tikz.sty
+(D:\soft\latex\tex/latex/pgf/basiclayer\pgf.sty
+(D:\soft\latex\tex/latex/pgf/utilities\pgfrcs.sty
+(D:\soft\latex\tex/generic/pgf/utilities\pgfutil-common.tex
 \pgfutil@everybye=\toks32
 \pgfutil@tempdima=\dimen296
 \pgfutil@tempdimb=\dimen297
 )
-(D:\APP\MikTex\tex/generic/pgf/utilities\pgfutil-latex.def
+(D:\soft\latex\tex/generic/pgf/utilities\pgfutil-latex.def
 \pgfutil@abb=\box71
 )
-(D:\APP\MikTex\tex/generic/pgf/utilities\pgfrcs.code.tex
-(D:\APP\MikTex\tex/generic/pgf\pgf.revision.tex)
+(D:\soft\latex\tex/generic/pgf/utilities\pgfrcs.code.tex
+(D:\soft\latex\tex/generic/pgf\pgf.revision.tex)
 Package: pgfrcs 2025-08-29 v3.1.11a (3.1.11a)
 ))
 Package: pgf 2025-08-29 v3.1.11a (3.1.11a)
 
-(D:\APP\MikTex\tex/latex/pgf/basiclayer\pgfcore.sty
-(D:\APP\MikTex\tex/latex/pgf/systemlayer\pgfsys.sty
-(D:\APP\MikTex\tex/generic/pgf/systemlayer\pgfsys.code.tex
+(D:\soft\latex\tex/latex/pgf/basiclayer\pgfcore.sty
+(D:\soft\latex\tex/latex/pgf/systemlayer\pgfsys.sty
+(D:\soft\latex\tex/generic/pgf/systemlayer\pgfsys.code.tex
 Package: pgfsys 2025-08-29 v3.1.11a (3.1.11a)
 
-(D:\APP\MikTex\tex/generic/pgf/utilities\pgfkeys.code.tex
+(D:\soft\latex\tex/generic/pgf/utilities\pgfkeys.code.tex
 \pgfkeys@pathtoks=\toks33
 \pgfkeys@temptoks=\toks34
 
-(D:\APP\MikTex\tex/generic/pgf/utilities\pgfkeyslibraryfiltered.code.tex
+(D:\soft\latex\tex/generic/pgf/utilities\pgfkeyslibraryfiltered.code.tex
 \pgfkeys@tmptoks=\toks35
 ))
 \pgf@x=\dimen298
@@ -972,36 +972,36 @@ Package: pgfsys 2025-08-29 v3.1.11a (3.1.11a)
 \t@pgf@tokc=\toks38
 \pgf@sys@id@count=\count372
 
-(D:\APP\MikTex\tex/generic/pgf/systemlayer\pgf.cfg
+(D:\soft\latex\tex/generic/pgf/systemlayer\pgf.cfg
 File: pgf.cfg 2025-08-29 v3.1.11a (3.1.11a)
 )
 Driver file for pgf: pgfsys-xetex.def
 
-(D:\APP\MikTex\tex/generic/pgf/systemlayer\pgfsys-xetex.def
+(D:\soft\latex\tex/generic/pgf/systemlayer\pgfsys-xetex.def
 File: pgfsys-xetex.def 2025-08-29 v3.1.11a (3.1.11a)
 
-(D:\APP\MikTex\tex/generic/pgf/systemlayer\pgfsys-dvipdfmx.def
+(D:\soft\latex\tex/generic/pgf/systemlayer\pgfsys-dvipdfmx.def
 File: pgfsys-dvipdfmx.def 2025-08-29 v3.1.11a (3.1.11a)
 
-(D:\APP\MikTex\tex/generic/pgf/systemlayer\pgfsys-common-pdf.def
+(D:\soft\latex\tex/generic/pgf/systemlayer\pgfsys-common-pdf.def
 File: pgfsys-common-pdf.def 2025-08-29 v3.1.11a (3.1.11a)
 )
 \pgfsys@objnum=\count373
 )))
-(D:\APP\MikTex\tex/generic/pgf/systemlayer\pgfsyssoftpath.code.tex
+(D:\soft\latex\tex/generic/pgf/systemlayer\pgfsyssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgfsyssoftpath@smallbuffer@items=\count374
 \pgfsyssoftpath@bigbuffer@items=\count375
 )
-(D:\APP\MikTex\tex/generic/pgf/systemlayer\pgfsysprotocol.code.tex
+(D:\soft\latex\tex/generic/pgf/systemlayer\pgfsysprotocol.code.tex
 File: pgfsysprotocol.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 ))
-(D:\APP\MikTex\tex/generic/pgf/basiclayer\pgfcore.code.tex
+(D:\soft\latex\tex/generic/pgf/basiclayer\pgfcore.code.tex
 Package: pgfcore 2025-08-29 v3.1.11a (3.1.11a)
 
-(D:\APP\MikTex\tex/generic/pgf/math\pgfmath.code.tex
-(D:\APP\MikTex\tex/generic/pgf/math\pgfmathutil.code.tex)
-(D:\APP\MikTex\tex/generic/pgf/math\pgfmathparser.code.tex
+(D:\soft\latex\tex/generic/pgf/math\pgfmath.code.tex
+(D:\soft\latex\tex/generic/pgf/math\pgfmathutil.code.tex)
+(D:\soft\latex\tex/generic/pgf/math\pgfmathparser.code.tex
 \pgfmath@dimen=\dimen308
 \pgfmath@count=\count376
 \pgfmath@box=\box72
@@ -1009,21 +1009,21 @@ Package: pgfcore 2025-08-29 v3.1.11a (3.1.11a)
 \pgfmath@stack@operand=\toks40
 \pgfmath@stack@operation=\toks41
 )
-(D:\APP\MikTex\tex/generic/pgf/math\pgfmathfunctions.code.tex)
-(D:\APP\MikTex\tex/generic/pgf/math\pgfmathfunctions.basic.code.tex)
-(D:\APP\MikTex\tex/generic/pgf/math\pgfmathfunctions.trigonometric.code.tex)
-(D:\APP\MikTex\tex/generic/pgf/math\pgfmathfunctions.random.code.tex)
-(D:\APP\MikTex\tex/generic/pgf/math\pgfmathfunctions.comparison.code.tex)
-(D:\APP\MikTex\tex/generic/pgf/math\pgfmathfunctions.base.code.tex)
-(D:\APP\MikTex\tex/generic/pgf/math\pgfmathfunctions.round.code.tex)
-(D:\APP\MikTex\tex/generic/pgf/math\pgfmathfunctions.misc.code.tex)
-(D:\APP\MikTex\tex/generic/pgf/math\pgfmathfunctions.integerarithmetics.code.te
-x) (D:\APP\MikTex\tex/generic/pgf/math\pgfmathcalc.code.tex)
-(D:\APP\MikTex\tex/generic/pgf/math\pgfmathfloat.code.tex
+(D:\soft\latex\tex/generic/pgf/math\pgfmathfunctions.code.tex)
+(D:\soft\latex\tex/generic/pgf/math\pgfmathfunctions.basic.code.tex)
+(D:\soft\latex\tex/generic/pgf/math\pgfmathfunctions.trigonometric.code.tex)
+(D:\soft\latex\tex/generic/pgf/math\pgfmathfunctions.random.code.tex)
+(D:\soft\latex\tex/generic/pgf/math\pgfmathfunctions.comparison.code.tex)
+(D:\soft\latex\tex/generic/pgf/math\pgfmathfunctions.base.code.tex)
+(D:\soft\latex\tex/generic/pgf/math\pgfmathfunctions.round.code.tex)
+(D:\soft\latex\tex/generic/pgf/math\pgfmathfunctions.misc.code.tex)
+(D:\soft\latex\tex/generic/pgf/math\pgfmathfunctions.integerarithmetics.code.te
+x) (D:\soft\latex\tex/generic/pgf/math\pgfmathcalc.code.tex)
+(D:\soft\latex\tex/generic/pgf/math\pgfmathfloat.code.tex
 \c@pgfmathroundto@lastzeros=\count377
 ))
-(D:\APP\MikTex\tex/generic/pgf/math\pgfint.code.tex)
-(D:\APP\MikTex\tex/generic/pgf/basiclayer\pgfcorepoints.code.tex
+(D:\soft\latex\tex/generic/pgf/math\pgfint.code.tex)
+(D:\soft\latex\tex/generic/pgf/basiclayer\pgfcorepoints.code.tex
 File: pgfcorepoints.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgf@picminx=\dimen309
 \pgf@picmaxx=\dimen310
@@ -1040,102 +1040,102 @@ File: pgfcorepoints.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgf@zx=\dimen321
 \pgf@zy=\dimen322
 )
-(D:\APP\MikTex\tex/generic/pgf/basiclayer\pgfcorepathconstruct.code.tex
+(D:\soft\latex\tex/generic/pgf/basiclayer\pgfcorepathconstruct.code.tex
 File: pgfcorepathconstruct.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgf@path@lastx=\dimen323
 \pgf@path@lasty=\dimen324
 )
-(D:\APP\MikTex\tex/generic/pgf/basiclayer\pgfcorepathusage.code.tex
+(D:\soft\latex\tex/generic/pgf/basiclayer\pgfcorepathusage.code.tex
 File: pgfcorepathusage.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgf@shorten@end@additional=\dimen325
 \pgf@shorten@start@additional=\dimen326
 )
-(D:\APP\MikTex\tex/generic/pgf/basiclayer\pgfcorescopes.code.tex
+(D:\soft\latex\tex/generic/pgf/basiclayer\pgfcorescopes.code.tex
 File: pgfcorescopes.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgfpic=\box73
 \pgf@hbox=\box74
 \pgf@layerbox@main=\box75
 \pgf@picture@serial@count=\count378
 )
-(D:\APP\MikTex\tex/generic/pgf/basiclayer\pgfcoregraphicstate.code.tex
+(D:\soft\latex\tex/generic/pgf/basiclayer\pgfcoregraphicstate.code.tex
 File: pgfcoregraphicstate.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgflinewidth=\dimen327
 )
-(D:\APP\MikTex\tex/generic/pgf/basiclayer\pgfcoretransformations.code.tex
+(D:\soft\latex\tex/generic/pgf/basiclayer\pgfcoretransformations.code.tex
 File: pgfcoretransformations.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgf@pt@x=\dimen328
 \pgf@pt@y=\dimen329
 \pgf@pt@temp=\dimen330
 )
-(D:\APP\MikTex\tex/generic/pgf/basiclayer\pgfcorequick.code.tex
+(D:\soft\latex\tex/generic/pgf/basiclayer\pgfcorequick.code.tex
 File: pgfcorequick.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 )
-(D:\APP\MikTex\tex/generic/pgf/basiclayer\pgfcoreobjects.code.tex
+(D:\soft\latex\tex/generic/pgf/basiclayer\pgfcoreobjects.code.tex
 File: pgfcoreobjects.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 )
-(D:\APP\MikTex\tex/generic/pgf/basiclayer\pgfcorepathprocessing.code.tex
+(D:\soft\latex\tex/generic/pgf/basiclayer\pgfcorepathprocessing.code.tex
 File: pgfcorepathprocessing.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 )
-(D:\APP\MikTex\tex/generic/pgf/basiclayer\pgfcorearrows.code.tex
+(D:\soft\latex\tex/generic/pgf/basiclayer\pgfcorearrows.code.tex
 File: pgfcorearrows.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgfarrowsep=\dimen331
 )
-(D:\APP\MikTex\tex/generic/pgf/basiclayer\pgfcoreshade.code.tex
+(D:\soft\latex\tex/generic/pgf/basiclayer\pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgf@max=\dimen332
 \pgf@sys@shading@range@num=\count379
 \pgf@shadingcount=\count380
 )
-(D:\APP\MikTex\tex/generic/pgf/basiclayer\pgfcoreimage.code.tex
+(D:\soft\latex\tex/generic/pgf/basiclayer\pgfcoreimage.code.tex
 File: pgfcoreimage.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 )
-(D:\APP\MikTex\tex/generic/pgf/basiclayer\pgfcoreexternal.code.tex
+(D:\soft\latex\tex/generic/pgf/basiclayer\pgfcoreexternal.code.tex
 File: pgfcoreexternal.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgfexternal@startupbox=\box76
 )
-(D:\APP\MikTex\tex/generic/pgf/basiclayer\pgfcorelayers.code.tex
+(D:\soft\latex\tex/generic/pgf/basiclayer\pgfcorelayers.code.tex
 File: pgfcorelayers.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 )
-(D:\APP\MikTex\tex/generic/pgf/basiclayer\pgfcoretransparency.code.tex
+(D:\soft\latex\tex/generic/pgf/basiclayer\pgfcoretransparency.code.tex
 File: pgfcoretransparency.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 )
-(D:\APP\MikTex\tex/generic/pgf/basiclayer\pgfcorepatterns.code.tex
+(D:\soft\latex\tex/generic/pgf/basiclayer\pgfcorepatterns.code.tex
 File: pgfcorepatterns.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 )
-(D:\APP\MikTex\tex/generic/pgf/basiclayer\pgfcorerdf.code.tex
+(D:\soft\latex\tex/generic/pgf/basiclayer\pgfcorerdf.code.tex
 File: pgfcorerdf.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 )))
-(D:\APP\MikTex\tex/generic/pgf/modules\pgfmoduleshapes.code.tex
+(D:\soft\latex\tex/generic/pgf/modules\pgfmoduleshapes.code.tex
 File: pgfmoduleshapes.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgfnodeparttextbox=\box77
 )
-(D:\APP\MikTex\tex/generic/pgf/modules\pgfmoduleplot.code.tex
+(D:\soft\latex\tex/generic/pgf/modules\pgfmoduleplot.code.tex
 File: pgfmoduleplot.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 )
-(D:\APP\MikTex\tex/latex/pgf/compatibility\pgfcomp-version-0-65.sty
+(D:\soft\latex\tex/latex/pgf/compatibility\pgfcomp-version-0-65.sty
 Package: pgfcomp-version-0-65 2025-08-29 v3.1.11a (3.1.11a)
 \pgf@nodesepstart=\dimen333
 \pgf@nodesepend=\dimen334
 )
-(D:\APP\MikTex\tex/latex/pgf/compatibility\pgfcomp-version-1-18.sty
+(D:\soft\latex\tex/latex/pgf/compatibility\pgfcomp-version-1-18.sty
 Package: pgfcomp-version-1-18 2025-08-29 v3.1.11a (3.1.11a)
 ))
-(D:\APP\MikTex\tex/latex/pgf/utilities\pgffor.sty
-(D:\APP\MikTex\tex/latex/pgf/utilities\pgfkeys.sty
-(D:\APP\MikTex\tex/generic/pgf/utilities\pgfkeys.code.tex))
-(D:\APP\MikTex\tex/latex/pgf/math\pgfmath.sty
-(D:\APP\MikTex\tex/generic/pgf/math\pgfmath.code.tex))
-(D:\APP\MikTex\tex/generic/pgf/utilities\pgffor.code.tex
+(D:\soft\latex\tex/latex/pgf/utilities\pgffor.sty
+(D:\soft\latex\tex/latex/pgf/utilities\pgfkeys.sty
+(D:\soft\latex\tex/generic/pgf/utilities\pgfkeys.code.tex))
+(D:\soft\latex\tex/latex/pgf/math\pgfmath.sty
+(D:\soft\latex\tex/generic/pgf/math\pgfmath.code.tex))
+(D:\soft\latex\tex/generic/pgf/utilities\pgffor.code.tex
 Package: pgffor 2025-08-29 v3.1.11a (3.1.11a)
 \pgffor@iter=\dimen335
 \pgffor@skip=\dimen336
 \pgffor@stack=\toks42
 \pgffor@toks=\toks43
 ))
-(D:\APP\MikTex\tex/generic/pgf/frontendlayer/tikz\tikz.code.tex
+(D:\soft\latex\tex/generic/pgf/frontendlayer/tikz\tikz.code.tex
 Package: tikz 2025-08-29 v3.1.11a (3.1.11a)
 
-(D:\APP\MikTex\tex/generic/pgf/libraries\pgflibraryplothandlers.code.tex
+(D:\soft\latex\tex/generic/pgf/libraries\pgflibraryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgf@plot@mark@count=\count381
 \pgfplotmarksize=\dimen337
@@ -1157,7 +1157,7 @@ File: pgflibraryplothandlers.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \tikznumberofcurrentchild=\count384
 \tikz@fig@count=\count385
 
-(D:\APP\MikTex\tex/generic/pgf/modules\pgfmodulematrix.code.tex
+(D:\soft\latex\tex/generic/pgf/modules\pgfmodulematrix.code.tex
 File: pgfmodulematrix.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgfmatrixcurrentrow=\count386
 \pgfmatrixcurrentcolumn=\count387
@@ -1165,42 +1165,42 @@ File: pgfmodulematrix.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 )
 \tikz@expandcount=\count389
 
-(D:\APP\MikTex\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarytopaths.
+(D:\soft\latex\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarytopaths.
 code.tex
 File: tikzlibrarytopaths.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 )))
-(D:\APP\MikTex\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryshapes.g
+(D:\soft\latex\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryshapes.g
 eometric.code.tex
 File: tikzlibraryshapes.geometric.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 
-(D:\APP\MikTex\tex/generic/pgf/libraries/shapes\pgflibraryshapes.geometric.code
+(D:\soft\latex\tex/generic/pgf/libraries/shapes\pgflibraryshapes.geometric.code
 .tex
 File: pgflibraryshapes.geometric.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-)) (D:\APP\MikTex\tex/generic/pgf/libraries\pgflibraryarrows.meta.code.tex
+)) (D:\soft\latex\tex/generic/pgf/libraries\pgflibraryarrows.meta.code.tex
 File: pgflibraryarrows.meta.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgfarrowinset=\dimen346
 \pgfarrowlength=\dimen347
 \pgfarrowwidth=\dimen348
 \pgfarrowlinewidth=\dimen349
 )
-(D:\APP\MikTex\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryposition
+(D:\soft\latex\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryposition
 ing.code.tex
 File: tikzlibrarypositioning.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 )
-(D:\APP\MikTex\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryfit.code
+(D:\soft\latex\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryfit.code
 .tex
 File: tikzlibraryfit.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 )
-(D:\APP\MikTex\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarybackgrou
+(D:\soft\latex\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarybackgrou
 nds.code.tex
 File: tikzlibrarybackgrounds.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgf@layerbox@background=\box82
 \pgf@layerboxsaved@background=\box83
 )
-(D:\APP\MikTex\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarycalc.cod
+(D:\soft\latex\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarycalc.cod
 e.tex
 File: tikzlibrarycalc.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-) (D:\APP\MikTex1\tex/latex/fancyhdr\fancyhdr.sty
+) (D:\soft\latex\tex/latex/fancyhdr\fancyhdr.sty
 Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
 
 \f@nch@headwidth=\skip73
@@ -1383,13 +1383,13 @@ Package fontspec Info:
 
 LaTeX Font Info:    Trying to load font information for U+msa on input line 179
 .
- (D:\APP\MikTex\tex/latex/amsfonts\umsa.fd
+ (D:\soft\latex\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Trying to load font information for U+msb on input line 179
 .
 
-(D:\APP\MikTex\tex/latex/amsfonts\umsb.fd
+(D:\soft\latex\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
@@ -1427,7 +1427,7 @@ Package fontspec Info:
 
  [8]
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 662.
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 659.
  [9] [10] [11] [12] [13] [14] [15] [16] [17]
 [18] [19]
 File: figures/ui_homepage.png Graphic file (type bmp)
@@ -1439,103 +1439,111 @@ File: figures/ui_select_palace.png Graphic file (type bmp)
 <figures/ui_select_palace.png>
 File: figures/ui_select_duet.png Graphic file (type bmp)
 <figures/ui_select_duet.png>
- [21] [22] [23] [24] [25] [26] [27]
-Overfull \hbox (2.8605pt too wide) in paragraph at lines 1325--1326
+ [21]
+File: figures/ui_chat.png Graphic file (type bmp)
+<figures/ui_chat.png>
+File: figures/ui_summary.png Graphic file (type bmp)
+<figures/ui_summary.png>
+ [22]
+File: figures/ui_duet.png Graphic file (type bmp)
+<figures/ui_duet.png>
+ [23] [24] [25] [26] [27] [28]
+Overfull \hbox (2.8605pt too wide) in paragraph at lines 1315--1316
 []\TU/TimesNewRoman(0)/m/n/12 SYSTRAN. faster-whisper[EB/OL]. \TU/lmtt/m/n/12 h
 ttps://github.com/SYSTRAN/faster-whisper\TU/TimesNewRoman(0)/m/n/12 ,
- []
-
-[28]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 1334.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \kern 3.33234pt
-(hyperref)                removed on input line 1334.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 1334.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \kern 3.33234pt
-(hyperref)                removed on input line 1334.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 1334.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \kern 3.33234pt
-(hyperref)                removed on input line 1334.
-
-
-Overfull \hbox (7.9226pt too wide) in paragraph at lines 1362--1362
-[]|\TU/lmtt/m/n/12 exp_GPTSoVITS_weights/| 
  []
 
 [29]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 1371.
+(hyperref)                removing `\leavevmode@ifvmode' on input line 1324.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 3.33234pt
-(hyperref)                removed on input line 1371.
+(hyperref)                removed on input line 1324.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 1371.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \kern 3.33234pt
-(hyperref)                removed on input line 1371.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 1371.
+(hyperref)                removing `\leavevmode@ifvmode' on input line 1324.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 3.33234pt
-(hyperref)                removed on input line 1371.
+(hyperref)                removed on input line 1324.
 
 
-Overfull \hbox (8.78496pt too wide) in paragraph at lines 1412--1412
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\leavevmode@ifvmode' on input line 1324.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 3.33234pt
+(hyperref)                removed on input line 1324.
+
+
+Overfull \hbox (7.9226pt too wide) in paragraph at lines 1350--1350
+[]|\TU/lmtt/m/n/12 exp_GPTSoVITS_weights/| 
+ []
+
+[30]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\leavevmode@ifvmode' on input line 1359.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 3.33234pt
+(hyperref)                removed on input line 1359.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\leavevmode@ifvmode' on input line 1359.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 3.33234pt
+(hyperref)                removed on input line 1359.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\leavevmode@ifvmode' on input line 1359.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 3.33234pt
+(hyperref)                removed on input line 1359.
+
+
+Overfull \hbox (8.78496pt too wide) in paragraph at lines 1400--1400
 []|\TU/TimesNewRoman(0)/m/n/12 2023212061| 
  []
 
 
-Overfull \hbox (8.78496pt too wide) in paragraph at lines 1412--1412
+Overfull \hbox (8.78496pt too wide) in paragraph at lines 1400--1400
 []|\TU/TimesNewRoman(0)/m/n/12 2023212062| 
  []
 
 
-Overfull \hbox (8.78496pt too wide) in paragraph at lines 1412--1412
+Overfull \hbox (8.78496pt too wide) in paragraph at lines 1400--1400
 []|\TU/TimesNewRoman(0)/m/n/12 2023212179| 
  []
 
-[30] (终期论文.aux)
+[31] (终期论文.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2022/08/05>
  ***********
 Package rerunfilecheck Info: File `终期论文.out' has not changed.
-(rerunfilecheck)             Checksum: AC2084D5CA25B9D88A3BC0F50C7763A4;5064.
+(rerunfilecheck)             Checksum: 03760F7F0450F6C09DC7055D13A5EEDB;5064.
  ) 
 Here is how much of TeX's memory you used:
- 31967 strings out of 402983
- 681308 string characters out of 5454899
- 1095046 words of memory out of 5000000
- 60166 multiletter control sequences out of 15000+600000
+ 31982 strings out of 402987
+ 681204 string characters out of 5454942
+ 1095026 words of memory out of 5000000
+ 60173 multiletter control sequences out of 15000+600000
  638140 words of font info for 141 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  93i,18n,95p,511b,981s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 终期论文.pdf (34 pages).
+Output written on 终期论文.pdf (35 pages).

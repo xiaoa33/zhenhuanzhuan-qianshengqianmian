@@ -1,6 +1,30 @@
+# 甄嬛传·千声千面 —— 全项目合并依赖
+# 涵盖 yiping-backend、xiao-asr_llm、xiao-gpt-sovits、siting_data_prepare
+# 安装: pip install -r requirements.txt
+
+# ── Web 服务框架（yiping-backend / xiao-asr_llm / xiao-gpt-sovits）──
 fastapi>=0.110.0
 uvicorn[standard]>=0.29.0
 httpx>=0.27.0
 python-dotenv>=1.0.0
 python-multipart>=0.0.9
 aiofiles>=23.2.1
+
+# ── ASR 语音识别（xiao-asr_llm）──
+faster-whisper>=1.0.0
+
+# ── 音频处理（siting_data_prepare）──
+torch>=2.0.0
+torchaudio>=2.0.0
+soundfile>=0.12.0
+librosa>=0.10.0
+pydub>=0.25.0
+
+# ── ASR / VAD / 说话人识别（siting_data_prepare）──
+funasr>=1.0.0
+modelscope>=1.10.0
+
+# ── 数据处理（siting_data_prepare）──
+numpy>=1.24.0
+pandas>=2.0.0
+tqdm>=4.65.0

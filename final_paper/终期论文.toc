@@ -6,15 +6,12 @@
 \contentsline {subsection}{\numberline {3.1}数据集构建}{2}{subsection.3.1}%
 \contentsline {subsubsection}{\numberline {3.1.1}数据来源与规模}{2}{subsubsection.3.1.1}%
 \contentsline {subsubsection}{\numberline {3.1.2}数据处理 Pipeline}{2}{subsubsection.3.1.2}%
-\contentsline {subsubsection}{\numberline {3.1.3}最终数据集统计}{4}{subsubsection.3.1.3}%
+\contentsline {subsubsection}{\numberline {3.1.3}最终数据集统计}{5}{subsubsection.3.1.3}%
 \contentsline {subsection}{\numberline {3.2}CosyVoice3 语音克隆}{6}{subsection.3.2}%
 \contentsline {subsubsection}{\numberline {3.2.1}CosyVoice3-0.5B 微调实验}{6}{subsubsection.3.2.1}%
-\contentsline {subsubsection}{\numberline {3.2.2}从微调转向 Zero-shot 方案的决策分析}{7}{subsubsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.2}从微调转向 Zero-shot 方案的决策分析}{8}{subsubsection.3.2.2}%
 \contentsline {subsubsection}{\numberline {3.2.3}14 角色 Zero-shot Speaker 注册}{8}{subsubsection.3.2.3}%
 \contentsline {subsubsection}{\numberline {3.2.4}情绪 Speaker 创新方案}{8}{subsubsection.3.2.4}%
-\contentsline {paragraph}{问题分析}{8}{section*.11}%
-\contentsline {paragraph}{解决方案}{8}{section*.12}%
-\contentsline {paragraph}{情绪数据采集}{9}{section*.13}%
 \contentsline {subsection}{\numberline {3.3}GPT-SoVITS 微调}{10}{subsection.3.3}%
 \contentsline {subsubsection}{\numberline {3.3.1}微调数据准备}{10}{subsubsection.3.3.1}%
 \contentsline {subsubsection}{\numberline {3.3.2}双版本模型权重微调}{11}{subsubsection.3.3.2}%
@@ -29,19 +26,15 @@
 \contentsline {subsubsection}{\numberline {3.5.1}整体架构}{18}{subsubsection.3.5.1}%
 \contentsline {subsubsection}{\numberline {3.5.2}前端技术栈与视觉设计}{19}{subsubsection.3.5.2}%
 \contentsline {subsubsection}{\numberline {3.5.3}页面架构}{20}{subsubsection.3.5.3}%
-\contentsline {paragraph}{主页（HomePage）}{20}{section*.25}%
-\contentsline {paragraph}{角色选择页（CharacterSelectPage）}{20}{section*.27}%
-\contentsline {paragraph}{对话页（ChatPage）}{22}{section*.31}%
-\contentsline {paragraph}{即兴对话页（DuetPage）}{22}{section*.32}%
-\contentsline {subsubsection}{\numberline {3.5.4}流式 TTS 链路}{22}{subsubsection.3.5.4}%
-\contentsline {section}{\numberline {4}数据集构建结果}{23}{section.4}%
-\contentsline {section}{\numberline {5}问题分析}{24}{section.5}%
-\contentsline {subsection}{\numberline {5.1}CosyVoice3 微调过拟合}{24}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}GPT-SoVITS 训练与调优}{25}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}情绪控制与音色保真的矛盾}{26}{subsection.5.3}%
-\contentsline {section}{\numberline {6}总结与展望}{26}{section.6}%
-\contentsline {subsection}{\numberline {6.1}项目成果}{26}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}未来展望}{27}{subsection.6.2}%
-\contentsline {section}{参考文献}{28}{section*.36}%
-\contentsline {section}{附录\tmspace +\thickmuskip {.2777em}A\tmspace +\thickmuskip {.2777em}\tmspace +\thickmuskip {.2777em} 网盘数据说明}{29}{section*.38}%
-\contentsline {section}{附录\tmspace +\thickmuskip {.2777em}B\tmspace +\thickmuskip {.2777em}\tmspace +\thickmuskip {.2777em} 小组成员分工}{30}{section*.41}%
+\contentsline {subsubsection}{\numberline {3.5.4}流式 TTS 链路}{23}{subsubsection.3.5.4}%
+\contentsline {section}{\numberline {4}数据集构建结果}{24}{section.4}%
+\contentsline {section}{\numberline {5}问题分析}{25}{section.5}%
+\contentsline {subsection}{\numberline {5.1}CosyVoice3 微调过拟合}{25}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}GPT-SoVITS 训练与调优}{26}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}情绪控制与音色保真的矛盾}{27}{subsection.5.3}%
+\contentsline {section}{\numberline {6}总结与展望}{27}{section.6}%
+\contentsline {subsection}{\numberline {6.1}项目成果}{27}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}未来展望}{28}{subsection.6.2}%
+\contentsline {section}{参考文献}{29}{section*.32}%
+\contentsline {section}{附录\tmspace +\thickmuskip {.2777em}A\tmspace +\thickmuskip {.2777em}\tmspace +\thickmuskip {.2777em} 网盘数据说明}{30}{section*.34}%
+\contentsline {section}{附录\tmspace +\thickmuskip {.2777em}B\tmspace +\thickmuskip {.2777em}\tmspace +\thickmuskip {.2777em} 小组成员分工}{31}{section*.37}%
